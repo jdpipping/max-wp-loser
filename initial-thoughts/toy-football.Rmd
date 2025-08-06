@@ -1,0 +1,312 @@
+---
+title: "Toy Football"
+author: "JP & Adi Wyner"
+date: "`r Sys.Date()`"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# The Problem
+
+We are interested in the probability of a team winning a football game given a particular game state. This includes the current score, the number of possessions each team has remaining, and the probability of scoring a touchdown on a given possession.
+
+We make a couple simplifying assumptions:
+
+* Each team has an equal number of possesssions.
+* The probability of scoring a touchdown on a particular possession is constant and independent of the current game state.
+* The teams are evenly matched, so the teams' probabilities of scoring a touchdown on a particular possession are equal.
+* Should the teams tie, the winner is determined by a coin flip.
+
+# The Model
+
+### Parametrization
+
+We parametrize the model as follows:
+
+* $N$: a constant representing the total number of possessions each team has.
+* $n_{rem}$: the number of possessions remaining for each team.
+* $p_{td}$: the probability of scoring on a given possession. For simplicity, we will assume that this is $0.5$.
+* $A_{final}, B_{final}$: the final score of team $A, B$.
+* $\text{score}_{A}, \text{score}_{B}$: the current score of team $A, B$.
+* $A_{rem}, B_{rem}$: the number of points team $A$ and $B$ score over the rest of the game.
+
+It is clear that the distribution of the final score of each team is binomially distributed with parameters $N, p_{td}$. Furthermore, the distribution of the number of points team $A$ and $B$ score over the rest of the game is also binomially distributed with parameters $n_{rem}, p_{td}$. Note that at any point in the game, $A_{final} = \text{score}_{A} + A_{rem}$, and similarly for $B$.
+
+### Probability of Winning
+
+At each stage in the game, we are interested in
+
+\begin{align*}
+P(A \text{ wins}) &= P(A_{final} > B_{final}) + \frac{1}{2}P(A_{final} = B_{final}) \\
+&= P(\text{score}_A + A_{rem} > \text{score}_B + B_{rem}) + \frac{1}{2} P(\text{score}_{A} + A_{rem} = \text{score}_{B} + B_{rem}) \\
+&= P(A_{rem}-B_{rem} > \text{score}_B - \text{score}_A) + \frac{1}{2} P(A_{rem}-B_{rem} = \text{score}_B -  \text{score}_A)
+\end{align*}
+
+Consider $Z_{rem} = A_{rem} - B_{rem}$ as a random variable representing the difference in the number of points scored by each team over the rest of the game, and let $z = \text{score}_B - \text{score}_A$. We can then express $P(A \text{ wins}) = P(Z_{rem} > z) + \frac{1}{2} P(Z_{rem} = z)$.
+
+### Distribution of Remaining Score Differential $Z_{rem}$
+
+#### PMF of $Z_{rem}$
+
+We characterize the PMF of $Z_{rem}$ as a convolution of $A_{rem}$ and $B_{rem}$ Binomial$(n_{rem}, p_{td})$:
+
+\begin{align*}
+P(Z_{rem} = z) = P(A_{rem} - B_{rem} = z) &= \sum_{k=0}^{n_{rem}} P(A_{rem} = k)P(B_{rem} = k - z) \\
+&= \sum_{k=0}^{n_{rem}} {n_{rem} \choose k}p^k (1-p)^{n_{rem}-k} {n_{rem} \choose k-z}p^{k-z} (1-p)^{n_{rem}-k+z} \\
+&= \sum_{k=0}^{n_{rem}} {n_{rem} \choose k} {n_{rem} \choose k-z} p^{2k-z} (1-p)^{2n_{rem}-2k+z} \\
+\end{align*}
+
+When $p = 1/2$, we can simplify this expression further: $$P(Z_{rem} = z) = (\frac{1}{2^{2n_{rem}}})\sum_{k=0}^{n_{rem}} {n_{rem} \choose k} {n_{rem} \choose k-z}$$. Then from the Chu-Vandermonde identity, we have that $$f_{Z_{rem}}(z) = P(Z_{rem} = z) = \frac{{2n_{rem} \choose n_{rem} + z}}{2^{2n_{rem}}}$$.
+
+#### Validity of PMF
+
+We verify this is a valid PMF by verifying non-negativity and that it sums to $1$.
+
+* Non-negativity: The binomial coefficients are non-negative, and the denominator is positive, so the PMF is non-negative across all $z$.
+* Normalization: Consider the sum of this PMF across all $z$:
+
+\begin{align*}
+\sum_{z = -n_{rem}}^{n_{rem}} \frac{{2n_{rem} \choose n_{rem} + z}}{2^{2n_{rem}}} &= \frac{1}{2^{2n_{rem}}}\sum_{z = -n_{rem}}^{n_{rem}} {2n_{rem} \choose n_{rem} + z} \\
+&= \frac{1}{2^{2n_{rem}}} \sum_{k=0}^{2n_{rem}} {2n_{rem}\choose k} \\
+&= \frac{1}{2^{2n_{rem}}} \cdot 2^{2n_{rem}} \\
+&= 1
+\end{align*}
+
+So this is a valid PMF for $Z_{rem}$.
+
+#### CDF of $Z_{rem}$
+
+We can get the CDF  of $Z_{rem}$ by summing the PMF.
+
+\begin{align*}
+F_{Z_{rem}}(z) = P(Z_{rem} \leq z) &= \sum_{k=-n_{rem}}^{z} P(Z_{rem} = k) \\
+&= \sum_{k=-n_{rem}}^{z} \frac{{2n_{rem} \choose n_{rem} + k}}{2^{2n_{rem}}} \\
+&= \frac{1}{2^{2n_{rem}}} \sum_{k=-n_{rem}}^{z} {2n_{rem} \choose n_{rem} + k}
+\end{align*}
+
+### Back to Win Probability
+
+Recall that
+
+\begin{align*}
+P(A \text{ wins}) &= P(A_{rem}-B_{rem} > \text{score}_B - \text{score}_A) + \frac{1}{2} P(A_{rem}-B_{rem} = \text{score}_B -  \text{score}_A) \\
+&= P(Z_{rem} > z) + \frac{1}{2} P(Z_{rem} = z)
+\end{align*}
+
+We can then express the probability that $A$ wins in terms of the CDF and PDF:
+
+\begin{align*}
+P(A \text{ wins}) &= 1 - P(Z_{rem} \leq z) + \frac{1}{2} P(Z_{rem} = z) \\
+&= 1 - F_{Z_{rem}}(z) + \frac{1}{2} f_{Z_{rem}}(z) \\
+&= 1 - \frac{1}{2^{2n_{rem}}} \left[\sum_{k=-n_{rem}}^{z} {2n_{rem} \choose n_{rem} + k} \right] + \frac{1}{2} \cdot \frac{{2n_{rem} \choose n_{rem} + z}}{2^{2n_{rem}}} \\
+\end{align*}
+
+And $P(B \text{ wins})$ is $1 - P(A \text{ wins})$, so
+
+\begin{align*}
+P(B \text{ wins}) &= P(Z_{rem} \leq z) - \frac{1}{2} P(Z_{rem} = z) \\
+&= F_{Z_{rem}}(z) - \frac{1}{2} f_{Z_{rem}}(z) \\
+&= \frac{1}{2^{2n_{rem}}} \left[\sum_{k=-n_{rem}}^{z} {2n_{rem} \choose n_{rem} + k} \right] - \frac{1}{2} \cdot \frac{{2n_{rem} \choose n_{rem} + z}}{2^{2n_{rem}}} \\
+\end{align*}
+
+# Functions
+
+```{r}
+# mass function
+pmf = function(n_rem, z) {
+  # pmf formula
+  return(choose(2*n_rem, n_rem + z)/(2^(2*n_rem)))
+}
+
+# distribution function
+cdf = function(n_rem, z) {
+  # computing control: when z < -n_rem, sum = 0
+  if(z < -n_rem) {
+    return(0)
+  }
+  # otherwise proceed
+  else {
+    # cdf formula
+    return(sum(sapply(-n_rem:z, function(k) choose(2*n_rem, n_rem + k)))/(2^(2*n_rem)))
+  }
+}
+
+# win probability
+win_prob = function(n_rem, score_a, score_b) {
+  # calculate z
+  z = score_b - score_a
+  # calculate win probability for team a
+  wp_a = 1 - cdf(n_rem, z) + 0.5*pmf(n_rem, z)
+  # return
+  return(wp_a)
+}
+
+# compute win probability for all possible states
+win_prob_all = function(N) {
+  # initialize win probability matrix
+  wp_matrix = matrix(nrow = N + 1, ncol = 2 * N + 1)
+  rownames(wp_matrix) = paste0('n_rem=', 0:N)
+  colnames(wp_matrix) = paste0('z=', -N:N)
+  # loop through number of possessions remaining
+  for (n_rem in 0:N) {
+    # loop through all possible score differentials
+    for (z in (n_rem - N):(N - n_rem)) {
+      # calculate and input win probability
+      wp_matrix[n_rem + 1, z + (N + 1)] = win_prob(n_rem, N, z + N)
+    }
+  }
+  # return
+  return(wp_matrix)
+}
+
+# simulate a single game
+sim_game = function(N, p_td) {
+  # simulate drives (incl. game start)
+  drives_a = c(0, rbinom(N, 1, p_td))
+  drives_b = c(0, rbinom(N, 1, p_td))
+  # live scores
+  scores_a = cumsum(drives_a)
+  scores_b = cumsum(drives_b)
+  # win probabilities, time 0
+  win_probs_a = sapply(0:N, function(i) win_prob(n_rem = N-i, score_a = scores_a[i + 1], score_b = scores_b[i + 1]))
+  win_probs_b = 1 - win_probs_a
+  # collect game data
+  game_data = data.frame(drives_a, drives_b, scores_a, scores_b, win_probs_a, win_probs_b)
+  rownames(game_data) = paste0('drive ', 0:N)
+    # assign winner
+  if (scores_a[N + 1] > scores_b[N + 1]) {
+    winner = 'a'
+  } else if (scores_a[N + 1] < scores_b[N + 1]) {
+    winner = 'b'
+  } else {
+    # if a tie, flip a coin
+    winner = sample(c('a', 'b'), 1)
+  }
+  # return data
+  return(list(game_data, winner))
+}
+
+# get max wp of losing team
+max_wp_loser = function(game) {
+  # get game data, winner
+  game_data = game[[1]]
+  winner = game[[2]]
+  # extract win probabilities
+  win_probs_a = game_data$win_probs_a
+  win_probs_b = game_data$win_probs_b
+  # get max win probability of losing team, time it occurs
+  if (winner == 'a') {
+    max_wp = max(win_probs_b)
+    t = which.max(win_probs_b) - 1
+  } else {
+    max_wp = max(win_probs_a)
+    t = which.max(win_probs_a) - 1
+  }
+  # return max wp
+  return(list(max_wp, t))
+}
+```
+
+# Simulation
+
+### Win Probabilty for All Game States
+
+```{r}
+# set parameters
+N = 5
+p_td = 0.5
+# get win probability matrix
+wp_matrix = win_prob_all(N)
+# print, rounded to 2 dp
+print(round(wp_matrix, 2))
+```
+
+
+### Single-Game Simulation
+
+```{r}
+# set seed
+set.seed(2024-10)
+
+# set parameters
+N = 10
+p_td = 0.5
+
+# sim game
+game = sim_game(N, p_td)
+# get game data, winner
+game_data = game[[1]]
+winner = game[[2]]
+# print game data, rounded to 2 dp
+print(round(game_data, 2))
+```
+
+### Max Win Probability of Losing Team
+
+```{r}
+# set seed
+set.seed(2024-10)
+
+# set parameters
+n_sim = 10000
+N = 500
+p_td = 0.5
+
+# initialize max wp vector
+max_wp_losers = numeric()
+t_losers = numeric()
+# each time
+for (i in 1:n_sim) {
+  # simulate game
+  game = sim_game(N, p_td)
+  # get max win probability of losing team, time it occurs
+  wp_data = max_wp_loser(game)
+  # extract data
+  max_wp = wp_data[[1]]
+  t = wp_data[[2]]
+  # store
+  max_wp_losers = c(max_wp_losers, max_wp)
+  t_losers = c(t_losers, t)
+}
+
+# plot empirical distribution of max wp of losing team
+hist(max_wp_losers, breaks = 20, freq = F,
+     col = 'maroon', border = 'black',
+     main = 'Empirical Distribution of Max WP of Losing Team', xlab = 'Max Win Probability of Losing Team', ylab = 'Density')
+```
+
+**Result:** The empirical proportion of games the losing team had a max win probability of 0.5 is `r mean(max_wp_losers == 0.5)`. The empirical mean max W.P. is `r mean(max_wp_losers)`. The empirical proportion of games the losing team had a max win probability of at least 0.9 is `r mean(max_wp_losers >= 0.9)`.
+
+```{r}
+# plot of (Z > 1 - alpha) where Z is win prob of losing team
+
+# set alpha values
+alpha_values = seq(0, 0.5, by = 0.01)
+# calculate probabilities
+prob_values = sapply(alpha_values, function(alpha) mean(max_wp_losers > (1 - alpha)))
+
+# plot
+plot(alpha_values, prob_values, type = 'l', col = 'maroon', 
+  main = 'Probability of Max WP of Losing Team > 1 - alpha',
+  xlab = 'alpha', ylab = 'P(Max WP of Losing Team > 1 - alpha)',
+  xlim = rev(range(alpha_values)))
+```
+
+
+```{r}
+# plot empirical distribution of t of max wp of losing team (normalized)
+hist(t_losers / N, breaks = 20, freq = F,
+     col = 'maroon', border = 'black',
+     main = 'Empirical Distribution of Time of Max WP of Losing Team', xlab = 'Time of Max Win Probability of Losing Team', ylab = 'Density')
+# overlay theoretical arcsin distribution
+curve(1 / (pi * sqrt(x * (1 - x))), add = T, col = 'darkblue', lwd = 2)
+```
+
+**Result:** The empirical proportion of games the losing team achieved their max win probability (0.5) at the start of the game is `r mean(t_losers == 0)`.
+
+**Note:** As currently coded, $t_{\max{wp}}$ measures the *first* time the maximum win probability is achieved. This can be adjusted to measure the *last* time the maximum win probability is achieved if we are interested in investigating comebacks.
