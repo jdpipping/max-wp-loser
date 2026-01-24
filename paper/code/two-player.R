@@ -114,7 +114,7 @@ p_pdf = ggplot(plot_data_pdf, aes(x = x, y = density, color = p0_label)) +
     legend.position = "right"
   )
 
-# Save the plots (paths relative to code/ directory)
-ggsave("../figures/distributions/sports_cdf.png", p_cdf, width = 8, height = 5, dpi = 300)
-ggsave("../figures/distributions/sports_pdf.png", p_pdf, width = 8, height = 5, dpi = 300)
+# Save the plots (paths relative to repo root)
+ggsave("paper/figures/distributions/sports_cdf.png", p_cdf, width = 8, height = 5, dpi = 300)
+ggsave("paper/figures/distributions/sports_pdf.png", p_pdf, width = 8, height = 5, dpi = 300)
 

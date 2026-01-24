@@ -56,6 +56,6 @@ p_cdf = ggplot(plot_data_cdf, aes(x = x, y = cdf, color = n_label)) +
   )
 
 # Save the plot
-ggsave("../figures/distributions/nplayer_cdf.png", p_cdf, width = 8, height = 5, dpi = 300)
+ggsave("paper/figures/distributions/nplayer_cdf.png", p_cdf, width = 8, height = 5, dpi = 300)
 
-print("Plot saved to ../figures/nplayer_cdf.png")
+print("Plot saved to paper/figures/distributions/nplayer_cdf.png")

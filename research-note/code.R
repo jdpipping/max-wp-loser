@@ -20,6 +20,9 @@ n_sims = 10000   # number of simulated games
 n_cores = detectCores() - 1  # use 1 less than available cores
 p_td = 0.5     # touchdown probability for both teams
 
+out_dir = "research-note/figures"
+dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
+
 #################
 ### FUNCTIONS ###
 #################
@@ -362,11 +365,11 @@ run_simulation = function() {
       theme(legend.position = "none")  # Hide the legend since we don't need it
     
     # Save all plots
-    ggsave("figures/max-wp-sim.png", m_plot, width = 6, height = 5, dpi = 300)
-    ggsave("figures/time-max-wp-sim.png", t_plot, width = 6, height = 5, dpi = 300)
-    ggsave("figures/threshold-sim.png", threshold_plot, width = 6, height = 5, dpi = 300)
-    ggsave("figures/high-wp-game.png", static_plot, width = 6, height = 5, dpi = 300)  # Save static plot
-    anim_save("figures/high-wp-game.gif", anim_plot, 
+    ggsave(file.path(out_dir, "max-wp-sim.png"), m_plot, width = 6, height = 5, dpi = 300)
+    ggsave(file.path(out_dir, "time-max-wp-sim.png"), t_plot, width = 6, height = 5, dpi = 300)
+    ggsave(file.path(out_dir, "threshold-sim.png"), threshold_plot, width = 6, height = 5, dpi = 300)
+    ggsave(file.path(out_dir, "high-wp-game.png"), static_plot, width = 6, height = 5, dpi = 300)  # Save static plot
+    anim_save(file.path(out_dir, "high-wp-game.gif"), anim_plot, 
               duration = 30, fps = 20, width = 6, height = 5, units = "in", res = 300,
               end_pause = 100)  # 100 frames = 5 seconds at 20 fps
   }
@@ -500,5 +503,5 @@ threshold_plot_empirical = ggplot(plot_data, aes(x = alpha)) +
   theme_minimal()
 
 # save plots
-ggsave("figures/max-wp-emp.png", m_plot_empirical, width = 6, height = 5, dpi = 300)
-ggsave("figures/threshold-emp.png", threshold_plot_empirical, width = 6, height = 5, dpi = 300)
+ggsave(file.path(out_dir, "max-wp-emp.png"), m_plot_empirical, width = 6, height = 5, dpi = 300)
+ggsave(file.path(out_dir, "threshold-emp.png"), threshold_plot_empirical, width = 6, height = 5, dpi = 300)

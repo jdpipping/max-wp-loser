@@ -10,6 +10,9 @@ library(ggthemes)
 season <- 2022  # 2022 season for Super Bowl LVII (played in Feb 2023)
 super_bowl_game_id <- "2022_21_KC_PHI"  # Super Bowl LVII: Chiefs vs Eagles
 
+out_dir <- "nessis2025/figures"
+dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
+
 # Load play-by-play data for the 2022 season
 pbp <- load_pbp(season)
 
@@ -207,9 +210,9 @@ if(nrow(sb_lvii) > 0) {
     geom_vline(xintercept = c(45, 30, 15, 0), linetype = "dashed", alpha = 0.5, color = "gray70")
   
   # Save the plot
-  ggsave("figures/super_bowl_lvii.png", plot = p, width = 5.12, height = 6, dpi = 300)
+  ggsave(file.path(out_dir, "super_bowl_lvii.png"), plot = p, width = 5.12, height = 6, dpi = 300)
   
-  print("Win probability chart saved as 'figures/super_bowl_lvii.png'")
+  print(sprintf("Win probability chart saved as '%s'", file.path(out_dir, "super_bowl_lvii.png")))
   
   # Print some key moments (using cleaned data)
   print("Key moments in the game:")

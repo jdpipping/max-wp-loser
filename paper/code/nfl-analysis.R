@@ -8,8 +8,8 @@ library(tidyverse)
 ### PARAMETERS ###
 ##################
 
-out_dir = "../figures/nfl"
-data_dir = "../data/nfl"
+out_dir = "paper/figures/nfl"
+data_dir = "paper/data/nfl"
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
 # Penn colors
@@ -236,7 +236,7 @@ if (!file.exists(all_games_path)) {
   season_files = list.files(data_dir, pattern = "_games\\.csv$", full.names = TRUE)
   season_files = season_files[!grepl("all_games\\.csv$", season_files)]
   if (length(season_files) == 0) {
-    stop("No game files found under data/nfl.")
+    stop("No game files found under paper/data/nfl.")
   }
   all_games = bind_rows(lapply(season_files, read.csv))
   write.csv(all_games, all_games_path, row.names = FALSE)

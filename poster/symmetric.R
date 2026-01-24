@@ -15,6 +15,8 @@ p_td = 0.5       # touchdown probability for both teams (symmetric)
 
 set.seed(09042025)
 
+out_dir = "poster/figures"
+
 #################
 ### FUNCTIONS ###
 #################
@@ -113,7 +115,7 @@ mean_M = mean(plot_data$M, na.rm = TRUE)
 sd_M = sd(plot_data$M, na.rm = TRUE)
 
 # Ensure output directory exists
-dir.create("figures", recursive = TRUE, showWarnings = FALSE)
+dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
 # Theoretical density for symmetric case: f(x) = 1/x^2 on [1/2, 1]
 theoretical_density = function(x) {
@@ -136,7 +138,7 @@ p = ggplot(plot_data, aes(M)) +
   theme_minimal() +
   theme(plot.caption = element_text(hjust = 0, size = 10))
 
-ggsave("figures/symmetric.png", p, width = 8, height = 4, dpi = 300)
+ggsave(file.path(out_dir, "symmetric.png"), p, width = 8, height = 4, dpi = 300)
 
 #######################
 ### NFL FASTR PLOTS ###
@@ -193,4 +195,4 @@ m_plot_empirical = ggplot(wp_data, aes(max_wp_loser)) +
   theme(plot.caption = element_text(hjust = 0, size = 10))
 
 # Save NFL empirical plot
-ggsave("figures/nfl.png", m_plot_empirical, width = 8, height = 4, dpi = 300)
+ggsave(file.path(out_dir, "nfl.png"), m_plot_empirical, width = 8, height = 4, dpi = 300)

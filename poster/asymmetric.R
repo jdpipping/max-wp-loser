@@ -20,6 +20,8 @@ p_td_B = 0.500   # Team B touchdown probability
 
 set.seed(09042025)
 
+out_dir = "poster/figures"
+
 #################
 ### FUNCTIONS ###
 #################
@@ -148,7 +150,7 @@ simulate_max_wp_designated_loser = function(n_target, N, pA, pB, designated_team
 ##################
 
 # Ensure output directory exists
-dir.create("figures", recursive = TRUE, showWarnings = FALSE)
+dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
  
 
@@ -172,6 +174,6 @@ p_asym_A = ggplot(plot_data_asym_A, aes(M)) +
        subtitle = sprintf("Team A loses, p_A = %.3f, p_B = %.3f", p_td_A, p_td_B),
        x = "Maximum Win Probability Attained", y = "Density") +
   theme_minimal()
-ggsave("figures/max-wp-sim-asym-designated.png", p_asym_A, width = 8, height = 4, dpi = 300)
+ggsave(file.path(out_dir, "max-wp-sim-asym-designated.png"), p_asym_A, width = 8, height = 4, dpi = 300)
 
 

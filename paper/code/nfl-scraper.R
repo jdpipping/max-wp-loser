@@ -9,7 +9,7 @@ library(tidyverse)
 ### PARAMETERS ###
 ##################
 
-data_dir = "../data/nfl"
+data_dir = "paper/data/nfl"
 dir.create(data_dir, recursive = TRUE, showWarnings = FALSE)
 
 # Parallel settings (set USE_PARALLEL=TRUE to enable)
