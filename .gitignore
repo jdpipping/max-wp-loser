@@ -2,18 +2,24 @@
 ### DIRECTORIES ###
 ###################
 
+# annals of applied prob
+aap*/
+
+
 # old work
 archived
+
 # internal docs
 internal
-# working paper
-paper
 
 #############
 ### FILES ###
 #############
 
+# finder
 *.DS_Store
+
+# raw latex
 *.tex
 
 ##############
