@@ -2,15 +2,15 @@
 ### DIRECTORIES ###
 ###################
 
-# annals of applied prob
-aap*/
-
-
 # old work
 archived
 
 # internal docs
 internal
+
+# submissions and pre prints
+aap*/
+arxiv/
 
 #############
 ### FILES ###
