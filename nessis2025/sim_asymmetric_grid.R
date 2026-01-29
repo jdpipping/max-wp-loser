@@ -19,7 +19,7 @@ pA_grid = c(0.495, 0.50, 0.505)
 pB_grid = c(0.495, 0.50, 0.505)
 
 # Output directory
-out_dir = "nessis2025/figures"
+out_dir = file.path("nessis2025", "figures")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
 # Penn colors

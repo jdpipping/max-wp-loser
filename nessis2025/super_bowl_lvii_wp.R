@@ -10,7 +10,7 @@ library(ggthemes)
 season <- 2022  # 2022 season for Super Bowl LVII (played in Feb 2023)
 super_bowl_game_id <- "2022_21_KC_PHI"  # Super Bowl LVII: Chiefs vs Eagles
 
-out_dir <- "nessis2025/figures"
+out_dir <- file.path("nessis2025", "figures")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
 # Load play-by-play data for the 2022 season

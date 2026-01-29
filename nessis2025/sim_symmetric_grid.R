@@ -17,7 +17,7 @@ N_grid = c(100, 1000, 10000)
 n_sims = 10000
 
 # Output directory (match slides location)
-out_dir = "nessis2025/figures"
+out_dir = file.path("nessis2025", "figures")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
 # Penn colors (match slides)
