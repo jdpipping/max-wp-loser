@@ -16,12 +16,14 @@ arxiv/
 ### FILES ###
 #############
 
+# citations
+*.bib
+
 # finder
 *.DS_Store
 
 # poster internals
 latexmkrc
-poster.bib
 *.sty
 
 # raw latex
