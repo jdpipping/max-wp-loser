@@ -1,45 +1,32 @@
-# The Blown Lead Paradox
+# Extreme-Path Benchmarks for Sequential Probability Forecasts
 
-Work on the distribution of the maximum win probability attained by losing teams, with theoretical results, applied examples, and empirical validation. This repository contains manuscript sources, code, data, and presentation materials.
+Benchmark distributions for how often sequential forecasts hit extreme values on paths that ultimately fail (e.g., 90% and still wrong). Theory, code, and ESPN win-probability analysis for NFL and NBA.
 
 ## Quick Links
 
-- Full Manuscript: `paper/main.pdf`
-- Manuscript Supplement: `paper/supp.pdf`
-- WSABI Research Note: `research-note/research-note.pdf`
-- 2nd Year Poster: `poster/poster.pdf`
-- NESSIS 2025 Slides: `nessis2025/slides.pdf`
+- **Manuscript:** `paper/main.pdf`
+- **NESSIS 2025 slides:** `nessis2025/slides.pdf`
+- **WSABI research note:** `research-note/research-note.pdf`
+- **2nd year poster:** `poster/poster.pdf`
 
 ## Directory Structure
 
 ```
 .
-├── nessis2025/
-├── paper/
-│   ├── code/
-│   ├── data/
-│   └── figures/
-├── poster/
-└── research-note/
+├── nessis2025/       # talk slides, simulations, figures
+├── paper/            # manuscript and appendix
+│   ├── code/         # R scripts for theory, data, analysis
+│   ├── data/         # NBA/NFL game-level data and summaries
+│   └── figures/      # generated figures
+├── poster/           # poster source and figures
+└── research-note/    # short research note
 ```
 
-### Directory Descriptions
+## Code
 
-- `nessis2025/` talk slides, simulation scripts, and figures
-- `paper/` manuscript sources, supplement, and bibliography
-  - `paper/code/` R scripts for theory, simulations, scraping, and validation
-  - `paper/data/` NBA/NFL game-level CSVs and binned summaries
-  - `paper/figures/` generated figures for the paper
-- `poster/` poster source, figures, and compiled PDF
-- `research-note/` short research note (code + figures)
+All scripts are in R. Run from the repository root or the corresponding `.Rproj`.
 
-## Code Descriptions
-
-- `nessis2025/` runs the grid simulations and empirical summaries for the slides and saves figures in `nessis2025/figures/`, including the Super Bowl LVII win-probability chart.
-- `paper/code/` builds the manuscript results: scrape/import NBA/NFL win-probability data, bin games by starting win probability, compute the distribution of the losing team's maximum win probability, and generate summary tables and figures. It also includes theoretical/simulation scripts (`two-player`, `n-player`, `finance`) and validation checks.
-- `poster/` generates the poster-specific simulation and empirical figures in `poster/figures/`.
-- `research-note/` runs simulations and empirical analyses used in the research note and writes figures (and a GIF) to `research-note/figures/`.
-
-## Running the Code
-
-All scripts are in R. Run all code from the repository root directory or the corresponding `.Rproj`.
+- **`paper/code/`** Scrape ESPN win-probability data, compute loser's peak by game, run PIT diagnostics, generate figures. Plus two-team/*n*-team theory scripts.
+- **`nessis2025/`** Talk simulations and figures.
+- **`poster/`** Poster figures.
+- **`research-note/`** Research-note analyses.
