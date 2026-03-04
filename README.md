@@ -1,6 +1,6 @@
 # Extreme-Path Benchmarks for Sequential Probability Forecasts
 
-Benchmark distributions for how often sequential forecasts hit extreme values on paths that ultimately fail. Theory, code, and ESPN win-probability analysis for NFL and NBA.
+Benchmark distributions for how often sequential forecasts hit extreme values on paths that ultimately fail. Theory, simulations, and ESPN win-probability analysis for NFL and NBA.
 
 ## Quick Links
 
