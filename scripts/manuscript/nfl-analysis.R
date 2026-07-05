@@ -1,6 +1,7 @@
-# Generate figures for paper/
-# Run from repo root: Rscript paper/code/nfl-analysis.R
-# Uses data from paper/data/nfl, outputs to paper/figures/nfl
+# Generate NFL diagnostics for the manuscript/AOAS deliverables.
+# Run from repo root: Rscript scripts/manuscript/nfl-analysis.R
+# Uses canonical data from data/derived/nfl and writes shared figures to
+# results/figures/manuscript/figures/nfl.
 
 #################
 ### LIBRARIES ###
@@ -13,17 +14,17 @@ file_arg = args_full[grepl("^--file=", args_full)]
 if (length(file_arg) > 0) {
   script_path = normalizePath(sub("^--file=", "", file_arg[1]))
 } else {
-  script_path = normalizePath("code/nfl-analysis.R")
+  script_path = normalizePath("scripts/manuscript/nfl-analysis.R")
 }
-paper_root = normalizePath(file.path(dirname(script_path), ".."))
-source(file.path(paper_root, "code", "plot-style.R"))
+repo_root = normalizePath(file.path(dirname(script_path), "..", ".."))
+source(file.path(repo_root, "R", "plot-style.R"))
 
 ##################
 ### PARAMETERS ###
 ##################
 
-out_dir = file.path(paper_root, "figures", "nfl")
-data_dir = file.path(paper_root, "data", "nfl")
+out_dir = file.path(repo_root, "results", "figures", "manuscript", "figures", "nfl")
+data_dir = file.path(repo_root, "data", "derived", "nfl")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
 PIT_FILL = paper_style$shade
@@ -103,7 +104,7 @@ if (!file.exists(all_games_path)) {
   season_files = list.files(data_dir, pattern = "_games\\.csv$", full.names = TRUE)
   season_files = season_files[!grepl("all_games\\.csv$", season_files)]
   if (length(season_files) == 0) {
-    stop("No game files found under paper/data/nfl.")
+    stop("No game files found under data/derived/nfl.")
   }
   all_games = bind_rows(lapply(season_files, read.csv))
   write.csv(all_games, all_games_path, row.names = FALSE)

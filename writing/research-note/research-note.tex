@@ -1,0 +1,154 @@
+    \documentclass[12pt,letterpaper]{article}  % letterpaper is US standard (8.5" x 11")
+
+    % Essential packages
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+    \usepackage{amsmath}
+    \usepackage{amsfonts}
+    \usepackage{amssymb}
+    \usepackage{graphicx}
+    \usepackage{hyperref}
+    \usepackage{geometry}
+    \usepackage{setspace}
+    \usepackage{xcolor}
+    \usepackage{enumitem}
+    \usepackage{parskip}  % Removes paragraph indentation and adds space between paragraphs
+    \usepackage{float}
+
+    % Page layout
+    \geometry{
+        letterpaper,  % Options include:
+        % letterpaper (8.5" x 11")
+        % legalpaper (8.5" x 14")
+        % a4paper (210mm x 297mm)
+        % a5paper (148mm x 210mm)
+        % b5paper (176mm x 250mm)
+        % executive (7.25" x 10.5")
+        margin=2cm
+    }
+
+    % Custom styling
+    \definecolor{linkcolor}{RGB}{0, 90, 160}
+    \hypersetup{
+        colorlinks=true,
+        linkcolor=linkcolor,
+        urlcolor=linkcolor
+    }
+
+    % Document info
+    \title{A Paradox of Blown Leads: \\
+    Rethinking Win Probability in Football}
+    \author{Jonathan Pipping \& Abraham Wyner}
+    \date{\today}
+
+    \begin{document}
+
+    \maketitle
+
+    \section*{Introduction}
+
+    Over the last 15 years, an explosion of publicly available NFL play-by-play data has made it possible to model the win probability of teams at any point in a game. Brian Burke published the first of these open-source models in 2014, and in the years since, they have become ubiquitous in sports media and game broadcasts. Even the most casual sports fans have probably seen a win probability graphic like Figure \ref{fig:super-bowl-full}, which makes it possible to visualize the story of a game as the evolution of a single number.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{figures/super-bowl-full.png}
+        \caption{ESPN's win probability graphic for Super Bowl LVII between the Kansas City Chiefs and the Philadelphia Eagles. A link to the graphic is available \href{https://www.espn.com/nfl/game/_/gameId/401438030/chiefs-eagles}{here}.}
+        \label{fig:super-bowl-full}
+    \end{figure}
+
+    These graphics are easy to understand, and assuming they're well-calibrated, they can be interpreted as the probability that a team will win based on the current state of the game. For example, with 1:56 left in the 2nd quarter of Super Bowl LVII, the Eagles led 21-14 and had just forced a 1st and 10 incompletion from QB Patrick Mahomes. After this play, ESPN Analytics estimated the Eagles' win probability at 67\%, meaning that we would expect the Eagles to win from this position about 2/3rds of the time.
+
+    As we know now, the Eagles did \textbf{not} go on to win, losing 38-35 on a last-second field goal. How might we interpret this result in the context of these win probability estimates? Most people, including professional analysts, might suggest that the Eagles blew the Super Bowl, since a team losing from a 67\% estimated win probability should only happen 1/3rd of the time. Some might go even further, observing that the Eagles obtained a maximum win probability of 78.4\% early in the 3rd quarter and call their defeat particularly extraordinary; after all, the model suggests we should only expect them to lose from this position about 21.6\% of the time! While this may seem like an intuitive interpretation, it's actually very wrong – but why?
+
+    First, let's consider the general setting of a two-team game with no ties. In these games, there is guaranteed to be one winner who attains a win probability of 100\% at the end of the game, exceeding all other possible win probabilities in the process. What does this mean for our discussion of the Eagles' Super Bowl defeat, and losing teams in general? \textbf{Having a maximal win probability below 100\% implicitly guarantees that the team lost that game.} This means that to properly analyze the significance of a blown lead, we can't just use the maximal win probability obtained by a loser in a single game; we need to compare this maximum to the maximum win probabilities obtained by all other losing teams. What does this distribution really look like? We answer these question by designing a simulation study where we know the true win probability of both teams at every stage of the game.
+
+    \section*{Simulation Study}
+
+    \subsection*{Setup}
+
+    Deriving the win probability of a team at any point in a football game is a complex problem, but we make some simplifying assumptions to make a written derivation possible. First, we assume that each team has an equal number of possessions $N$, and that each possession ends with a touchdown or a punt. Next, we assume that the teams are equally-matched, and each has a 50\% chance of scoring a touchdown on each possession. Finally, we assume that if the teams tie, the game goes to overtime and is decided by a fair coin flip.
+
+    With these assumptions, we can express the win probability of team $A$ as the probability that they outscore team $B$ plus the probability that they tie and win in overtime. Written mathematically, we have that
+    \begin{equation*}
+        \text{WP}_A = \mathbb{P}(\text{Team A outscores Team B}) + \frac{1}{2} \mathbb{P}(\text{Team A and Team B tie})
+    \end{equation*}
+    where $\mathbb{P}$ denotes probability. If we let $d_t$ represent the score differential at possession $t$
+    \begin{equation*}
+        d_t = \text{score}_A - \text{score}_B
+    \end{equation*}
+    and $n_t$ represent the number of possessions remaining at possession $t$
+    \begin{equation*}
+        n_t = N - t
+    \end{equation*}
+    Then our scoring assumptions allow us to express the win probability for team $A$ after possession $t$ as
+    \begin{equation*}
+        \text{WP}_A(t) = 1 + \frac{1}{2^{2n_t}} \left[\frac{1}{2} \binom{2n_t}{n_t - d_t} -\sum_{j = -n_t}^{-d_t} \binom{2n_t}{n_t + j}\right]
+    \end{equation*}
+
+    \subsection*{Procedure}
+
+    With this closed-form expression in hand, we simulate 10,000 games between team $A$ and team $B$, setting the number of possessions $N = 10,000$ to emulate the near-continuous nature of win probability plots. We calculate the win probability of both teams after each possession, see who lost the game, and extract the maximum win probability they attained. The win probability trajectory of one of these losing teams is pictured in Figure \ref{fig:high-wp-game}, peaking at 98.5\% before they eventually lost.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics{figures/high-wp-game.png}
+        \caption{Win probability trajectory of the losing team in one of the simulated games. The blue dot denotes when they achieved their maximum win probability of 98.5\%.}
+        \label{fig:high-wp-game}
+    \end{figure}
+
+    \subsection*{Results}
+
+    Since we have the true maximum win probability of the losing team for each simulated game, we can plot the distribution of these values, which is shown in Figure \ref{fig:max-wp-sim}. Since teams are evenly-matched, this quantity ranges from 0.5 (the starting win probability) to 1.0. This distribution shows a clear downward trend, which aligns with our intuition that losing teams are less likely to attain higher win probabilities.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics{figures/max-wp-sim.png}
+        \caption{Distribution of the maximum win probabilities of the losing team. Since teams are evenly-matched, this ranges from 0.5 to 1.0 and decreases smoothly over this range. The mean of this distribution is 0.690, and its standard deviation is 0.139.}
+        \label{fig:max-wp-sim}
+    \end{figure}
+
+    We modify this plot slightly in Figure \ref{fig:threshold-sim}, where we plot the proportion of games in which the losing team attained a win probability of $\alpha$ or higher, where $\alpha$ ranges from 0.5 to 1.0. An interesting observation from this visualization is that in half of simulated games, the losing team attained a win probability of 66\% or higher. Said another way, \textbf{in about half of games between evenly-matched teams, the losing team was at least a 2:1 favorite at some point in the game}. In fact, up until $\alpha = 0.93$, the proportion of games in which the losing team attains a win probability of $\alpha$ or higher is greater than $1 - \alpha$: a remarkable result that defies our initial intuition from win probability graphics.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics{figures/threshold-sim.png}
+        \caption{Proportion of times a win probability $\alpha$ is attained by the losing team. The dotted line represents the the identity line $\mathbb{P}(\text{Max WP} > \alpha) = 1 - \alpha$. In half of simulated games, the losing team attained a win probability of 66\% or higher.}
+        \label{fig:threshold-sim}
+    \end{figure}
+
+    \section*{Empirical Results}
+
+    How do our simulated results compare to what we observe in real NFL games? To match our simulation setup, we consider only games between evenly-matched teams (Vegas spreads under 2 points) since 2002. Then, using nflfastR's play-by-play win probability estimates, we extract the maximum win probability attained by the losing team in every such game.
+
+    We plot this distribution in Figure \ref{fig:max-wp-emp} and observe a similar shape to the one from our simulation: a peak around 0.5 and a downward trend from 0.5 to 1.0. Although the trend is less smooth than in our simulations, this is expected given the relatively small sample of 645 qualifying games since 2002. Moreover, because most NFL games consist of only 100 to 200 plays, it is reasonable to observe larger fluctuations in win probability and more irregular trajectories.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics{figures/max-wp-emp.png}
+        \caption{Observed distribution of the maximum win probabilities of the losing team. There is a clear peak around 0.5 and a general downward trend from 0.5 to 1.0. The mean of this distribution is 0.686, and its standard deviation is 0.138.}
+        \label{fig:max-wp-emp}
+    \end{figure}
+
+    We also make a threshold plot similar to Figure \ref{fig:threshold-sim} in Figure \ref{fig:threshold-emp}, which details the proportion of games in which the losing team attained a win probability of $\alpha$ or higher. This empirical result is very consistent with our simulated result: \textbf{in half of observed games between evenly-matched teams, the losing team attained a win probability of 67\% or higher}. This is a remarkable result, and signals that we should be careful when interpreting win probability trajectories after observing the outcome of a game.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics{figures/threshold-emp.png}
+        \caption{Observed proportion of times a win probability is attained by the losing team. The dotted line represents the the identity line $\mathbb{P}(\text{Max WP} > \alpha) = 1 - \alpha$. In half of observed games, the losing team attained a win probability of 67\% or higher.} 
+        \label{fig:threshold-emp}
+    \end{figure}
+
+    \section*{Takeaways}
+
+    The most paradoxical and counterintuitive result of our study is that high win probabilities are not uncommon among teams that ultimately lose. In both simulated and real NFL games between evenly matched opponents, the losing team reached a win probability of at least 66-67\% in half of all cases. This finding undermines the instinct to view blown leads as something unusual. In particular, the maximum win probability attained by a losing team cannot be meaningfully interpreted without reference to the full distribution of such maxima across all losing teams. What may look like a “collapse” is often a routine statistical occurrence – one that reflects the inherent volatility of in-game dynamics, not necessarily a failure of performance.    
+    
+    Our simulation and the observed results from real NFL games corroborate this; for most win probability values, the proportion of times a losing team attains that win probability is often significantly greater than the win probability itself. The clearest example of this phenomenon is this key observation: \textbf{in half of both simulated and observed games between evenly-matched teams, the losing team was at least a 2:1 favorite at some point!} What does this mean for the Eagles' defeat in Super Bowl LVII? How often would we expect to see a team lose after attaining a win probability of 78.4\%? From our understanding of the conditional win probability distribution of losing teams, we know the answer is \textbf{not} 21.6\%, but more like 25-30\%.
+
+
+    \begin{thebibliography}{99}
+        % Add your references here
+        \bibitem{nflfastr} Carl S, Baldwin B (2025). nflfastR: Functions to Efficiently Access NFL Play by Play Data. R package version 5.1.0.9000, \url{https://www.nflfastr.com/}.
+        \bibitem{example} ESPN. (2023). Super Bowl LVII: Kansas City Chiefs 38, Philadelphia Eagles 35. \url{https://www.espn.com/nfl/game/_/gameId/401438030/chiefs-eagles}.
+    \end{thebibliography}
+
+    \end{document}

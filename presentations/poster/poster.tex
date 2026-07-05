@@ -1,0 +1,242 @@
+% !TEX program = lualatex
+% !TEX root = poster.tex
+% Unofficial University of Cambridge Poster Template
+% https://github.com/andiac/gemini-cam
+% a fork of https://github.com/anishathalye/gemini
+% also refer to https://github.com/k4rtik/uchicago-poster
+
+\documentclass[final]{beamer}
+
+% ====================
+% Packages
+% ====================
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[size=custom,width=91.44,height=60.96,scale=1.0]{beamerposter}
+\usetheme{gemini}
+\usecolortheme{upenn}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage[numbers]{natbib}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.14}
+\usepackage{anyfontsize}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Tighten caption spacing
+\setlength{\abovecaptionskip}{0.3em}
+\setlength{\belowcaptionskip}{0.1em}
+
+% ====================
+% Lengths
+% ====================
+
+% If you have N columns, choose \sepwidth and \colwidth such that
+% (N+1)*\sepwidth + N*\colwidth = \paperwidth
+\newlength{\sepwidth}
+\newlength{\colwidth}
+\setlength{\sepwidth}{0.02\paperwidth}
+\setlength{\colwidth}{0.31\paperwidth}
+
+\newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
+
+% ====================
+% Title
+% ====================
+
+\title{Conditional Laws for the Maximal Values of Anchored Random Walk Functionals}
+
+\author{Jonathan Pipping \and Jiaoyang Huang \and Abraham J. Wyner}
+
+\institute[shortinst]{University of Pennsylvania, Department of Statistics \& Data Science}
+
+% ====================
+% Footer (optional)
+% ====================
+
+\footercontent{
+  \href{https://www.upenn.edu}{University of Pennsylvania} \hfill
+  2025 PhD Poster Presentation \hfill
+  \href{mailto:jpipping@wharton.upenn.edu}{jpipping@wharton.upenn.edu}}
+
+% ====================
+% Body
+% ====================
+
+\begin{document}
+
+\begin{frame}[t]
+\begin{columns}[t]
+\separatorcolumn
+
+\begin{column}{\colwidth}
+
+  \begin{block}{Problem Setup}
+
+    \textbf{Setup:} Let $(X_k)_{k=0}^N$ be a random walk with $X_0=0$ and i.i.d. increments $\Delta X_k$ of mean $\mu$ and variance $\sigma^2$, adapted to $(\mathcal F_k)$. For a position $d$ at time $k$, define the functional
+    \begin{equation*}
+        f(k, X_k) = \mathbb{P}(X_N > 0 \mid X_k = d)
+    \end{equation*}
+    Then the maximum of $f$ over the time interval $[0,N]$ is
+    \begin{equation*}
+        M = \max_{0\le k\le N} f(k,X_k).
+    \end{equation*}
+    \textbf{Question:} What is the law of $M$ conditional on the event $X_N<0$? A closed-form solution is difficult to obtain, so we consider the limiting case.
+
+    \textbf{Brownian Limit:} By Donsker's invariance principle, as $N\to\infty$,
+    \begin{equation*}
+        \frac{X_{\lfloor Nt \rfloor}}{\sigma\sqrt{N}} \xrightarrow{d} B_t + \mu^* t, \qquad \mu^* = \frac{\sqrt{N}\mu}{\sigma},
+    \end{equation*}
+    In the limit,
+    \begin{equation*}
+        f(t,B_t) = \mathbb{P}(B_1 \ge -\mu^* \mid \mathcal F_t) = \Phi\!\left(\frac{B_t+\mu^*(1-t)}{\sqrt{1-t}}\right),
+    \end{equation*}
+    This represents a bounded martingale with $f(0,B_0)=\Phi(\mu^*)$ whose terminal value is in $\{0,1\}$. The analogous maximum over the time interval $[0,1]$ is
+    \begin{equation*}
+        M = \sup_{0\le t < 1} f(t,B_t),
+    \end{equation*}
+    and we study the law of $M$ conditional on the event $B_1 < -\mu^*$.
+  \end{block}
+
+  \begin{block}{Symmetric Random Walks}
+
+    \textbf{Functional:} Since $\mu = 0$, the functional simplifies to
+    \begin{equation*}
+        f(t,B_t) = \mathbb{P}(B_1 \ge 0 \mid \mathcal F_t) 
+        = \Phi\!\left(\frac{B_t}{\sqrt{1-t}}\right),
+    \end{equation*}
+    \textbf{Unconditional Distribution:} Optional stopping at the first hitting time of level $x$ gives the unconditional distribution of $M$:
+    \begin{equation*}
+        F_M(x) = 
+        \begin{cases}
+            0, & x < \tfrac12 \\[6pt]
+            1 - \tfrac{1}{2x}, & \tfrac12 \le x < 1 \\[6pt]
+            1, & x = 1
+        \end{cases}
+    \end{equation*}
+    \textbf{Conditional Distribution:} The conditional distribution of $M$ given $B_1<0$ is
+    \begin{equation*}
+        F_{M \mid B_1 < 0}(x) = 2 - \frac{1}{x}, \quad x \in [\tfrac12, 1]
+    \end{equation*}
+    \textbf{Density Function}: Its corresponding density function is
+    \begin{equation*}
+        f_{M \mid B_1 < 0}(x) = \frac{1}{x^2}, \quad x \in (\tfrac12, 1)
+    \end{equation*}
+
+  \end{block}
+
+\end{column}
+
+\separatorcolumn
+
+\begin{column}{\colwidth}
+
+  \begin{block}{Asymmetric Random Walks}
+
+    \textbf{Functional:} In the presence of drift ($\mu^* \neq 0$), the functional
+    \begin{equation*}
+        f(t,B_t) = \mathbb{P}(B_1 \ge -\mu^* \mid \mathcal F_t)
+        = \Phi\!\left(\frac{B_t+\mu^*(1-t)}{\sqrt{1-t}}\right),
+    \end{equation*}
+    is a bounded martingale with $f(0,B_0)=\Phi(\mu^*)$.
+
+    \textbf{Unconditional Distribution:} Optional stopping at the first hitting time of level $x$ gives the distribution of $M$:
+    \begin{equation*}
+        F_M(x) = 
+        \begin{cases}
+            0, & x < \Phi(\mu^*) \\[6pt]
+            1 - \tfrac{\Phi(\mu^*)}{x}, & \Phi(\mu^*) \le x < 1 \\[6pt]
+            1, & x = 1
+        \end{cases}
+    \end{equation*}
+    \textbf{Conditional Distribution:} Conditional on $B_1< -\mu^*$,
+    \begin{equation*}
+      F_{M \mid B_1 < -\mu^*}(x) = 1 - \dfrac{\Phi(\mu^*)}{\Phi(-\mu^*)}\cdot\dfrac{1-x}{x}, \quad x \in [\Phi(\mu^*),1]
+    \end{equation*}
+    \textbf{Density Function}:
+    \begin{equation*}
+      f_{M \mid B_1 < -\mu^*}(x) = \frac{\Phi(\mu^*)}{\Phi(-\mu^*)}\cdot\frac{1}{x^2},
+      \quad x \in (\Phi(\mu^*),1).
+    \end{equation*}
+  \end{block}
+
+  \begin{block}{Complementary Processes}
+
+    \textbf{Definition:} Consider the complementary martingales
+    \begin{equation*}
+      p_t = \mathbb{P}(B_1 \ge -\mu^* \mid \mathcal F_t),
+      \qquad q_t = 1-p_t = \mathbb{P}(B_1 < -\mu^* \mid \mathcal F_t).
+    \end{equation*}
+
+    \textbf{Terminal Behavior:} At time $1$, exactly one of $\{p_t,q_t\}$ converges to $1$, while the other converges to $0$ (a.s.). Our object of interest is defined as
+    \begin{equation*}
+      M = \sup_{0 \le t < 1} \big( p_t \,\mathbf 1_{\{p_1=0\}} \;+\; q_t \,\mathbf 1_{\{q_1=0\}} \big),
+    \end{equation*}
+    i.e.\ the running supremum of whichever process ultimately vanishes.
+
+    \textbf{Branch Distributions:} For a process that starts at $s \in (0,1)$ and is conditioned to terminate at $0$, denote by $F_s(x)$ the distribution function of its maximum:
+    \begin{equation*}
+      F_s(x) = \mathbb{P}(\sup_{0\le t<1} p_t \le x \mid p_0=s,\,p_1=0)
+    \end{equation*}
+
+    \textbf{Distribution of the Eventual Vanishing Process:} Let $p_0 := \Phi(\mu^*)$. Then the law of the eventual vanishing process is the mixture
+    \begin{equation*}
+      F_{\mathrm{vanish}}(x)
+      \;=\;
+      \Phi(\mu^*)\, F_{\,1-\Phi(\mu^*)}(x)
+      \;+\;
+      (1 - \Phi(\mu^*))\,F_{\,\Phi(\mu^*)}(x)
+    \end{equation*}
+    with support $x \in [\min\{\Phi(\mu^*),1-\Phi(\mu^*)\},\,1]$.
+\end{block}
+
+
+ 
+
+\end{column}
+
+\separatorcolumn
+
+\begin{column}{\colwidth}
+
+  \begin{block}{Monte Carlo Simulation}
+
+    \textbf{Validation:} We validate our theoretical results with Monte Carlo simulations. The symmetric case is shown in Figure \ref{fig:symmetric}.
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.9\textwidth]{figures/symmetric.png}
+      \caption{Symmetric case: simulated distribution (red) vs. theoretical density (blue).}
+      \label{fig:symmetric}
+    \end{figure}
+    \vspace{-0.75em}
+  \end{block}
+
+  \begin{block}{Application to In-Game Win Probabilities}
+
+    \textbf{NFL Win Probabilities:} Win probability trajectories from closely-matched games approximately follow our theoretical symmetric distribution.
+    
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.9\textwidth]{figures/nfl.png}
+      \caption{Distribution of maximal win probabilities of eventual NFL losers (2002-2024).}
+    \end{figure}
+    \vspace{-0.75em}
+  \end{block}
+
+  \begin{block}{References}
+
+    \nocite{*}
+    \footnotesize{\bibliographystyle{apalike}\bibliography{poster}}
+
+  \end{block}
+
+\end{column}
+
+\separatorcolumn
+\end{columns}
+\end{frame}
+
+\end{document}

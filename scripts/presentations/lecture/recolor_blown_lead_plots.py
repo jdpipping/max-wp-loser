@@ -32,7 +32,8 @@ def recolor_image(path: Path) -> None:
 
 
 def main() -> None:
-    plot_dir = Path(__file__).resolve().parent / "plots"
+    repo_root = Path(__file__).resolve().parents[3]
+    plot_dir = repo_root / "presentations" / "lecture" / "plots"
     for name in [
         "high-wp-game.png",
         "blown_sim_distribution.png",

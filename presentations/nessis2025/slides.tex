@@ -1,0 +1,739 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass{beamer}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{bookmark}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+
+% Probability macro
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+
+% Penn colors
+\definecolor{pennred}{HTML}{990000}
+\definecolor{pennblue}{HTML}{011f5b}
+
+% Beamer theme settings for poster
+\usetheme{Madrid}
+\setbeamercolor{structure}{fg=pennred}
+\setbeamercolor{frametitle}{bg=pennblue, fg=white}
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{item}{fg=pennred}
+
+% Poster-specific settings
+\setbeamersize{text margin left=0.5cm,text margin right=0.5cm}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{page number in head/foot}[appendixframenumber]
+% Search figures across the project
+\graphicspath{{./figures/}{./old-figures/}{../../results/figures/manuscript/figures/}{../../writing/research-note/figures/}}
+
+\title[A Paradox of Blown Leads]{A Paradox of Blown Leads: \\
+Rethinking Win Probability in Team Sports}
+\author[Pipping \& Wyner]{Jonathan Pipping and Abraham J. Wyner}
+\date{NESSIS 2025}
+\institute[UPenn]{The Wharton School, University of Pennsylvania}
+
+\begin{document}
+
+\frame{\titlepage}
+
+% Opening text first, then visual
+\begin{frame}[fragile]{Case Study: Super Bowl LVII}
+\begin{columns}[c]
+  \column{0.45\textwidth}
+    \begin{itemize}
+      \item At the start of the 2nd half, the Chiefs trailed the Eagles 14--24 and faced a 3rd and 1 at their own 34
+      \item At that point, the Eagles' projected win probability was 78.4\%
+      \item On the next play, Jerick McKinnon converted with a 14-yard run, and the Chiefs would go on to score, eventually winning 38--35.
+    \end{itemize}
+  \column{0.52\textwidth}
+    \includegraphics[width=\linewidth]{super_bowl_lvii.png}
+    
+    \vspace{0.5ex}\hfill{\scriptsize Data via nflfastR}
+\end{columns}
+\end{frame}
+
+% Rarity of Blown Leads
+\begin{frame}[fragile]{How Often Do Blown Leads Occur?}
+\begin{itemize}
+  \item We'd like to understand how rare it is to blow a lead of this magnitude!
+  \pause
+  \item Intuitively, most people would assume it happens very rarely (about 21.6\% of the time), but maybe this is wrong.
+  \pause
+  \item To investigate this, we formalize the question mathematically.
+\end{itemize}
+\end{frame}
+
+% Pose as a math question
+\begin{frame}{Mathematical Framework}
+\begin{itemize}
+  \item The win probability of a team $i$ at time $t$ is a function of team strength $S_i$ and game state $(\mathcal{G}, t)$. Symbolically,
+  \begin{equation*}
+    W_i(t) = f(S_i, \mathcal{G}, t), \quad t \in [0, T]
+  \end{equation*}
+  \pause
+  \item In a two-team game between teams $A$ and $B$, at any time $t$ we have
+  \begin{equation*}
+    W_A(t) + W_B(t) = 1
+  \end{equation*}
+  \pause
+  \item For the \textbf{eventual loser} $\ell$, we know that $W_\ell(T) = 0$. So the quantity of interest (the maximum win prob.\ of the losing team) is given by the random variable
+  \begin{equation*}
+    M_\ell = \max_{t} W_\ell(t)
+  \end{equation*}
+  \pause
+  \item We will investigate the distribution of $M_\ell$ as a function of the team strengths $S_A$ and $S_B$.
+\end{itemize}
+\end{frame}
+
+% Simulation Setup
+
+\begin{frame}{Simulation Setup}
+\begin{itemize}
+  \item Estimating the win probability function $f$ is difficult in practice.
+  \pause
+  \begin{itemize}
+    \item Game state $(\mathcal{G}, t)$ is multi-dimensional highly non-linear.
+    \pause
+    \item Team strengths $S_A$ and $S_B$ are non-trivial to estimate.
+  \end{itemize}
+  \pause
+  \item To simplify the problem, we specify a simple model to allow exact calculation of in-game win probabilities.
+  \pause
+  \begin{itemize}
+    \item Each team has an equal number of possessions $N$.
+    \pause
+    \item Team strengths $p_A$ and $p_B$ are fixed and correspond to each team's probability of scoring on a given possession. Ties are broken by a weighted coin flip (overtime).
+  \end{itemize}
+  \pause
+  \item So the win prob.\ for each possible game state $(\mathcal{G}, t)$ is given by
+  \begin{align*}
+    \text{WP}_A(t) &= \mathbb{P}\left[\text{Binom}(n_t, p_A) + \text{score}_A(t) > \text{Binom}(n_t, p_B) + \text{score}_B(t)\right] \\
+    &\quad + \frac{p_A}{p_A + p_B}\mathbb{P}(\text{A and B tie})
+  \end{align*}
+  where $n_t = N - t$ is the number of possessions remaining.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Simulation Setup}
+\begin{itemize}
+  \item For each set of parameters $N, p_A, p_B$, we do the following:
+  \pause
+  \begin{enumerate}
+    \item Calculate the win prob.\ for each possible game state $(\mathcal{G}, t)$
+    \pause
+    \item Simulate 10,000 games between two teams.
+    \pause
+    \item Extract the maximum win prob.\ attained by the eventual loser ($M_\ell$).
+  \end{enumerate}
+  \pause
+  \item We consider the distribution of $M_\ell$ as $N, p_A$, and $p_B$ vary.
+  \pause
+  \begin{itemize}
+    \item Case 1: $p_A = p_B$, $f$ is symmetric across teams
+    \pause
+    \item Case 2: $p_A \neq p_B$, $f$ is asymmetric across teams
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+% Symmmetric Case
+
+\begin{frame}{Symmetric Case: $p_A = p_B$}
+\centering
+\includegraphics[width=\linewidth]{figures/symmetric_hist_grid.png}
+\end{frame}
+
+
+\begin{frame}{Symmetric Case: Threshold Plot}
+  \centering
+  \includegraphics[width=\linewidth]{figures/symmetric_threshold_grid.png}
+\end{frame}
+
+
+\begin{frame}{Symmetric Case: Takeaways}
+  \begin{itemize}
+    \item When $p_A = p_B$, the support of $M_\ell$ is $[0.5, 1)$.
+    \pause
+    \item Holding $N$ constant, the distribution of $M_\ell$ is identical for all values of $p_A = p_B$.
+    \pause
+    \begin{itemize}
+      \item Implies that the distribution of $M_\ell$ may depend only on some measure of the difference in probabilities (e.g., $|p_A - p_B|$, $\frac{p_A}{p_B}$, $\ldots$).
+    \end{itemize}
+    \pause
+    \item Holding $p_A = p_B$ constant, the distribution of $M_\ell$ becomes less discrete and approaches a continuous limit as $N$ increases.
+    \pause
+    \item In \textbf{about half} of all games, the losing team attains a win probability of at least \textbf{66\% or more}.
+  \end{itemize}
+\end{frame}
+
+
+% Asymmetric Case
+
+\begin{frame}{Asymmetric Case: $p_A \neq p_B$}
+\centering
+\includegraphics[width=\linewidth]{figures/asymmetric_hist_grid.png}
+\end{frame}
+
+
+\begin{frame}{Asymmetric Case: Threshold Plot}
+  \centering
+  \includegraphics[width=\linewidth]{figures/asymmetric_threshold_grid.png}
+\end{frame}
+
+
+\begin{frame}{Asymmetric Case: Takeaways}
+  \begin{itemize}
+    \item When $p_A \neq p_B$, the support of $M_\ell$ is $[\min\{p_A, p_B\}, 1)$.
+    \pause
+    \item Holding $N$ constant, the distribution of $M_\ell$ is constant whenever $|p_A - p_B|$ is constant.
+    \pause
+    \begin{itemize}
+      \item Implies that the distribution of $M_\ell$ depends only on the absolute difference in probabilities $|p_A - p_B|$.
+    \end{itemize}
+    \pause
+    \item Holding $N$ constant, the distribution of $M_\ell$ becomes increasingly right-skewed over the support as $|p_A - p_B|$ increases.
+    \pause
+    \item Larger strength differentials decrease the proportion of games where the losing team attains a high win probability.
+  \end{itemize}
+\end{frame}
+
+% Closed-Form Discrete Solution
+
+\begin{frame}{Towards a Closed-Form Solution}
+  \begin{itemize}
+    \item We hope to derive a closed-form solution for the distribution of $M_\ell$ in our simplified model. To do this, we define the following:
+    \pause
+    \begin{itemize}
+      \item $X_k = \text{score}_A(k) - \text{score}_B(k)$ is the score differential at time $k$.
+      \pause
+      \item $\mathcal{F}_k = \sigma(X_0, \ldots, X_k)$ is the set of information available at time $k$.
+      \pause
+      \item $Y = \boldsymbol{1}_{\{X_N \geq 0\}}$ is the event that team $A$ wins the game.
+    \end{itemize}
+    \pause
+    \item Then we can define Team $A$'s win probability at each time step $k$ as a Doob martingale:
+    \begin{equation*}
+      p_k = \mathbb{E}[Y \mid \mathcal{F}_k], \quad k = 0, \ldots, N
+    \end{equation*}
+    \pause
+    \item From here, define the following:
+    \pause
+    \begin{itemize}
+      \item $M_A = \max_{0 \leq k \leq N} p_k$ is the maximum win probability team $A$ attains.
+      \pause
+      \item $\tau_x = \min\{k \leq N : p_k \geq x\}$ is the first time $p_k$ exceeds $x$.
+    \end{itemize}
+    \pause
+    \item Since $\tau_x$ is a stopping time, we invoke the optional stopping theorem to derive the distribution of $M_A$.
+  \end{itemize}
+\end{frame}
+
+% Unconditional & Conditional Distribution
+\begin{frame}{Closed-Form Distributions: Discrete Case}
+  \begin{itemize}
+    \item \textbf{Theorem 1:} The distribution of $M_A$ satisfies:
+    \begin{equation*}
+      F_{M_A}(x) \geq 1 - \frac{p_0}{x}, \quad x \in [p_0, 1)
+    \end{equation*}
+    with equality when $\mathbb{P}(\tau_x = N) = 0$ (continuous limits).\footnote{Note that $M_A$ has a point mass of weight $p_0$ at $1$.}
+    \pause
+    \item \textbf{Theorem 2:} The conditional distribution of $M_A$ given that team $A$ loses satisfies:
+    \begin{equation*}
+      F_{M_A \mid Y = 0}(x) \geq 1 - \left(\frac{p_0}{1-p_0}\right) \cdot \left(\frac{1 - x}{x}\right), \quad x \in [p_0, 1)
+    \end{equation*}
+    with equality when $\mathbb{P}(\tau_x = N) = 0$ (continuous limits)
+  \end{itemize}
+\end{frame}
+
+% Distribution of Eventual Loser
+\begin{frame}{Closed-Form Distributions: Discrete Case}
+  \begin{itemize}
+    \item What about the distribution for team $B$?
+    \pause
+    \begin{itemize}
+      \item Recall that team $B$'s path is just a reflection of team $A$'s!
+      \pause
+      \item So $M_B$ has a similar form to $M_A$, but with $p_0$ replaced by $1 - p_0$.
+    \end{itemize}
+    \pause
+    \item So then what about the distribution of the \textbf{eventual} loser $M_\ell$?
+    \pause
+    \begin{itemize}
+      \item This is a \textbf{mixture} of the distributions $(M_A | A \text{ loses})$ and $(M_B | B \text{ loses})$ with weights $(1 - p_0)$ and $p_0$, respectively.
+      \pause
+      \item But wait! In the region $[\min(p_0, 1-p_0), \max(p_0, 1-p_0))$, the distribution of $M_\ell$ comes entirely from the underdog! So we must define the distribution of $M_\ell$ piecewise.
+    \end{itemize}
+    \pause
+    \item \textbf{Theorem 3:} Since team labels are arbitrary, let team $A$ be the favorite ($p_0 \geq 0.5$). Then the distribution of $M_\ell$ satisfies:
+    \begin{equation*}
+      F_{M_\ell}(x) \geq \begin{cases}
+        1 - \dfrac{1-p_0}{x} & \text{if } x \in [1 - p_0, p_0) \\
+        2 - \dfrac{1}{x} & \text{if } x \in [p_0, 1)
+      \end{cases}
+    \end{equation*}
+    with equality when $\mathbb{P}(\tau_x = N) = 0$ (continuous limits)
+  \end{itemize}
+\end{frame}
+ 
+% From Inequalities to Equality
+\begin{frame}{From Inequalities to Equality: The Brownian Limit}
+  \begin{itemize}
+    \item The inequalities in Theorems 1-3 are tight, but what if we want something stronger, like a density equality? What's the limitation?
+    \pause
+    \item In discrete time, there are \textbf{finitely-many} levels for $WP_A$ and $WP_B$, so the process can ``jump over'' level $x$ at the final step.
+    \pause
+    \begin{itemize}
+      \item For example, consider the simplest case: $N = 1$ and $p_0 = 0.5$.
+      \pause
+      \item Then $WP_A(0) = 0.5$ and $WP_A(1) = \{0, 1\}$, jumping the rest!
+      \pause
+      \item What we need to prevent this behavior is \textbf{continuous sample paths}, which prevents the process from jumping over levels.
+    \end{itemize}
+    \pause
+    \item How do we get continuous sample paths? By letting $N \to \infty$.
+    \pause
+    \begin{itemize}
+      \item In this limit, the process becomes continuous and we can derive exact closed-form expressions for the distributions of $M_A$, $M_B$, and $M_\ell$.
+      \pause
+      \item In addition, \textbf{Donsker's Invariance Principle} allows us to approximate the scoring process $X_k$ with a Brownian motion!
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+% Towards a Continuous Closed-Form
+
+\begin{frame}{Towards a Continuous Closed-Form}
+  \begin{itemize}
+     \item We hope to derive a continuous closed-form for the distribution of $M_\ell$ in our simplified model. Like before, we have:
+     \pause
+     \begin{itemize}
+      \item $X_k = \text{score}_A(k) - \text{score}_B(k)$ is the score differential at time $k$.
+      \pause
+      \item $\mathcal{F}_k = \sigma(X_0, \ldots, X_k)$ is the set of information available at time $k$.
+     \end{itemize}
+     \pause
+     \item Then define the following quantities:
+     \pause
+     \begin{itemize}
+      \item $\mu = p_A - p_B$ is the difference in scoring probabilities.
+      \pause
+      \item $\sigma^2 = p_A(1-p_A) + p_B(1-p_B)$ is the variance of each step in the scoring process.
+     \end{itemize}
+     \pause
+     \item Then by Donsker's Invariance Principle, we have that
+     \begin{equation*}
+      \frac{X_{\lfloor Nt \rfloor}}{\sigma \sqrt{N}} \xrightarrow{d} B_t + \mu^* t,\quad \mu^* = \frac{\sqrt{N}\,\mu}{\sigma},\ t \in [0,1]
+     \end{equation*}
+     where $B_t$ is standard Brownian motion.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Towards a Continuous Closed-Form}
+  \begin{itemize}
+    \item From here, note the following:
+    \pause
+    \begin{itemize}
+      \item The discrete terminal event $\{X_N \geq 0\}$ converges to $\{B_1 + \mu^* \geq 0\}$.
+      \pause
+      \item So $Y = \boldsymbol{1}_{\{B_1 + \mu^* \geq 0\}}$ is the event that team $A$ wins the game.
+      \pause
+      \item $p_0 = \P(Y = 1) = \Phi(\mu^*)$.
+    \end{itemize}
+    \pause
+    \item Now we can define Team $A$'s win probability as a Doob martingale:
+    \begin{equation*}
+      p_t = \mathbb{E}[Y \mid \mathcal{F}_t], \quad t \in [0,1]
+    \end{equation*}
+    \pause
+    \item Then we can define the following quantities:
+    \pause
+    \begin{itemize}
+      \item $M = \underset{0 \leq t \leq 1}{\sup} p_t$ is the maximum win probability team $A$ attains.
+      \pause
+      \item $\tau_x = \inf\{t \in [0,1]: p_t = x\}$ is the first time $p_t$ exceeds $x$.
+    \end{itemize}
+    \pause
+    \item Then we invoke the optional stopping theorem and use properties of Brownian motion to derive the distribution of $M_A, M_B$, and $M_\ell$.
+  \end{itemize}
+\end{frame}
+
+% Closed-Form Distributions: Continuous Case
+
+\begin{frame}{Closed-Form Distributions: Continuous Case}
+  \begin{itemize}
+    \item \textbf{Theorem 4:} The distribution of $M_A$ satisfies:
+    \begin{equation*}
+      F_{M_A}(x) = 1 - \frac{p_0}{x} = 1 - \frac{\Phi(\mu^*)}{x}, \quad x \in [\Phi(\mu^*),1)
+    \end{equation*}
+    \pause
+    \item \textbf{Theorem 5:} The conditional distribution of $M_A$ given that team $A$ loses satisfies:
+    \begin{align*}
+      F_{M_A \mid Y = 0}(x) &= 1 - \left(\frac{p_0}{1-p_0}\right) \cdot \left(\frac{1 - x}{x}\right), \quad x \in [p_0, 1) \\
+      &= 1 - \left(\frac{\Phi(\mu^*)}{1-\Phi(\mu^*)}\right) \cdot \left(\frac{1 - x}{x}\right), \quad x \in [\Phi(\mu^*), 1)
+    \end{align*}
+  \end{itemize}
+\end{frame}
+
+% Distribution of Eventual Loser
+\begin{frame}{Closed-Form Distributions: Continuous Case}
+  \begin{itemize}
+    \item What about the distribution for team $B$?
+    \pause
+    \begin{itemize}
+      \item In the discrete case, we just replaced $p_0$ with $1 - p_0$.
+      \pause
+      \item So in the continuous case, we just replace $\Phi(\mu^*)$ with $\Phi(-\mu^*)$.
+    \end{itemize}
+    \pause
+    \item We saw in the discrete case that the distribution of $M_\ell$ is a piecewise mixture. We use a similar logic to derive the distribution of $M_\ell$.
+    \pause
+    \item \textbf{Theorem 6:} Since team labels are arbitrary, let team $A$ be the favorite ($\mu^* \geq 0$). Then the distribution of $M_\ell$ satisfies
+    \begin{equation*}
+      F_{M_\ell}(x) = \begin{cases}
+        1 - \dfrac{1-p_0}{x} & \text{if } x \in [1 - p_0, p_0) \\
+        2 - \dfrac{1}{x} & \text{if } x \in [p_0, 1)
+      \end{cases} 
+    \end{equation*}
+    where $p_0 = \Phi(\mu^*)$.
+  \end{itemize}
+\end{frame}
+
+% Closed-Form Examples
+\begin{frame}{Closed-Form Examples}
+  \begin{itemize}
+    \item In evenly-matched games, we have the following:
+    \pause
+    \begin{itemize}
+      \item Each team's starting win probability ($p_0$) is $0.5$.
+      \pause
+      \item $F_{M_\ell}(x) = 2 - \frac{1}{x}$ uniformly over all $x \in [0.5, 1)$.
+    \end{itemize}
+    \pause
+    \item In unevenly-matched games, we have the following:
+    \pause
+    \begin{itemize}
+      \item Starting win probabillities differ ($p_0 \neq 0.5$).
+      \pause
+      \item $M_\ell$ is distributed \textbf{piecewise} over $x \in [p_0^\text{(dog)}, 1)$.
+      \pause
+      \begin{itemize}
+        \item From $[p_0^\text{(dog)}, p_0^\text{(fav)})$, only the underdog's maxima contribute.
+        \pause
+        \item From $[p_0^\text{(fav)}, 1)$, both teams' maxima contribute.
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+  \end{frame}
+
+% Does this even matter?
+\begin{frame}{But Wait\ldots Does This Even Matter?}
+  \begin{itemize}
+    \item The math is clean, but it's still a major simplification of sports!
+    \pause
+    \begin{itemize}
+      \item Scoring often isn't binary!
+      \pause
+      \item True team scoring probabilities may vary throughout a game!
+      \pause
+      \item Teams often have an unequal number of possessions!
+      \pause
+      \item Weather, injuries, game strategy, and other external factors matter!
+    \end{itemize}
+    \pause
+    \item Let's take a look at the distribution of $M_\ell$ for real-life games\dots
+  \end{itemize}
+\end{frame}
+
+% Real Data Validation
+\begin{frame}{Evenly-Matched NFL Games (2002--2024, $|$Spread$| <$ 2)}
+  \centering
+  \includegraphics[width=\linewidth]{figures/nfl_even_hist.png}
+  
+  \vspace{0.5ex}\hfill{\scriptsize Data via nflfastR (2002--2024)}
+\end{frame}
+
+\begin{frame}{Evenly-Matched NFL Games (2002--2024, $|$Spread$| <$ 2)}
+  \centering
+  \includegraphics[width=\linewidth]{figures/nfl_even_threshold.png}
+  
+  \vspace{0.5ex}\hfill{\scriptsize Data via nflfastR (2002--2024)}
+\end{frame}
+
+% Spread ~3 results
+\begin{frame}{Unevenly-Matched NFL Games: 2002--2024, $|$Spread$| = 3$}
+  \centering
+  \includegraphics[width=\linewidth]{figures/nfl_spread_hist.png}
+  
+  \vspace{0.5ex}\hfill{\scriptsize Data via nflfastR (2002--2024)}
+\end{frame}
+
+\begin{frame}{Unevenly-Matched NFL Games: 2002--2024, $|$Spread$| = 3$}
+  \centering
+  \includegraphics[width=\linewidth]{figures/nfl_spread_threshold.png}
+  
+  \vspace{0.5ex}\hfill{\scriptsize Data via nflfastR (2002--2024)}
+\end{frame}
+
+% Conclusions
+\begin{frame}{Conclusions}
+  \begin{itemize}
+    \item Our solutions closely match the empirical distribution of the maximum win probability of the eventual loser ($M_\ell$)!
+    \pause
+    \item Blown leads happen \textbf{all the time}, especially in even matchups!
+    \pause
+    \item Conditioning on an eventual loss \textbf{fundamentally changes} the distribution of the maximum win probability attained.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusions}
+  \begin{itemize}
+    \item In Super Bowl LVII, the Eagles reached a maximum win probability of 78.4\% before ultimately losing.
+    \pause
+    \item From this position (assuming a well-calibrated model) \textbf{it's true} that the Eagles only had a 21.6\% chance of losing the game.
+    \pause
+    \item However, the event that the eventual loser of this game reached 78.4\% is \textbf{provably closer} to 30\%.
+  \end{itemize}
+\end{frame}
+
+% Acknowledgements
+\begin{frame}{Acknowledgements}
+\begin{itemize}
+  \item Special thanks to Professor Jiaoyang Huang, Dr.\ Paul Sabin, and Dr.\ Ryan Brill for their helpful feedback.
+  \item All work supported by the Wharton Sports Analytics \& Business Initiative (WSABI)
+\end{itemize}
+\end{frame}
+
+% References
+\begin{frame}{References}
+  \footnotesize
+  \begin{itemize}
+    \item Donsker, M. D. (1951). An invariance principle for certain probability limit theorems.\ \emph{Memoirs of the American Mathematical Society}, 6.
+    \item Doob, J. L. (1953).\ \emph{Stochastic Processes}. New York: John Wiley \& Sons.
+    \item nflfastR: Carl, S. and Baldwin, B. (2025).\ \emph{nflfastR: Functions to Efficiently Access NFL Play by Play Data}. R package version 5.1.0.9000. Available at \texttt{https://www.nflfastr.com/}.
+  \end{itemize}
+  \end{frame}
+
+% Supplementary Slides
+\appendix
+
+\begin{frame}{Proof of Theorem 1}
+\begin{itemize}
+  \item \textbf{Theorem 1:} When $p_A = p_B$, the cumulative distribution of $M$ satisfies 
+  \begin{equation*}
+    F_M(x) \geq 1 - \frac{p_0}{x}, \quad x \in [p_0, 1)
+  \end{equation*}
+  with equality exactly when $\P(\tau_x = N) = 0$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Proof of Theorem 1 (continued)}
+\begin{itemize}
+  \item If $x \leq p_0$, then $\tau_x = 0$ a.s., so $M \geq x$ a.s. and $F_M(x) = 0$.
+  \item For $x > p_0$, by the optional stopping theorem on the bounded martingale $(p_k)$ at $\tau_x \wedge N$:
+  \begin{equation*}
+    \E[p_{\tau_x \wedge N}] = p_0
+  \end{equation*}
+  \item Decomposing this:
+  \begin{equation*}
+    p_0 = \E[p_{\tau_x} \boldsymbol{1}_{\{\tau_x < N\}}] + \E[p_N \boldsymbol{1}_{\{\tau_x = N\}}]
+  \end{equation*}
+  \item Since $p_{\tau_x} = x$ on $\{\tau_x < N\}$ and $p_N = 1$ on $\{\tau_x = N\}$:
+  \begin{equation*}
+    p_0 = x \P(\tau_x < N) + \P(\tau_x = N)
+  \end{equation*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Proof of Theorem 1 (continued)}
+\begin{itemize}
+  \item Since $\P(M \geq x) = \P(\tau_x < N) + \P(\tau_x = N)$:
+  \begin{equation*}
+    p_0 = x \P(M \geq x) + (1 - x)\P(\tau_x = N)
+  \end{equation*}
+  \item For $x < 1$, $\P(\tau_x = N) \geq 0$ and we have:
+  \begin{equation*}
+    \P(M \geq x) \leq \frac{p_0}{x}, \quad x \in [p_0, 1)
+  \end{equation*}
+  with equality exactly when $\P(\tau_x=N)=0$.
+  \item When $x = 1$, $\tau_x = N$ a.s., so:
+  \begin{equation*}
+    \P(M \geq 1) = \P(M = 1) = p_0
+  \end{equation*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Proof of Theorem 2}
+\begin{itemize}
+  \item \textbf{Theorem 2:} When $p_A = p_B$, the cumulative distribution of $M$ conditional on $Y = 0$ satisfies
+  \begin{equation*}
+    F_{M \mid Y = 0}(x) \geq 1 - \left(\frac{p_0}{1-p_0}\right) \cdot \left(\frac{1 - x}{x}\right), \quad x \in [p_0, 1)
+  \end{equation*}
+  with equality exactly when $\P(\tau_x=N)=0$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Proof of Theorem 2 (continued)}
+\begin{itemize}
+  \item Decompose the event $\{M \geq x\}$:
+  \begin{equation*}
+    \P(M \geq x) = \P(M \geq x, Y = 0) + \P(M \geq x, Y = 1)
+  \end{equation*}
+  \item On $\{Y = 1\}$, $p_N = 1 \geq x$ a.s. So $\{M \geq x\} \cap \{Y = 1\} = \{Y = 1\}$:
+  \begin{align*}
+    \P(M \geq x) &= \P(Y = 1) + \P(M \geq x, Y = 0) \\
+    &= \P(Y = 1) + \P(Y = 0)\P(M \geq x \mid Y = 0) \\
+    &= p_0 + (1 - p_0)\P(M \geq x \mid Y = 0)
+  \end{align*}
+  \item From Theorem 1: $\frac{p_0}{x} \geq p_0 + (1 - p_0)\P(M \geq x \mid Y = 0)$
+  \item Solving for $\P(M \geq x \mid Y = 0)$:
+  \begin{equation*}
+    \P(M \geq x \mid Y = 0) \leq \left(\frac{p_0}{1-p_0}\right) \cdot \left(\frac{1 - x}{x}\right)
+  \end{equation*}
+  with equality exactly when $\P(\tau_x=N)=0$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Proof of Theorem 3}
+\begin{itemize}
+  \item \textbf{Theorem 3:} When $p_A = p_B$, the distribution of $M_\ell$ satisfies
+  \begin{equation*}
+    F_{M_\ell}(x) \geq 2 - \frac{1}{x}, \quad x \in [0.5, 1)
+  \end{equation*}
+  with equality exactly when $\P(\tau_x = N) = 0$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Proof of Theorem 3 (continued)}
+\begin{itemize}
+  \item Since $p_A = p_B$, we have $p_0 = 0.5$ and the mixture weights are equal.
+  \item From Theorem 2, both conditional distributions are identical:
+  \begin{equation*}
+    F_{M_A \mid Y = 0}(x) = F_{M_B \mid Y = 1}(x) \geq 1 - \left(\frac{0.5}{0.5}\right) \cdot \left(\frac{1 - x}{x}\right) = 1 - \frac{1-x}{x}
+  \end{equation*}
+  \item Since both teams have identical distributions, the mixture is simply:
+  \begin{equation*}
+    F_{M_\ell}(x) \geq 0.5 \cdot F_{M_A \mid Y = 0}(x) + 0.5 \cdot F_{M_B \mid Y = 1}(x) = 1 - \frac{1-x}{x} = 2 - \frac{1}{x}
+  \end{equation*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Proof of Theorem 4}
+\begin{itemize}
+  \item \textbf{Theorem 4:} When $p_A \neq p_B$, the cumulative distribution of $M$ satisfies
+  \begin{equation*}
+    F_M(x) = 1 - \frac{p_0}{x} = 1 - \frac{\Phi(\mu^*)}{x}, \quad x \in [p_0, 1)
+  \end{equation*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Proof of Theorem 4 (continued)}
+\begin{itemize}
+  \item By the optional stopping theorem on the bounded martingale $(p_t)$ at $\tau_x \wedge 1$:
+  \begin{equation*}
+    \E[p_{\tau_x \wedge 1}] = p_0
+  \end{equation*}
+  \item Decomposing this:
+  \begin{equation*}
+    p_0 = \E[p_{\tau_x} \boldsymbol{1}_{\{\tau_x < 1\}}] + \E[p_1 \boldsymbol{1}_{\{\tau_x = 1\}}]
+  \end{equation*}
+  \item Since $p_{\tau_x} = x$ on $\{\tau_x < 1\}$ and $p_1 = 1$ on $\{\tau_x = 1\}$:
+  \begin{equation*}
+    p_0 = x \P(\tau_x < 1) + \P(\tau_x = 1)
+  \end{equation*}
+  \item Since $\P(M \geq x) = \P(\tau_x < 1) + \P(\tau_x = 1)$:
+  \begin{equation*}
+    p_0 = x \P(M \geq x) + \P(\tau_x = 1)
+  \end{equation*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Proof of Theorem 4 (continued)}
+\begin{itemize}
+  \item For $x < 1$, $\P(\tau_x = 1) = 0$ (continuous paths), so:
+  \begin{equation*}
+    \P(M \geq x) = \frac{p_0}{x} = \frac{\Phi(\mu^*)}{x}, \quad x \in [p_0, 1)
+  \end{equation*}
+  \item When $x = 1$, $\tau_x = 1$ a.s., so:
+  \begin{equation*}
+    \P(M \geq 1) = \P(M = 1) = p_0 = \Phi(\mu^*)
+  \end{equation*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Proof of Theorem 5}
+\begin{itemize}
+  \item \textbf{Theorem 5:} When $p_A \neq p_B$, the conditional distribution of $M$ given $Y = 0$ satisfies
+  \begin{equation*}
+    F_{M \mid Y = 0}(x) = 1 - \left(\frac{p_0}{1-p_0}\right) \cdot \left(\frac{1 - x}{x}\right), \quad x \in [p_0, 1)
+  \end{equation*}
+  where $p_0 = \Phi(\mu^*)$ and $M = 0$ for $x \in [0, p_0)$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Proof of Theorem 5 (continued)}
+\begin{itemize}
+  \item Decompose the event $\{M \geq x\}$:
+  \begin{equation*}
+    \P(M \geq x) = \P(M \geq x, Y = 0) + \P(M \geq x, Y = 1)
+  \end{equation*}
+  \item On $\{Y = 1\}$, $p_1 = 1 \geq x$ a.s. So $\{M \geq x\} \cap \{Y = 1\} = \{Y = 1\}$:
+  \begin{align*}
+    \P(M \geq x) &= \P(Y = 1) + \P(M \geq x, Y = 0) \\
+    &= \P(Y = 1) + \P(Y = 0)\P(M \geq x \mid Y = 0) \\
+    &= p_0 + (1 - p_0)\P(M \geq x \mid Y = 0)
+  \end{align*}
+  \item From Theorem 4: $\frac{p_0}{x} = p_0 + (1 - p_0)\P(M \geq x \mid Y = 0)$
+  \item Solving for $\P(M \geq x \mid Y = 0)$:
+  \begin{equation*}
+    \P(M \geq x \mid Y = 0) = \left(\frac{p_0}{1-p_0}\right) \cdot \left(\frac{1 - x}{x}\right)
+  \end{equation*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Proof of Theorem 6}
+\begin{itemize}
+  \item \textbf{Theorem 6:} When $p_A \neq p_B$, let team $A$ be the favorite ($\mu^* \geq 0$). Then the distribution of $M_\ell$ satisfies
+  \begin{equation*}
+    F_{M_\ell}(x) = \begin{cases}
+      1 - \dfrac{1-p_0}{x} & \text{if } x \in [1 - p_0, p_0) \\
+      2 - \dfrac{1}{x} & \text{if } x \in [p_0, 1)
+    \end{cases} 
+  \end{equation*}
+  where $p_0 = \Phi(\mu^*)$ and $M_\ell = 0$ for $x \in [0, 1-p_0)$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Proof of Theorem 6 (continued)}
+\begin{itemize}
+  \item The distribution of $M_\ell$ is a mixture: $F_{M_\ell}(x) = (1-p_0) F_{M_A \mid Y = 0}(x) + p_0 F_{M_B \mid Y = 1}(x)$.
+  \item From Theorem 5, we have the conditional distributions:
+  \begin{align*}
+    F_{M_A \mid Y = 0}(x) &= \begin{cases} 0 & x \in [0, p_0) \\ 1 - \left(\frac{p_0}{1-p_0}\right) \cdot \left(\frac{1 - x}{x}\right) & x \in [p_0, 1) \end{cases} \\
+    F_{M_B \mid Y = 1}(x) &= \begin{cases} 0 & x \in [0, 1-p_0) \\ 1 - \left(\frac{1-p_0}{p_0}\right) \cdot \left(\frac{x}{1-x}\right) & x \in [1-p_0, 1) \end{cases}
+  \end{align*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Proof of Theorem 6 (continued)}
+\begin{itemize}
+  \item For $x \in [1-p_0, p_0)$: $F_{M_A \mid Y = 0}(x) = 0$ (since $x < p_0$), so
+  \begin{align*}
+    F_{M_\ell}(x) &= (1-p_0) \cdot 0 + p_0 \cdot \left(1 - \frac{1-p_0}{p_0} \cdot \frac{x}{1-x}\right) \\
+    &= 1 - \frac{1-p_0}{x}
+  \end{align*}
+  \item For $x \in [p_0, 1)$: Both terms contribute, giving
+  \begin{align*}
+    F_{M_\ell}(x) &= (1-p_0)\left(1 - \frac{p_0}{1-p_0} \cdot \frac{1-x}{x}\right) + p_0\left(1 - \frac{1-p_0}{p_0} \cdot \frac{x}{1-x}\right) \\
+    &= 2 - \frac{1}{x}
+  \end{align*}
+\end{itemize}
+\end{frame}
+
+\end{document}

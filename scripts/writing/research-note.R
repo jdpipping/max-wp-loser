@@ -11,6 +11,15 @@ library(pbapply)
 library(pracma)
 library(tidyverse)
 
+args_full = commandArgs(trailingOnly = FALSE)
+file_arg = args_full[grepl("^--file=", args_full)]
+if (length(file_arg) > 0) {
+  script_path = normalizePath(sub("^--file=", "", file_arg[1]))
+} else {
+  script_path = normalizePath("scripts/writing/research-note.R")
+}
+repo_root = normalizePath(file.path(dirname(script_path), "..", ".."))
+
 #################
 ### PARAMETERS ##
 #################
@@ -20,7 +29,7 @@ n_sims = 10000   # number of simulated games
 n_cores = detectCores() - 1  # use 1 less than available cores
 p_td = 0.5     # touchdown probability for both teams
 
-out_dir = "research-note/figures"
+out_dir = file.path(repo_root, "writing", "research-note", "figures")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
 #################

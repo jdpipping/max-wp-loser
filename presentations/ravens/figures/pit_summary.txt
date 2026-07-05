@@ -1,0 +1,4 @@
+team=BAL
+pre_lamar_era:  n=71 KS_D=0.1254 KS_p=0.1073
+lamar_era:      n=53 KS_D=0.1909 KS_p=0.0210
+distribution=M|Y=0 (designated team, conditional on loss)

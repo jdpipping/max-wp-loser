@@ -6,11 +6,20 @@ library(ggplot2)
 library(dplyr)
 library(ggthemes)
 
+args_full <- commandArgs(trailingOnly = FALSE)
+file_arg <- args_full[grepl("^--file=", args_full)]
+if (length(file_arg) > 0) {
+  script_path <- normalizePath(sub("^--file=", "", file_arg[1]))
+} else {
+  script_path <- normalizePath("scripts/presentations/nessis2025/super_bowl_lvii_wp.R")
+}
+repo_root <- normalizePath(file.path(dirname(script_path), "..", "..", ".."))
+
 # Set up the season and game
 season <- 2022  # 2022 season for Super Bowl LVII (played in Feb 2023)
 super_bowl_game_id <- "2022_21_KC_PHI"  # Super Bowl LVII: Chiefs vs Eagles
 
-out_dir <- file.path("nessis2025", "figures")
+out_dir <- file.path(repo_root, "presentations", "nessis2025", "figures")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
 # Load play-by-play data for the 2022 season

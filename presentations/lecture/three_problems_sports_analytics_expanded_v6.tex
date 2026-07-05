@@ -1,0 +1,1521 @@
+\documentclass[aspectratio=169,professionalfonts]{beamer}
+
+\usetheme{Boadilla}
+\usecolortheme{seahorse}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+\setbeamersize{text margin left=8mm,text margin right=8mm}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,bm,mathtools}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{array}
+
+\definecolor{PennBlue}{RGB}{1,31,91}
+\definecolor{AccentRed}{RGB}{170,45,45}
+\definecolor{SoftGray}{RGB}{245,245,245}
+\setbeamercolor{title}{fg=PennBlue}
+\setbeamercolor{frametitle}{fg=PennBlue}
+\setbeamercolor{block title}{fg=white,bg=PennBlue}
+\setbeamercolor{block body}{bg=SoftGray}
+\setbeamercolor{alerted text}{fg=AccentRed}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prb}{\mathbb{P}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Corr}{\operatorname{Corr}}
+\newcommand{\sd}{\operatorname{sd}}
+\newcommand{\logit}{\operatorname{logit}}
+\newcommand{\logistic}{\operatorname{logistic}}
+\newcommand{\cost}{\operatorname{cost}}
+\newcommand{\Normal}{\mathcal{N}}
+\newcommand{\Bern}{\operatorname{Bernoulli}}
+\newcommand{\BetaDist}{\operatorname{Beta}}
+\newcommand{\Unif}{\operatorname{Unif}}
+\newcommand{\QB}{\mathrm{QB}}
+\newcommand{\notQB}{\mathrm{not\text{-}QB}}
+
+% The Loser's Curse figures referenced in body.tex were not uploaded.
+% This macro lets the deck compile now and automatically uses the figure
+% when the corresponding file is placed in the expected path.
+\newcommand{\maybefig}[2][]{%
+  \IfFileExists{#2}{\includegraphics[#1]{#2}}{%
+    \fbox{\begin{minipage}[c][0.42\textheight][c]{0.90\linewidth}
+      \centering\scriptsize Missing figure file:\\[1mm]
+      \texttt{\detokenize{#2}}\\[2mm]
+      Put this file in the same relative path to render the final deck.
+    \end{minipage}}%
+  }%
+}
+
+\newcommand{\slidecite}[1]{\vspace{0.5mm}{\scriptsize\hfill #1}}
+
+\title{Three Problems in Sports Analytics}
+\author{Professor Abraham (Adi) Wyner  }
+\institute{Tel Aviv University Statistics Department}
+\date{June 16, 2026}
+
+\begin{document}
+
+\begin{frame}
+\frametitle{Three Problems in Sports Analytics}
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.52\textwidth}
+  {\Large Professor Abraham (Adi) Wyner}\\[1mm]
+  Tel Aviv University Statistics Department\\
+  June 16, 2026
+  \vspace{2mm}
+  
+  {\small Joint work with students\\[0.5mm]
+  Ryan Brill \& J Pipping}
+
+
+  \vspace{4mm}
+  \begin{block}{Sports analytics}
+  The use of data, statistics, and mathematical modeling to understand games, evaluate people, forecast outcomes, and make better decisions.
+  \end{block}
+\end{column}
+\begin{column}{0.44\textwidth}
+  \begin{block}{Four pillars}
+  \begin{enumerate}
+    \item Historical descriptions and evaluations of teams and players.
+    \item Prediction: future performance and evaluation.
+    \item Strategic decisions.
+    \item Training analytics.
+  \end{enumerate}
+  \end{block}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Why sports analytics is booming}
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.49\textwidth}
+\begin{block}{The demand side}
+\begin{itemize}
+  \item Roughly a \$40 billion industry.
+  \item Fans, owners, players, media, and gamblers care deeply about the games.
+  \item The questions are simple to state and hard to answer well.
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.49\textwidth}
+\begin{block}{The intellectual side}
+\begin{itemize}
+  \item A laboratory for behavior: decisions, incentives, psychology, health, and race.
+  \item Hard statistics: selection, censoring, calibration, causality, and high-dimensional prediction.
+  \item Hard math: stochastic processes, optimization, networks, game theory, and tails.
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+
+\vspace{2mm}
+\centering
+
+\alert{This talk has something for all four: sports, human behavior, statistics, and mathematics.}
+\end{frame}
+
+\begin{frame}
+\frametitle{The three problems}
+\begin{enumerate}
+  \item \textbf{Hot Hand Fallacy.} We see streaks and infer momentum. Are hot streaks real, or can finite samples fool us?
+  \item \textbf{Paradox of the Blown Lead.} We think teams blow big leads often. Are win probability models wrong, or are we conditioning on the wrong event?
+  \item \textbf{Loser's Curse in the NFL Draft.} Big-time decision makers trade valuable assets for draft picks. Are they making poor decisions, or optimizing a different objective?
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{A common theme: Signal is hard to spot}
+
+
+\large
+\begin{enumerate}
+\item It is not so easy to estimate ``hotness.''
+\item Blown leads are more common than you think. \\[1mm]
+\item Are high-value decisions just as susceptible to psychological biases as small-value decisions?
+\end{enumerate}
+
+
+\vspace{5mm}
+\begin{block}{Statistical moral}
+Before calling behavior biased or irrational, specify the estimand and the utility function.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Problem I: The Loser's Curse in the NFL Draft}
+\begin{block}{Why this example matters}
+The NFL draft is not a toy experiment. It is a repeated, high-stakes labor market in which teams reveal their valuations by trading picks.
+\end{block}
+
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.49\textwidth}
+\begin{itemize}
+  \item Worse teams pick earlier.
+  \item Teams trade picks for picks, future picks, and players.
+  \item Draft order has prices, costs, uncertain payoffs, and strategic value.
+\end{itemize}
+\end{column}
+\begin{column}{0.49\textwidth}
+\begin{block}{Behavioral-economics test}
+Massey--Thaler ask whether expert decision makers still make biased decisions when the \emph{``monetary stakes are exceedingly high.''}
+\slidecite{Massey and Thaler (2013)}
+\end{block}
+\end{column}
+\end{columns}
+
+\vspace{2mm}
+\centering
+\alert{If NFL general managers fail here, the behavioral story is much bigger than a lab curiosity.}
+\end{frame}
+
+\begin{frame}
+\frametitle{Massey--Thaler's Two Claims}
+\begin{enumerate}
+  \item \textbf{The Loser's Curse.} The NFL rewards last year's losers with the top draft picks, but those picks are not the best bargains under expected surplus value.
+  \item \textbf{The trade market is too steep.} The trade valuation curve looks much like the old Jimmy Johnson chart, while realized production value declines much more slowly with draft position.
+\end{enumerate}
+
+\vspace{3mm}
+\begin{block}{The provocative conclusion}
+If the right utility function is expected on-field production per salary dollar, then teams that trade up are burning value and teams should trade down more often.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Claim 1: The Gift that Becomes a Curse}
+Let $x$ denote draft position, $Y$ first-contract on-field production value, and $c(x)$ rookie-contract cost.
+\[
+  \text{expected surplus value} \;=\; \E\{Y-c(x)\mid x\}.
+\]
+
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.52\textwidth}
+\begin{itemize}
+  \item The worst teams get the smallest $x$: the right to choose first.
+  \item Top picks have the highest expected raw production.
+  \item But they also have large costs and large forecasting error.
+  \item Massey--Thaler's striking result: surplus per dollar is highest near the \alert{end of the first round}, not the top.
+\end{itemize}
+\end{column}
+\begin{column}{0.44\textwidth}
+\centering
+\maybefig[width=\linewidth,height=0.48\textheight,keepaspectratio]{plots/plot_MasseyThaler_finding1.png}
+\end{column}
+\end{columns}
+
+\vspace{1mm}
+\centering
+\Large \alert{Ouch: the league's reward may be a poisoned gift.}
+\end{frame}
+
+\begin{frame}
+\frametitle{What Makes it a ``Curse''?}
+\begin{block}{The allocation rule}
+The worst teams are placed at the front of the line, precisely where expected surplus value is low relative to the opportunity cost.
+\end{block}
+
+\vspace{1mm}
+\begin{itemize}
+  \item The policy goal is competitive balance: give bad teams access to the best amateurs.
+  \item The economic question is different: is pick 1 the best use of scarce salary-cap resources?
+  \item Under expected surplus, Massey--Thaler's answer is no.
+\end{itemize}
+
+\vspace{2mm}
+\begin{block}{Their sharp version}
+\centering
+\Large
+``the first pick in the first round is the worst pick in the round.''
+\slidecite{Massey and Thaler (2013)}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Claim 2: The Trade Market is Too Steep}
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.48\textwidth}
+\begin{block}{Market value curve}
+Estimate $M(x)$ from observed pick-for-pick trades:
+\[
+  \sum_{x\in A} M(x) \approx \sum_{x\in B} M(x).
+\]
+Empirically, this curve closely mirrors the traditional Jimmy Johnson trade chart.
+\end{block}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{block}{Production/surplus curve}
+Estimate $V(x)$ from realized player production and compensation:
+\[
+  V(x) = \E\{Y-c(x)\mid x\}.
+\]
+This curve declines much more slowly than the market curve.
+\end{block}
+\end{column}
+\end{columns}
+
+\vspace{2mm}
+\centering
+\alert{Same pick. Two value functions. Very different prices.}
+\end{frame}
+
+\begin{frame}
+\frametitle{The Picture: Market Value vs. Surplus Value}
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.49\textwidth}
+\centering
+\maybefig[width=\linewidth,height=0.47\textheight,keepaspectratio]{plots/plot_MasseyThaler_finding2.png}
+\end{column}
+\begin{column}{0.49\textwidth}
+\begin{itemize}
+  \item The market pays a huge premium for moving up.
+  \item Expected surplus does not fall nearly that fast.
+  \item Trading down converts one glamorous pick into several cheaper expected-surplus opportunities.
+\end{itemize}
+
+\vspace{2mm}
+\begin{block}{Massey--Thaler bottom line}
+\centering
+``top draft picks are significantly overvalued.''
+\slidecite{Massey and Thaler (2013)}
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{A One-Line Trade-Up Diagnosis}
+Suppose a team trades a bundle $B$ for an earlier pick $a$.
+
+\vspace{1mm}
+\begin{align*}
+\text{Market says fair:} \qquad & M(a) \approx \sum_{x\in B} M(x),\\[1mm]
+\text{Expected surplus says:} \qquad & \E\{S\mid a\} \ll \sum_{x\in B}\E\{S\mid x\}.
+\end{align*}
+
+\vspace{2mm}
+\begin{block}{If expected surplus is the utility function}
+The team trading up is paying market price for a dream and giving away the better expected bargain.
+\end{block}
+
+\vspace{2mm}
+\centering
+\Large
+\alert{The obvious prescription: trade down. A lot.}
+\end{frame}
+
+\begin{frame}
+\frametitle{The Behavioral-Economics Punchline}
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.50\textwidth}
+\begin{block}{Why economists cared}
+This is a rare high-value setting with experienced experts, repeated feedback, public prices, and consequences for jobs, profits, and championships.
+\end{block}
+\end{column}
+\begin{column}{0.46\textwidth}
+\begin{block}{The interpretation}
+If teams keep trading up despite the surplus evidence, then perhaps laboratory-style biases scale up to the NFL front office.
+\end{block}
+\end{column}
+\end{columns}
+
+\vspace{3mm}
+\begin{center}
+\Large
+\alert{Are million-dollar decisions just as psychologically fragile as small-stakes lab decisions?}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Twelve-Plus Years Later: Did Teams Learn?}
+\begin{block}{The natural follow-up}
+Massey asked Ryan Brill to update the analysis with modern data through 2025.
+\end{block}
+
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.52\textwidth}
+\begin{itemize}
+  \item The rookie wage scale changed.
+  \item Analytics departments grew.
+  \item The Massey--Thaler result became famous.
+  \item Teams had many drafts to learn from their own outcomes.
+\end{itemize}
+\end{column}
+\begin{column}{0.44\textwidth}
+\begin{block}{The awkward answer}
+The broad picture does \alert{not} go away: the trade market remains steep and the expected-surplus critique persists.
+\end{block}
+\end{column}
+\end{columns}
+
+\vspace{2mm}
+\centering
+\Large
+\alert{Provocative reading: ``just as stupid as ever.''}
+\end{frame}
+
+\begin{frame}
+\frametitle{The Replication Sting}
+\centering
+\maybefig[width=0.88\linewidth,height=0.56\textheight,keepaspectratio]{plots/plot_Massey_Thaler_replicate.png}
+
+\vspace{1mm}
+\begin{block}{Why this is such a strong behavioral story}
+If expected surplus is the correct objective, then the NFL draft market is not merely biased; it is biased in a way that survived publication, money, feedback, and a decade of analytics.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{But Maybe Football People Are Not So Stupid}
+\begin{center}
+\Large
+What if the mistake is not in the front office, but in the statistician's utility function?
+\end{center}
+
+\vspace{2mm}
+\begin{block}{Brill--Wyner move}
+Do not assume teams maximize expected surplus. Ask whether their trades are consistent with a different objective: acquiring \alert{top talent}.
+\end{block}
+
+\begin{itemize}
+  \item Championships are nonlinear outcomes.
+  \item A roster is not built from expected value alone.
+  \item One elite quarterback can matter more than several merely good bargains.
+  \item The draft may be a search for the right tail, not the mean.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{The Decision Criterion Changes}
+Traditional expected-surplus analysis asks for
+\[
+  \E\{Y-c(x)\mid x\}.
+\]
+The top-talent hypothesis asks for tail probabilities such as
+\[
+  \Prb\{Y>r\mid x\}
+  \quad\text{or}\quad
+  \Prb\{Y-c(x)>r\mid x\}.
+\]
+
+\vspace{2mm}
+\begin{block}{Statistical moral}
+Before calling a decision biased, specify the utility function. A mean regression answers a mean question; it does not answer a championship question.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{A Concrete Motivating Trade}
+\begin{block}{2013: Miami moves up to pick 3}
+Miami gave picks 12 and 42 to Oakland for pick 3.
+\end{block}
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Valuation rule & Winner under the rule & Magnitude\\
+\midrule
+Jimmy Johnson chart & Miami & Miami draft capital $+31\%$\\
+Expected surplus value & Oakland & Oakland draft capital $+135\%$\\
+Expected elite-player count & Miami & Miami draft capital $+40\%$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{2mm}
+\small
+Same trade. Same draft board. Different objective functions imply different winners.
+\end{frame}
+
+\begin{frame}
+\frametitle{Why Expectation May Be the Wrong Utility}
+A general manager is not literally trying to maximize the average second-contract value of drafted players. The strategic objective may be closer to
+\[
+  \Prb\{\text{build a Super Bowl-winning roster}\}.
+\]
+
+\begin{block}{One-line threshold example}
+Let team performance be random. If
+\[
+A\sim \Normal(1,0),\qquad B\sim \Normal(0,1),\qquad \tau=1.28,
+\]
+then
+\[
+\Prb(A>\tau)=0,\qquad \Prb(B>\tau)\approx 0.10.
+\]
+The lower-mean, higher-variance option can be better for exceeding a high threshold.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Draft Picks as Right-Tail Lotteries}
+\begin{block}{Hypothesis}
+Teams trade for variance and right-tail outcomes, not only for expected value.
+\end{block}
+
+\begin{itemize}
+  \item A good roster needs many competent players.
+  \item A championship roster may require a few transformational players.
+  \item Top draft picks may be valuable because they are more likely to produce extreme right-tail outcomes.
+\end{itemize}
+
+\vspace{2mm}
+\begin{center}
+\Large
+Estimate the \alert{full conditional distribution} $Y\mid x$, not only $\E[Y\mid x]$.
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Empirical Clue: Both Mean and Variance Decline}
+\centering
+\maybefig[width=0.92\linewidth,height=0.60\textheight,keepaspectratio]{plots/plot_empMeanSd.png}
+
+\vspace{1mm}
+\small
+If high picks have both higher mean and higher variance, expected value can understate their value for threshold objectives.
+\end{frame}
+
+\begin{frame}
+\frametitle{Measuring Player Performance}
+\begin{block}{Outcome variable}
+$Y$ is a player's second-contract average salary per year as a percentage of the salary cap.
+\end{block}
+
+\begin{itemize}
+  \item Interprets the free-agent market as an approximate valuation mechanism.
+  \item If a player does not sign a second contract, set $Y=0$.
+  \item Focuses on first-contract performance and first-contract surplus.
+\end{itemize}
+
+\begin{block}{Caveat}
+This is not a perfect player value measure. The point is to compare draft-pick value functions given a performance measure.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{A Bayesian Spike-Plus-Beta Model}
+Let $y_{\rm bust}=0.5\%$ of the salary cap. Model a spike near zero and a continuous right tail.
+
+\vspace{2mm}
+\begin{align*}
+1\{Y\le y_{\rm bust}\}\mid x &\sim \Bern\{p_b(x)\},
+& p_b(x)&=\logistic(\alpha_0+\alpha_1x),\\
+Y\mid x,Y>y_{\rm bust} &\sim \BetaDist\{\mu(x),\phi(x)\},
+& \mu(x)&=\logistic(\widetilde x^\top\beta),\\
+&& \phi(x)&=\exp(\gamma_0+\gamma_1x).
+\end{align*}
+
+\vspace{1mm}
+Weakly informative priors; posterior inference by Stan MCMC.
+\end{frame}
+
+\begin{frame}
+\frametitle{What the Density Model Learns}
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.54\textwidth}
+\begin{itemize}
+  \item The bust probability increases with draft position.
+  \item The right tail shifts left as the draft progresses.
+  \item The distribution changes shape; it is not just a moving mean.
+\end{itemize}
+\end{column}
+\begin{column}{0.44\textwidth}
+\centering
+\maybefig[width=\linewidth,height=0.50\textheight,keepaspectratio]{plots/plot_post_density_full_rdsall_SE.png}
+\end{column}
+\end{columns}
+
+\vspace{2mm}
+\begin{block}{Why this matters}
+Any utility based on elite outcomes needs $\Prb(Y>r\mid x)$, not just $\E[Y\mid x]$.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Position-Specific Hierarchy}
+The model is extended to condition on player position $p$.
+
+\vspace{1mm}
+\begin{align*}
+Y\mid x,p,Y>y_{\rm bust} &\sim \BetaDist\{\mu(x,p),\phi(x,p)\},\\
+\mu(x,p)&=\logistic(\widetilde x^\top\beta_p),\\
+\phi(x,p)&=\exp(\gamma_{0,p}+\gamma_{1,p}x),\\
+p_b(x,p)&=\logistic(\alpha_{0,p}+\alpha_{1,p}x).
+\end{align*}
+
+\begin{block}{Why hierarchical?}
+There are many position groups and sparse data at each position-by-pick combination, so position-specific parameters are shrunk toward overall means.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Right-Tail Draft Value Curves}
+For an elite-performance threshold $r$, define
+\[
+  v_r(x)=\frac{\Prb(Y>r\mid x)}{\Prb(Y>r\mid x=1)}.
+\]
+
+\begin{block}{Interpretation}
+$v_r(x)$ is proportional to the expected number of elite players produced by pick $x$, relative to pick 1.
+\end{block}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Threshold $r$ & Reference level in the paper\\
+\midrule
+$24.5\%$ & Joe Burrow level\\
+$19.7\%$ & Deshaun Watson level\\
+$17.8\%$ & Jared Goff level\\
+$15.0\%$ & Derek Carr level\\
+$11.0\%$ & Penei Sewell level\\
+$8.7\%$ & Tre'Davious White level\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Main Result: The Tail Curves are Steep}
+\centering
+\maybefig[width=0.92\linewidth,height=0.60\textheight,keepaspectratio]{plots/plot_tail_probs_relative_SE.png}
+
+\vspace{1mm}
+\small
+As the elite threshold $r$ increases, $x\mapsto \Prb(Y>r\mid x)$ steepens and can approach the fitted trade market curve.
+\end{frame}
+
+\begin{frame}
+\frametitle{Revealed Preference Interpretation}
+\begin{block}{Result}
+The fitted trade market is closest, in mean absolute error, to a right-tail curve with threshold
+\[
+  r\approx 19.7\% \text{ of the salary cap}.
+\]
+\end{block}
+
+\begin{itemize}
+  \item This is roughly Deshaun Watson's second-contract level in the paper's scale.
+  \item It is a very high bar: among regular-starter quarterbacks in the dataset, about $8/65=12.3\%$ met it.
+  \item This does not prove what general managers think; it says their trades are consistent with valuing extreme upside.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Surplus Value, But in the Right Tail}
+Let $S=Y-c(x)$. Massey--Thaler focus on $\E[S\mid x]$. The alternative is
+\[
+  \Prb(S>r\mid x).
+\]
+
+\centering
+\maybefig[width=0.92\linewidth,height=0.50\textheight,keepaspectratio]{plots/plot_G_surplusValueCurves_2A.png}
+
+\vspace{1mm}
+\small
+The expected-surplus first-round spike is much less decisive when the objective is a high-surplus tail event.
+\end{frame}
+
+\begin{frame}
+\frametitle{Quarterbacks are Different}
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.46\textwidth}
+\begin{itemize}
+  \item Quarterbacks have higher expected value.
+  \item More importantly, quarterbacks have much fatter right tails.
+  \item Top-pick quarterback upside is the central economic force in the draft market.
+\end{itemize}
+\end{column}
+\begin{column}{0.52\textwidth}
+\centering
+\maybefig[width=\linewidth,height=0.55\textheight,keepaspectratio]{plots/plot_G_valueCurves_byQB.png}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{For Elite QBs, the Curse Largely Disappears}
+\centering
+\maybefig[width=0.92\linewidth,height=0.58\textheight,keepaspectratio]{plots/plot_G_surplusValueCurves_byQB.png}
+
+\vspace{1mm}
+\small
+For elite quarterback surplus, the top of the draft can be rationally valuable despite its high cost. For non-quarterbacks, the first-round surplus peak persists.
+\end{frame}
+
+\begin{frame}
+\frametitle{Revisiting the 2013 Dolphins--Raiders Trade}
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Objective & Pick 3 & Picks 12+42 & Preferred side\\
+\midrule
+Johnson chart & 2200 & 1680 & Pick 3\\
+Expected surplus & 1.02 & 2.40 & Picks 12+42\\
+Expected elite players & 0.893 & 0.639 & Pick 3\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{block}{Lesson}
+``Overpaying'' is not an intrinsic property of a trade. It is relative to a utility function.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{What Survives of the Loser's Curse?}
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.49\textwidth}
+\begin{block}{Under expected surplus}
+Top picks are expensive, and the best expected bargains are later in the first round.
+\end{block}
+\end{column}
+\begin{column}{0.49\textwidth}
+\begin{block}{Under elite-player probability}
+Top picks can be correctly priced because they buy access to the far right tail.
+\end{block}
+\end{column}
+\end{columns}
+
+\vspace{4mm}
+\centering
+\Large
+The empirical dispute is not only about estimates.\newline
+It is about the decision criterion.
+\end{frame}
+
+\begin{frame}
+\frametitle{Methodological Takeaway}
+A mean regression gives one value curve. A conditional density gives many.
+
+\vspace{2mm}
+\begin{align*}
+\E[Y\mid x] &\quad \text{performance value},\\
+\E[Y-c(x)\mid x] &\quad \text{surplus value},\\
+\Prb(Y>r\mid x) &\quad \text{elite-player value},\\
+\Prb(Y-c(x)>r\mid x) &\quad \text{elite-surplus value}.
+\end{align*}
+
+\begin{block}{General principle}
+Estimate the distribution first; choose the functional after the decision problem is specified.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Strategic Takeaway for Teams}
+\begin{itemize}
+  \item The paper is not a proof that teams should always trade up.
+  \item It is evidence that top picks may be rationally expensive for teams seeking transformational upside.
+  \item The optimal action depends on team state: roster, current quarterback, cap, injuries, prospect pool, and future picks.
+\end{itemize}
+
+\vspace{2mm}
+\begin{block}{Ultimate target}
+\[
+  \arg\max_{\text{trade/action }a}\; \E\{U(\text{championship path},\text{ roster},\text{ cap})\mid a\}.
+\]
+\end{block}
+\end{frame}
+
+
+
+%\begin{frame}
+%\frametitle{Problem II: The Hot Hand Fallacy}
+%\begin{block}{Empirical question}
+%Do players shoot better after a streak of made shots?
+%\end{block}
+
+%\vspace{1mm}
+%A natural statistic is a conditional success rate:
+%\[
+ % \widehat P(S\mid S^k)
+ % =
+%  \frac{\#\{\text{successes following }k\text{ successes}\}}
+ %      {\#\{\text{occurrences of }k\text{ successes}\}}.
+%\]
+
+%\vspace{1mm}
+%For basketball this feels natural because shots are ordered, repeated, and naturally split into games.
+
+%\vspace{2mm}
+%\begin{block}{The trap}
+%The statistic is simple; the averaging problem is not.
+%\end{block}
+%\end{frame}
+
+
+\begin{frame}{Hot Hand Fallacy: Motivating Example}
+\large
+
+A basketball player is known to be a  \(50\%\) free throw shooter.  The player wants to know whether he gets ``hot'' by making three shots in a row.  For each game, he computes
+\[
+r_i
+=
+\frac{\#\{\text{makes following three consecutive makes in game }i\}}
+{\#\{\text{three-consecutive-make opportunities in game }i\}}.
+\]
+
+\medskip
+
+He then averages these game-level ratios across games and finds
+\[
+\frac{1}{G}\sum_{i=1}^{G} r_i = 0.46.
+\]
+
+\medskip
+
+\begin{block}{Question}
+This appears to be evidence against hotness. Is it?
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Second Motivating Example}
+\large
+
+Now consider a different version of the same question.
+The player takes \(100\) three-point shots over the season and makes exactly
+\(50\) of them.  
+
+\medskip
+
+Here the natural null model is not iid Bernoulli with known \(p\), but the
+fixed-\(m\) permutation model: the observed sequence is treated as a uniform
+random permutation of
+\[
+50 \text{ makes}
+\qquad\text{and}\qquad
+50 \text{ misses}.
+\]
+
+\medskip
+
+He looks across the full sequence of \(100\) shots and finds that his shooting
+percentage after three consecutive makes is 
+\[
+0.44.
+\]
+
+\medskip
+
+\begin{block}{Question}
+What should he make of this? Evidence for or against hotness?
+\end{block}
+
+\end{frame}
+
+\begin{frame}{The hot-hand question}
+\begin{block}{Empirical question}
+Do players shoot better after a streak of made shots?
+\end{block}
+
+\vspace{0.2cm}
+A natural statistic is a conditional success rate:
+\[
+  \widehat P(S\mid S^k)
+  =
+  \frac{\#\{\text{successes following }k\text{ successes}\}}
+       {\#\{\text{occurrences of }k\text{ successes}\}}.
+\]
+
+\vspace{0.2cm}
+For basketball, this feels natural because shots are:
+\begin{itemize}
+  \item ordered,
+  \item homogeneous enough to model simply, especially free throws,
+  \item and naturally split into games.
+\end{itemize}
+
+
+\end{frame}
+
+\begin{frame}{Motivation: Gilovich--Vallone--Tversky}
+\begin{itemize}
+  \item The hot-hand question is simple and compelling:
+  \[
+    \text{Do players shoot better after a streak of made shots?}
+  \]
+  \item Gilovich, Vallone, and Tversky (1985) argued that the hot hand was largely a
+  \textbf{misperception of random sequences}.
+  \item Their analysis relied heavily on conditional success rates after makes and misses:
+  \[
+    \widehat P(S \mid S^k)
+    =
+    \frac{\#\{\text{successes following } k \text{ successes}\}}
+         {\#\{\text{occurrences of } k \text{ successes}\}}.
+  \]
+  \item In their data, average success rates after streaks of makes appeared close to the player's
+  base success rate, suggesting little evidence of positive serial dependence.
+\end{itemize}
+
+\vspace{0.2cm}
+\begin{block}{The original interpretation}
+Fans see streaks; the conditional-percentage evidence seemed to say:
+\[
+  \text{what looks like a hot hand may just be randomness.}
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}{Miller--Sanjurjo: The Rebuttal}
+\begin{itemize}
+  \item Miller and Sanjurjo (2018) identified a finite-sample problem with the standard
+  conditional-percentage calculation.
+  \item Their \textbf{hot-hand paradox}: even for iid coin tosses,
+  the expected proportion of heads following a string of heads in a finite sequence is
+  \textbf{less than} \(1/2\).
+  \item Thus, observing
+  \[
+    \widehat P(S \mid S^k) \approx \widehat P(S)
+  \]
+  need not mean ``no hot hand.'' The statistic can be biased downward under the no-hot-hand null.
+\end{itemize}
+
+\vspace{0.1cm}
+\begin{block}{Miller--Sanjurjo insight}
+Even when shots are iid, the naive conditional percentage after a streak can be biased downward.
+\end{block}
+
+
+\end{frame}
+
+\begin{frame}{A Covariance View of the Hot-Hand Bias}
+\begin{itemize}
+  \item This talk does \emph{not} reprove the hot-hand literature.
+  \item The goal is to give a simple structural explanation for why the naive statistic can be biased.
+  \item The explanation is not psychological; it is algebraic:
+\end{itemize}
+
+\vspace{0.35cm}
+\[
+  \boxed{
+  \text{bias}
+  =
+  \text{denominator--rate covariance}
+  }
+\]
+
+\vspace{0.35cm}
+\begin{block}{Guiding idea}
+When we average game-level conditional percentages, games with few qualifying streaks
+can receive the same weight as games with many qualifying streaks. The resulting mean of ratios
+need not equal the pooled conditional probability.
+\end{block}
+\end{frame}
+
+\begin{frame}{The basic setup}
+Let
+\[
+X_1,\dots,X_L \overset{\text{iid}}{\sim} \text{Bernoulli}(p),
+\qquad X_t=1 \text{ means success}.
+\]
+Fix a run length $k$. Define
+\[
+D=d_{L,k}^{+}
+=
+\#\{\text{$k$-success runs starting in positions }1,\dots,L-k\},
+\]
+\[
+N=n_{L,k}^{+}
+=
+\#\{\text{$k$-success runs followed by another success}\},
+\]
+and the within-sequence conditional rate
+\[
+R=r_{L,k}^{+}=\frac{N}{D}\quad(D>0).
+\]
+
+\vspace{0.2cm}
+Under the iid null, the true target is
+\[
+P(S\mid S^k)=p.
+\]
+\end{frame}
+
+\begin{frame}{Two ways to average across games}
+Suppose we observe $G$ independent games or sequences.
+
+\vspace{0.2cm}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\begin{block}{Equal-weight average}
+\[
+\bar R_G=\frac{1}{G}\sum_{i=1}^G R_i.
+\]
+Each game gets the same weight.
+\end{block}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{block}{Pooled estimator}
+\[
+\widetilde R_G=
+\frac{\sum_{i=1}^G N_i}{\sum_{i=1}^G D_i}
+=\sum_{i=1}^G
+\frac{D_i}{\sum_j D_j}R_i.
+\]
+Each opportunity gets the same weight.
+\end{block}
+\end{column}
+\end{columns}
+
+\vspace{0.3cm}
+\begin{alertblock}{Key distinction}
+A game with one qualifying streak should not carry the same information as a game with twenty qualifying streaks.
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Main identity: the whole issue in one line}
+Since $DR=N$,
+\[
+  \E[N]=\E[DR]=\E[D]\E[R]+\Cov(R,D).
+\]
+Under iid Bernoulli sampling,
+\[
+  \E[N]=p\E[D].
+\]
+Therefore
+\[
+\boxed{
+  \E[R]
+  =
+  p-\frac{\Cov(R,D)}{\E[D]}
+}
+\]
+
+\vspace{0.3cm}
+\begin{block}{Interpretation}
+If $R$ and $D$ are positively correlated, then
+\[
+  \E[R]<p.
+\]
+The equal-weight average of game-level ratios is biased downward.
+\end{block}
+\end{frame}
+
+\begin{frame}{The heuristic: why should $R$ and $D$ be positively correlated?}
+For the $S^k$ pattern, a success after the run does two things:
+\[
+  S^k \mapsto S^{k+1}.
+\]
+
+\vspace{0.2cm}
+It contributes to the numerator $N$ and extends the run, creating more overlapping $k$-success opportunities.
+
+\vspace{0.3cm}
+For example, with $k=3$:
+\[
+  SSSS S
+\]
+contains multiple overlapping $SSS$ opportunities.
+
+\vspace{0.3cm}
+\begin{alertblock}{Core intuition}
+Sequences with many opportunities $D$ tend to be sequences where successes continue after success runs. Those same sequences tend to have larger $R=N/D$.
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Consequences under iid Bernoulli sampling}
+For fixed $k$ and $p\in(0,1)$, the first-order bias after $k$ successes is
+\[
+  \E[r_{L,k}^{+}]
+  =
+  p-\frac{p^{1-k}-p}{L-k}+o(L^{-1}).
+\]
+Thus success-after-success-runs is biased downward.
+
+\vspace{0.2cm}
+Similarly, after $k$ failures,
+\[
+  \E[r_{L,k}^{-}]
+  =
+  p+\frac{(1-p)^{1-k}-(1-p)}{L-k}+o(L^{-1}).
+\]
+Thus success-after-failure-runs is biased upward.
+
+\vspace{0.2cm}
+So the naive contrast has negative mean even when the true contrast is zero:
+\[
+  \E[r_{L,k}^{+}-r_{L,k}^{-}]
+  =
+  -\frac{p^{1-k}+(1-p)^{1-k}-1}{L-k}+o(L^{-1}).
+\]
+\end{frame}
+
+\begin{frame}{Simulation: iid Bernoulli, $k=3$, $p=1/2$}
+\centering
+\maybefig[width=0.98\textwidth,height=0.67\textheight,keepaspectratio]{plots/two_panel.png}
+\end{frame}
+
+\begin{frame}{What the iid simulation shows}
+For $k=3$, $p=1/2$, and 10,000 sequences:
+
+\vspace{0.2cm}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\begin{block}{$L=30$}
+\[
+\begin{aligned}
+\widehat{\Cov}(r,d)&\approx 0.444,\\
+\widehat{\Corr}(r,d)&\approx 0.668,\\
+\bar r&\approx 0.384,\\
+\bar r+\widehat{\Cov}(r,d)/\bar d&\approx 0.503.
+\end{aligned}
+\]
+\end{block}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{block}{$L=100$}
+\[
+\begin{aligned}
+\widehat{\Cov}(r,d)&\approx 0.480,\\
+\widehat{\Corr}(r,d)&\approx 0.630,\\
+\bar r&\approx 0.457,\\
+\bar r+\widehat{\Cov}(r,d)/\bar d&\approx 0.497.
+\end{aligned}
+\]
+\end{block}
+\end{column}
+\end{columns}
+
+\vspace{0.2cm}
+\begin{alertblock}{Message}
+The pooled estimator recovers $p\approx 1/2$; the equal-weight game average is lower because $r$ and $d$ are positively correlated.
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Basketball interpretation}
+\small
+A player looking back over a season might compute
+\[
+  \text{game-by-game } P(S\mid S^k),
+  \quad \text{then average over games.}
+\]
+That feels natural because games are the natural record-keeping units.
+
+\vspace{0.15cm}
+But the target is the rate over \emph{opportunities}, not over games:
+\[
+  \frac{\sum_i N_i}{\sum_i D_i}.
+\]
+This is what the player would get by ignoring artificial game endings and stringing all games into one long season sequence.
+
+\vspace{0.15cm}
+\begin{block}{Gap between the two methods}
+\[
+  p-\E[R]
+  =
+  \frac{\Cov(R,D)}{\E[D]}.
+\]
+Positive covariance means the game-level average is systematically too low.
+\end{block}
+\end{frame}
+
+\begin{frame}{Extension: fixed-$m$ permutation model}
+Now suppose the number of successes is fixed.
+
+\vspace{0.2cm}
+Among $L$ trials, exactly $m$ are successes, and all
+\[
+  \binom{L}{m}
+\]
+sequences are equally likely. Let
+\[
+  p=\frac{m}{L}.
+\]
+
+\vspace{0.25cm}
+This is the natural null if we condition on a player's observed number of makes.
+
+\vspace{0.3cm}
+The pooled finite-population target is not exactly $p$:
+\[
+  \frac{\E[N]}{\E[D]}
+  =
+  \frac{m-k}{L-k}
+  =
+  p-\frac{k(1-p)}{L-k}.
+\]
+
+\vspace{0.15cm}
+So there is now a without-replacement correction even before the ratio issue.
+\end{frame}
+
+\begin{frame}{Permutation decomposition}
+In the fixed-$m$ permutation model,
+\[
+\boxed{
+  p-\E[r_{L,k}]
+  =
+  \frac{k(1-p)}{L-k}
+  +
+  \frac{\Cov(r_{L,k},d_{L,k})}{\E[d_{L,k}]}
+}
+\]
+
+\vspace{0.2cm}
+This separates the bias into two pieces:
+\begin{enumerate}
+  \item \textbf{Finite-population term:}
+  \[
+    \frac{k(1-p)}{L-k}.
+  \]
+  This comes from sampling without replacement.
+
+  \item \textbf{Covariance term:}
+  \[
+    \frac{\Cov(r_{L,k},d_{L,k})}{\E[d_{L,k}]}.
+  \]
+  This is the same denominator--rate mechanism as in the Bernoulli model.
+\end{enumerate}
+
+\vspace{0.1cm}
+For $k=1$, the covariance term vanishes exactly. For $k\ge 2$, it survives asymptotically.
+\end{frame}
+
+\begin{frame}{Permutation simulation: $L=100$, $k=3$, $m=50$}
+\centering
+\maybefig[width=0.93\textwidth,height=0.67\textheight,keepaspectratio]{plots/permutation.png}
+\end{frame}
+
+\begin{frame}{The two corrections in the permutation simulation}
+For $L=100$, $k=3$, exactly 50 successes and 50 failures:
+\[
+  \bar r \approx 0.4642.
+\]
+
+\vspace{0.2cm}
+First add the denominator-covariance correction:
+\[
+  \bar r+\frac{\widehat{\Cov}(r,d)}{\bar d}
+  \approx
+  0.4642+0.0224
+  =0.4866.
+\]
+This matches the pooled rate:
+\[
+  \frac{\bar n}{\bar d}\approx 0.4866.
+\]
+
+\vspace{0.2cm}
+Then add the finite-population correction:
+\[
+  \frac{k(1-p)}{L-k}
+  =
+  \frac{3(1/2)}{97}
+  \approx 0.0155.
+\]
+So
+\[
+  0.4866+0.0155=0.5021\approx 1/2.
+\]
+\end{frame}
+
+\begin{frame}{A useful comparison: the $SSF$ pattern}
+To see that the covariance effect is not just a generic ratio artifact, consider a different pattern:
+\[
+  SSF \quad \text{followed by } S.
+\]
+Define
+\[
+  D=\#\{SSF\text{ patterns with a following trial}\},
+  \qquad
+  R=\frac{\#\{SSFS\}}{D}.
+\]
+
+\vspace{0.2cm}
+\centering
+\maybefig[width=0.72\textwidth,height=0.43\textheight,keepaspectratio]{plots/ssf.png}
+\end{frame}
+
+\begin{frame}{Why the $SSF$ covariance is much smaller}
+\small
+For $SSS$, a following success reinforces the conditioning event:
+\[
+  SSS\mapsto SSSS.
+\]
+It increases the numerator and creates overlapping $SSS$ opportunities.
+
+\vspace{0.1cm}
+For $SSF$, the conditioning pattern ends the success run:
+\[
+  SSF\mapsto SSFS.
+\]
+The following success increases the numerator, but it does not create the same overlap structure.
+
+\vspace{0.1cm}
+In the simulation:
+\[
+  \widehat{\Cov}(R,D)\approx 0.063,
+  \qquad
+  \widehat{\Corr}(R,D)\approx 0.199.
+\]
+
+\begin{alertblock}{Lesson}
+Equal weighting is most dangerous when the conditioning event is reinforced by the outcome being measured.
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Main takeaways}
+\begin{enumerate}
+  \item The bias is not mysterious: it is a denominator--rate covariance.
+  \[
+    \E[R]=p-\frac{\Cov(R,D)}{\E[D]}.
+  \]
+
+  \item Pooling opportunities is the right way to estimate $P(S\mid S^k)$.
+  Equal game weights target the mean of ratios, not the conditional probability.
+
+  \item In the fixed-$m$ permutation model, the bias has two pieces:
+  \[
+    \frac{k(1-p)}{L-k}
+    +
+    \frac{\Cov(r,d)}{\E[d]}.
+  \]
+
+  \item The overlap structure determines the magnitude of the effect.
+\end{enumerate}
+
+\vspace{0.2cm}
+\begin{block}{Bottom line}
+A perfectly memoryless shooter can look colder after a make if we average finite-game conditional percentages in the wrong way.
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Problem III: The Paradox of the Blown Lead}
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.50\textwidth}
+\begin{block}{The fan interpretation}
+If a team reaches win probability $0.78$ and loses, the instinctive reaction is:
+\[
+  \text{``That should happen only }22\%\text{ of the time.''}
+\]
+\end{block}
+
+\begin{itemize}
+  \item Win-probability graphics invite this interpretation.
+  \item But after the game we have selected the team that \emph{lost}.
+  \item That changes the reference distribution.
+\end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+\centering
+\maybefig[width=0.88\linewidth,height=0.55\textheight,keepaspectratio]{plots/blown_espn_superbowl.png}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{The Conditioning Error}
+In a two-team game with no ties, the winner eventually reaches win probability $1$.
+
+\vspace{2mm}
+For the losing team, define
+\[
+  M = \max_t WP_{\text{loser}}(t).
+\]
+
+\begin{block}{The right comparison}
+A losing team that reached $\alpha$ was not a generic team at win probability $\alpha$.
+It was drawn from the conditional distribution
+\[
+  M \mid \{\text{team lost}\}.
+\]
+\end{block}
+
+\vspace{2mm}
+\centering
+\Large
+\alert{A ``blown lead'' is an extreme of a path, observed after conditioning on loss.}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{A Simple Model Where Win Probability is Known}
+Assume two evenly matched teams, $A$ and $B$.
+\begin{itemize}
+  \item Each team has $N$ possessions.
+  \item Each possession ends in a score or a turnover.
+  \item Each team scores on a possession with probability $1/2$.
+  \item If the game is tied after $N$ possessions, overtime is a fair coin flip.
+\end{itemize}
+
+Let $d_t=\text{score}_A-\text{score}_B$ and $n_t=N-t$ be the number of remaining possessions. Then
+\[
+WP_A(t)=\Prb(A\text{ outscores }B)+\frac12\Prb(A\text{ ties }B).
+\]
+
+\begin{block}{Why this model is useful}
+It gives a controlled experiment where the win-probability model is exactly calibrated by construction.
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Simulation Procedure}
+With the closed-form win probability in hand:
+\begin{enumerate}
+  \item Simulate 10,000 games between evenly matched teams.
+  \item Compute the true win probability of both teams after each possession.
+  \item Identify the eventual loser.
+  \item Record the maximum win probability attained by that loser.
+\end{enumerate}
+
+\vspace{2mm}
+\centering
+\maybefig[width=0.78\linewidth,height=0.47\textheight,keepaspectratio]{plots/high-wp-game.png}
+
+\vspace{1mm}
+\small One simulated loser reached $98.5\%$ before eventually losing.
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{The Distribution of the Loser's Maximum Win Probability}
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.56\textwidth}
+\centering
+\maybefig[width=\linewidth,height=0.54\textheight,keepaspectratio]{plots/blown_sim_distribution.png}
+\end{column}
+\begin{column}{0.40\textwidth}
+\begin{itemize}
+  \item The distribution ranges from $0.5$ to $1.0$ for evenly matched teams.
+  \item It is decreasing, but not concentrated near $0.5$.
+  \item In the simulation, the mean is about $0.690$ and the standard deviation is about $0.139$.
+\end{itemize}
+\end{column}
+\end{columns}
+
+\vspace{1mm}
+\begin{block}{Key object}
+The object is not $WP(t)$ at a fixed time. It is the maximum of a stochastic process, conditional on eventual loss.
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{The Threshold Plot: How Often Does the Loser Become a Favorite?}
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.56\textwidth}
+\centering
+\maybefig[width=\linewidth,height=0.55\textheight,keepaspectratio]{plots/blown_sim_threshold.png}
+\end{column}
+\begin{column}{0.40\textwidth}
+For each threshold $\alpha$, plot
+\[
+  \Prb(M\ge \alpha).
+\]
+
+\begin{itemize}
+  \item In half of simulated games, the losing team reached at least $66\%$.
+  \item Up to about $\alpha=0.93$, the curve is above the naive line $1-\alpha$.
+\end{itemize}
+\end{column}
+\end{columns}
+
+\vspace{1mm}
+\centering
+\alert{A losing team being a 2:1 favorite at some point is routine, not shocking.}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Updated NFL Data Look Similar}
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{0.49\textwidth}
+\centering
+\maybefig[width=\linewidth,height=0.42\textheight,keepaspectratio]{plots/blown_obs_distribution.png}
+
+\small ESPN NFL regular-season games, $2018$--$2024$, in the $p_0=0.50$ bin: mean $0.676$, SD $0.129$.
+\end{column}
+\begin{column}{0.49\textwidth}
+\centering
+\maybefig[width=\linewidth,height=0.42\textheight,keepaspectratio]{plots/blown_obs_threshold.png}
+
+\small In half of observed games, the loser reached at least $67\%$.
+\end{column}
+\end{columns}
+
+\vspace{2mm}
+\begin{block}{Empirical message}
+The simple simulation and updated ESPN NFL data tell the same story: high interim win probabilities are common among eventual losers.
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Blown-Lead Takeaway}
+\begin{itemize}
+  \item A win probability model can be calibrated and still produce many dramatic-looking losses.
+  \item The correct reference class is not ``teams currently at $\alpha$.''
+  \item It is ``teams that ultimately lost, summarized by their maximum win probability.''
+\end{itemize}
+
+\vspace{2mm}
+\begin{block}{Super Bowl LVII example}
+The Eagles reached about $78.4\%$ and lost. The answer to ``how unusual is that?'' is not $21.6\%$.
+In the conditional distribution of losing-team maxima, it is about $1/0.784 - 1 \approx 27.6\%$.
+\end{block}
+
+\vspace{2mm}
+\centering
+\Large
+\alert{The model need not be wrong; the post-game conditioning changes the question.}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Closing: Three Problems, One Statistical Discipline}
+\begin{center}
+\small
+\begin{tabular}{>{\bfseries}p{0.23\textwidth}p{0.64\textwidth}}
+Loser's Curse & Top picks look cursed under expected surplus, but may be rational under a right-tail utility.\\[2mm]
+Hot Hand & A memoryless shooter can look cold after makes if we average finite-game conditional percentages in the wrong way.\\[2mm]
+Blown Leads & A large maximum win probability is not rare among teams that eventually lose.\\
+\end{tabular}
+\end{center}
+
+\vspace{4mm}
+\begin{block}{Sports analytics at its best}
+It turns familiar arguments about games into precise questions about estimands, distributions, reference classes, decisions, and utility functions.
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{References}
+\footnotesize
+\begin{itemize}
+  \item Cade Massey and Richard H. Thaler. \emph{The Loser's Curse: Decision Making and Market Efficiency in the National Football League Draft}. Management Science, 59(7):1479--1495, 2013.
+  \item Ryan S. Brill and Abraham J. Wyner. \emph{The Loser's Curse and the Critical Role of the Utility Function}. arXiv:2411.10400, revised 2025.
+  \item Thomas Gilovich, Robert Vallone, and Amos Tversky. \emph{The hot hand in basketball: On the misperception of random sequences}. Cognitive Psychology, 17(3):295--314, 1985.
+  \item Joshua B. Miller and Adam Sanjurjo. \emph{Surprised by the hot hand fallacy? A truth in the law of small numbers}. Econometrica, 86(6):2019--2047, 2018.
+  \item David M. Ritzwoller and Joseph P. Romano. \emph{Uncertainty in the hot hand fallacy: Detecting streaky alternatives to random Bernoulli sequences}. Review of Economic Studies, 89(2):976--1007, 2022.
+  \item Joshua B. Miller and Adam Sanjurjo. \emph{A cold shower for the hot hand fallacy: Robust evidence from controlled settings}. Review of Economics and Statistics, 106(6):1607--1619, 2024.
+  \item Jonathan Pipping and Abraham Wyner. \emph{A Paradox of Blown Leads: Rethinking Win Probability in Football}. Working paper, 2026.
+  \item Carl S. and Ben Baldwin. \emph{nflfastR: Functions to Efficiently Access NFL Play by Play Data}. R package documentation, 2025.
+\end{itemize}
+\end{frame}
+
+
+\end{document}

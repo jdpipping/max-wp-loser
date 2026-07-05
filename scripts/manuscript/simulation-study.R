@@ -13,12 +13,12 @@ file_arg <- args_full[grepl("^--file=", args_full)]
 if (length(file_arg) > 0) {
   script_path <- normalizePath(sub("^--file=", "", file_arg[1]))
 } else {
-  script_path <- normalizePath("code/simulation-study.R")
+  script_path <- normalizePath("scripts/manuscript/simulation-study.R")
 }
-paper_root <- normalizePath(file.path(dirname(script_path), ".."))
-out_dir <- file.path(paper_root, "figures", "simulation")
+repo_root <- normalizePath(file.path(dirname(script_path), "..", ".."))
+out_dir <- file.path(repo_root, "results", "figures", "manuscript", "figures", "simulation")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
-source(file.path(paper_root, "code", "plot-style.R"))
+source(file.path(repo_root, "R", "plot-style.R"))
 
 logit_safe <- function(p) qlogis(pmin(pmax(p, 1e-6), 1 - 1e-6))
 inv_logit <- plogis

@@ -1,5 +1,5 @@
-# Generate distribution figures for paper/
-# Run from paper/ root: Rscript code/n-player.R
+# Generate distribution figures for the manuscript/AOAS deliverables.
+# Run from repo root: Rscript scripts/manuscript/n-player.R
 
 library(tidyverse)
 
@@ -8,10 +8,10 @@ file_arg <- args_full[grepl("^--file=", args_full)]
 if (length(file_arg) > 0) {
   script_path <- normalizePath(sub("^--file=", "", file_arg[1]))
 } else {
-  script_path <- normalizePath("code/n-player.R")
+  script_path <- normalizePath("scripts/manuscript/n-player.R")
 }
-paper_root <- normalizePath(file.path(dirname(script_path), ".."))
-source(file.path(paper_root, "code", "plot-style.R"))
+repo_root <- normalizePath(file.path(dirname(script_path), "..", ".."))
+source(file.path(repo_root, "R", "plot-style.R"))
 
 # Define the CDF F(M_omega) for symmetric n-player games
 nplayer_cdf = function(x, n) {
@@ -64,8 +64,8 @@ p_cdf = ggplot(plot_data_cdf, aes(x = x, y = cdf, color = n_label)) +
     legend.position = "right"
   )
 
-# Output to paper/figures/
-out_dir <- file.path(paper_root, "figures", "distributions")
+# Output to shared manuscript figures.
+out_dir <- file.path(repo_root, "results", "figures", "manuscript", "figures", "distributions")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 ggsave(file.path(out_dir, "nplayer_cdf.png"), p_cdf, width = 8, height = 5, dpi = 300)
 message("Saved to ", out_dir, "/nplayer_cdf.png")

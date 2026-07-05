@@ -5,6 +5,15 @@
 library(nflfastR)
 library(tidyverse)
 
+args_full = commandArgs(trailingOnly = FALSE)
+file_arg = args_full[grepl("^--file=", args_full)]
+if (length(file_arg) > 0) {
+  script_path = normalizePath(sub("^--file=", "", file_arg[1]))
+} else {
+  script_path = normalizePath("scripts/presentations/poster/symmetric.R")
+}
+repo_root = normalizePath(file.path(dirname(script_path), "..", "..", ".."))
+
 #################
 ### PARAMETERS ##
 #################
@@ -15,7 +24,7 @@ p_td = 0.5       # touchdown probability for both teams (symmetric)
 
 set.seed(09042025)
 
-out_dir = "poster/figures"
+out_dir = file.path(repo_root, "presentations", "poster", "figures")
 
 #################
 ### FUNCTIONS ###
