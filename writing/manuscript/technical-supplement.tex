@@ -1,0 +1,237 @@
+\section{Proofs of Discrete-Time Results} \label{app:discrete-proofs}
+
+Throughout, $(p_k)_{k=0}^N$ is a bounded martingale with $p_0\in(0,1)$ and terminal value $p_N=Y\in\{0,1\}$.
+For $x\in(0,1]$, define the first-passage time
+\[
+\tau_x := \inf\{k\in\{0,1,\dots,N\}: p_k\ge x\},
+\]
+with $\inf\varnothing := N+1$.
+
+\subsection{Unconditional distribution of \texorpdfstring{$M_N$}{M N}}
+
+\begin{theorem}[Discrete-time unconditional bound] \label{thm:supp-discrete-unconditional}
+Let $M_N=\max_{0\le k\le N} p_k$. For $x\in[p_0,1)$,
+\[
+\P(M_N<x)\;\ge\;1-\frac{p_0}{x},
+\]
+and hence $F_{M_N}(x)=\P(M_N\le x)\ge 1-p_0/x$.
+The strict-threshold bound is an equality if $p_{\tau_x}=x$ a.s.\ on $\{\tau_x\le N\}$; equality for $F_{M_N}(x)$ additionally requires $\P(M_N=x)=0$.
+For $x<p_0$, $F_{M_N}(x)=0$.
+Moreover, $M_N$ has an atom at $1$ with $\P(M_N=1)=p_0$.
+\end{theorem}
+
+\begin{proof}
+If $x<p_0$ then $M_N\ge p_0>x$ a.s., hence $F_{M_N}(x)=0$.
+
+Fix $x\in[p_0,1)$. By optional stopping for the bounded martingale $(p_k)$ at $\tau_x\wedge N$,
+\[
+\E[p_{\tau_x\wedge N}] = p_0.
+\]
+Decompose $p_{\tau_x\wedge N}=p_{\tau_x}\mathbf 1\{\tau_x\le N\}+p_N\mathbf 1\{\tau_x>N\}$.
+On $\{\tau_x\le N\}$ we have $p_{\tau_x}\ge x$.
+Therefore,
+\[
+p_0
+= \E[p_{\tau_x}\mathbf 1\{\tau_x\le N\}] + \E[p_N\mathbf 1\{\tau_x>N\}]
+\;\ge\; x\,\P(\tau_x\le N).
+\]
+Since $\{\tau_x\le N\}=\{M_N\ge x\}$, this yields
+\[
+\P(M_N\ge x)\le \frac{p_0}{x}\qquad\Rightarrow\qquad
+\P(M_N<x)\ge 1-\frac{p_0}{x}.
+\]
+Equality in the strict-threshold bound holds when $p_{\tau_x}=x$ a.s.\ on $\{\tau_x\le N\}$.
+Because $F_{M_N}(x)=\P(M_N<x)+\P(M_N=x)$, the corresponding CDF equality also requires no atom at $x$.
+
+Finally, $M_N=1$ iff $p_N=1$ iff $Y=1$, so $\P(M_N=1)=p_0$.
+\end{proof}
+
+\subsection{Conditional distribution of \texorpdfstring{$M_N$ given $Y=0$}{M N given Y=0}}
+
+\begin{theorem}[Discrete-time conditional bound] \label{thm:supp-discrete-conditional}
+For $x\in[p_0,1)$,
+\[
+\P(M_N<x\mid Y=0)
+\;\ge\;
+1-\Big(\frac{p_0}{1-p_0}\Big)\Big(\frac{1-x}{x}\Big),
+\]
+and hence the same bound holds for $F_{M_N\mid Y=0}(x)=\P(M_N\le x\mid Y=0)$.
+The strict-threshold bound is an equality under the same no-overshoot condition as in Theorem~\ref{thm:supp-discrete-unconditional}; CDF equality additionally requires $\P(M_N=x\mid Y=0)=0$.
+For $x<p_0$, $F_{M_N\mid Y=0}(x)=0$.
+\end{theorem}
+
+\begin{proof}
+Fix $x\in[p_0,1)$. Decompose $\P(M_N\ge x)$ by $Y$:
+\[
+\P(M_N\ge x)=\P(M_N\ge x, Y=1)+\P(M_N\ge x, Y=0).
+\]
+On $\{Y=1\}$ we have $p_N=1\ge x$, hence $\{Y=1\}\subseteq\{M_N\ge x\}$ and
+\[
+\P(M_N\ge x)=\P(Y=1)+\P(Y=0)\P(M_N\ge x\mid Y=0)
+= p_0 + (1-p_0)\P(M_N\ge x\mid Y=0).
+\]
+By Theorem~\ref{thm:supp-discrete-unconditional}, $\P(M_N\ge x)\le p_0/x$, so
+\[
+\frac{p_0}{x}\;\ge\; p_0 + (1-p_0)\P(M_N\ge x\mid Y=0),
+\]
+which rearranges to
+\[
+\P(M_N\ge x\mid Y=0)\;\le\;\Big(\frac{p_0}{1-p_0}\Big)\Big(\frac{1-x}{x}\Big).
+\]
+Taking complements gives the stated strict-threshold bound; the ordinary CDF bound follows because $\P(M_N\le x\mid Y=0)\ge\P(M_N<x\mid Y=0)$.
+\end{proof}
+
+\begin{proposition}[Discrete-time correction identity]
+For $x\in(p_0,1)$,
+\[
+\P(M_N\ge x\mid Y=0)
+=\frac{p_0}{1-p_0}\cdot\frac{1-x}{x}
+-\frac{1}{x(1-p_0)}\,\E\!\big[(p_{\tau_x}-x)\mathbf 1\{\tau_x<N\}\big]
+-\frac{1-x}{x(1-p_0)}\,\P(\tau_x=N).
+\]
+\end{proposition}
+
+\begin{proof}
+Fix $x\in(p_0,1)$. Since $x<1$, the event $\{Y=1\}$ is contained in $\{\tau_x\le N\}$, so
+\[
+\P(\tau_x\le N)=\P(Y=1)+(1-p_0)\P(M_N\ge x\mid Y=0).
+\]
+Optional stopping at $\tau_x\wedge N$ gives
+\[
+p_0=\E[p_{\tau_x\wedge N}]
+=\E[p_{\tau_x}\mathbf 1\{\tau_x\le N\}]
+=x\,\P(\tau_x\le N)+\E\!\big[(p_{\tau_x}-x)\mathbf 1\{\tau_x\le N\}\big].
+\]
+Combining the two displays and rearranging yields
+\[
+\P(M_N\ge x\mid Y=0)
+=\frac{p_0}{1-p_0}\cdot\frac{1-x}{x}
+-\frac{1}{x(1-p_0)}\,\E\!\big[(p_{\tau_x}-x)\mathbf 1\{\tau_x\le N\}\big].
+\]
+Finally,
+\[
+\E\!\big[(p_{\tau_x}-x)\mathbf 1\{\tau_x\le N\}\big]
+=\E\!\big[(p_{\tau_x}-x)\mathbf 1\{\tau_x< N\}\big]+(1-x)\P(\tau_x=N),
+\]
+because $\tau_x=N$ implies $p_{\tau_x}=p_N=1$.
+Substituting gives the stated decomposition.
+\end{proof}
+
+\section{Proofs of Continuous-Path Results} \label{app:continuous-proofs}
+
+Let $(p_t)_{t\in[0,1]}$ be a bounded martingale with $p_0\in(0,1)$ and $p_1=Y\in\{0,1\}$, and assume path continuity.
+Define $M=\sup_{t\in[0,1]}p_t$ and $\tau_x=\inf\{t\in[0,1]: p_t\ge x\}$.
+
+\subsection{Unconditional distribution of \texorpdfstring{$M$}{M}}
+
+\begin{theorem}[Continuous-path unconditional] \label{thm:supp-continuous-unconditional}
+For $x\in[p_0,1)$,
+\[
+F_M(x)=\P(M\le x)=1-\frac{p_0}{x},
+\]
+and $F_M(x)=0$ for $x<p_0$, while $F_M(1)=1$.
+In particular, $\P(M=1)=p_0$.
+\end{theorem}
+
+\begin{proof}
+If $x<p_0$ then $M\ge p_0>x$ a.s.
+
+Fix $x\in[p_0,1)$. Optional stopping at $\tau_x\wedge 1$ yields $\E[p_{\tau_x\wedge 1}]=p_0$.
+By continuity, on $\{\tau_x<1\}$ we have $p_{\tau_x}=x$, and on $\{\tau_x\ge 1\}$ we have $p_1=Y$.
+Thus
+\[
+p_0 = x\,\P(\tau_x<1) + \E[Y\mathbf 1\{\tau_x\ge 1\}].
+\]
+But if $Y=1$, continuity and $p_1=1>x$ imply that $p_t\ge x$ for some $t<1$, and hence $\tau_x<1$; therefore
+$\E[Y\mathbf 1\{\tau_x\ge 1\}]=0$ for $x<1$.
+Therefore $p_0 = x\,\P(\tau_x<1)$, i.e.\ $\P(M\ge x)=\P(\tau_x<1)=p_0/x$.
+Because this tail is continuous in $x$ on $[p_0,1)$, $M$ has no atoms there.
+Thus $\P(M\le x)=\P(M<x)=1-p_0/x$ on that interval.
+Finally, $M=1$ iff $Y=1$, so $\P(M=1)=p_0$.
+\end{proof}
+
+\subsection{Conditional distribution of \texorpdfstring{$M$ given $Y=0$}{M given Y=0}}
+
+\begin{theorem}[Continuous-path conditional] \label{thm:supp-continuous-conditional}
+For $x\in[p_0,1)$,
+\[
+F_{M\mid Y=0}(x)=\P(M\le x\mid Y=0)
+=
+1-\Big(\frac{p_0}{1-p_0}\Big)\Big(\frac{1-x}{x}\Big),
+\]
+and $F_{M\mid Y=0}(x)=0$ for $x<p_0$, while $F_{M\mid Y=0}(1)=1$.
+\end{theorem}
+
+\begin{proof}
+Fix $x\in[p_0,1)$. As before,
+\[
+\P(M\ge x)=\P(Y=1)+(1-p_0)\P(M\ge x\mid Y=0)=p_0+(1-p_0)\P(M\ge x\mid Y=0).
+\]
+By Theorem~\ref{thm:supp-continuous-unconditional}, $\P(M\ge x)=p_0/x$, hence
+\[
+\frac{p_0}{x}=p_0+(1-p_0)\P(M\ge x\mid Y=0)
+\quad\Rightarrow\quad
+\P(M\ge x\mid Y=0)=\Big(\frac{p_0}{1-p_0}\Big)\Big(\frac{1-x}{x}\Big).
+\]
+This conditional tail is continuous in $x$ below one, so it has no atoms there; taking complements yields the stated CDF.
+Finally, on $\{Y=0\}$ the process cannot attain $1$ (if $p_t=1$ then $\P(Y=1\mid\mathcal F_t)=1$), so $M<1$ a.s.\ and $F_{M\mid Y=0}(1)=1$.
+\end{proof}
+
+\section{Distribution of \texorpdfstring{$M_\lambda$}{M\_lambda} (Two Teams)} \label{app:two-player-derivation}
+
+Let $(p_t)$ and $(q_t)$ be the two teams' win-probability martingales, where $q_t = 1 - p_t$ and $p_0 = \P(Y=1)$; assume $p_0 \ge 0.5$ without loss of generality.
+The maximum win probability attained by the eventual loser is
+\begin{equation} \label{eq:supp-M-lambda-def}
+    M_\lambda \equiv \sup_{0 \leq t \leq 1} \Big( p_t \boldsymbol{1}\{Y = 0\} + q_t \boldsymbol{1}\{Y = 1\} \Big).
+\end{equation}
+By the law of total probability,
+\begin{align} \label{eq:supp-M-lambda-total-prob}
+    F_{M_\lambda}(x) = \P(M_\lambda \le x) &= \P(M_\lambda \le x \mid Y=0) (1-p_0) + \P(M_\lambda \le x \mid Y=1) p_0.
+\end{align}
+
+When team~A loses, Theorem~\ref{thm:supp-continuous-conditional} gives
+\begin{align}
+    F_{M_\lambda \mid Y=0}(x) = \P(M_\lambda \le x \mid Y = 0) &=
+    \begin{cases}
+        0 & \text{for } x < p_0, \\
+        1 - \left(\frac{p_0}{1-p_0}\right) \left(\frac{1-x}{x}\right) & \text{for } x \in [p_0,1), \\
+        1 & \text{for } x = 1.
+    \end{cases} \label{eq:supp-M-lambda-A}
+\end{align}
+Applying the same formula with $p_0$ replaced by $1-p_0$ gives
+\begin{align}
+    F_{M_\lambda \mid Y=1}(x) = \P(M_\lambda \le x \mid Y = 1) &=
+    \begin{cases}
+        0 & \text{for } x < 1-p_0, \\
+        1 - \left(\frac{1-p_0}{p_0}\right) \left(\frac{1-x}{x}\right) & \text{for } x \in [1-p_0,1), \\
+        1 & \text{for } x = 1.
+    \end{cases} \label{eq:supp-M-lambda-B}
+\end{align}
+
+With $p_0 \ge 0.5$ (team~A favored), substituting \eqref{eq:supp-M-lambda-A} and \eqref{eq:supp-M-lambda-B} into \eqref{eq:supp-M-lambda-total-prob} gives three regions:
+\begin{enumerate}[leftmargin=*]
+    \item For $0 \le x < 1-p_0$, neither \eqref{eq:supp-M-lambda-A} nor \eqref{eq:supp-M-lambda-B} contributes, so $F_{M_\lambda}(x) = 0$.
+
+    \item For $1-p_0 \le x < p_0$, only \eqref{eq:supp-M-lambda-B} contributes:
+    \begin{align*}
+        F_{M_\lambda}(x) &= (1-p_0) \cdot 0 + p_0 \cdot \left[1 - \left(\frac{1-p_0}{p_0}\right) \left(\frac{1-x}{x}\right)\right] \\
+        &= p_0 - (1-p_0)\left(\frac{1-x}{x}\right) = 1 - \frac{1-p_0}{x}.
+    \end{align*}
+
+    \item For $x \ge p_0$, both \eqref{eq:supp-M-lambda-A} and \eqref{eq:supp-M-lambda-B} contribute:
+    \begin{align*}
+        F_{M_\lambda}(x) &= (1-p_0)\left[1 - \left(\frac{p_0}{1-p_0}\right) \left(\frac{1-x}{x}\right)\right] + p_0\left[1 - \left(\frac{1-p_0}{p_0}\right) \left(\frac{1-x}{x}\right)\right] \\
+        &= \left[(1-p_0) - p_0\left(\frac{1-x}{x}\right)\right] + \left[p_0 - (1-p_0)\left(\frac{1-x}{x}\right)\right] \\
+        &= 1 - \frac{1-x}{x} = \frac{2x-1}{x} = 2 - \frac{1}{x}.
+    \end{align*}
+\end{enumerate}
+
+Combining the three regions gives the piecewise cumulative distribution function
+\begin{equation*}
+    F_{M_\lambda}(x) = \P(M_\lambda \le x) = \begin{cases}
+        0 & \text{for } 0 \le x < 1-p_0, \\[0.5em]
+        1 - \frac{1-p_0}{x} & \text{for } 1-p_0 \le x < p_0, \\[0.5em]
+        2 - \frac{1}{x} & \text{for } p_0 \le x < 1, \\[0.5em]
+        1 & \text{for } x = 1.
+    \end{cases}
+\end{equation*}

@@ -1,1 +1,1 @@
-n=1832 prop_90=0.086 prop_95=0.046 prop_99=0.017 ks_stat=0.0153 ks_pval=0.4244
+n=1848 prop_90=0.085 prop_95=0.045 prop_99=0.015 Dn_upper=0.0146

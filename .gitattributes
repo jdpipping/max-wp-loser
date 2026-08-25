@@ -1,2 +1,8 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Preserve the official IMS support files byte-for-byte, including upstream whitespace.
+vendor/ims-aoas/** -whitespace
+writing/aoas/imsart.cls -whitespace
+writing/aoas/imsart.sty -whitespace
+writing/aoas/imsart-nameyear.bst -whitespace

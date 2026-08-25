@@ -1,0 +1,15 @@
+league,season,game_id,game_date,home_team,away_team,home_team_abbr,away_team_abbr,schedule_status,raw_available,failure_stage,error,audit_status
+nba,2018,400975670,2018-03-01,Sacramento Kings,Brooklyn Nets,SAC,BKN,STATUS_FINAL,FALSE,NA,NA,missing_wp_feed
+nba,2018,400975617,2018-02-22,Sacramento Kings,Oklahoma City Thunder,SAC,OKC,STATUS_FINAL,FALSE,NA,NA,missing_wp_feed
+nba,2018,400974853,2017-10-31,Brooklyn Nets,Phoenix Suns,BKN,PHX,STATUS_FINAL,FALSE,NA,NA,missing_wp_feed
+nba,2018,400974444,2017-10-20,New Orleans Pelicans,Golden State Warriors,NO,GS,STATUS_FINAL,FALSE,NA,NA,missing_wp_feed
+nba,2018,400974773,2017-10-20,Washington Wizards,Detroit Pistons,WSH,DET,STATUS_FINAL,FALSE,NA,NA,missing_wp_feed
+nba,2018,400974442,2017-10-19,Los Angeles Lakers,LA Clippers,LAL,LAC,STATUS_FINAL,FALSE,NA,NA,missing_wp_feed
+nba,2018,400974441,2017-10-19,Oklahoma City Thunder,New York Knicks,OKC,NY,STATUS_FINAL,FALSE,NA,NA,missing_wp_feed
+nba,2018,400974769,2017-10-19,Toronto Raptors,Chicago Bulls,TOR,CHI,STATUS_FINAL,FALSE,NA,NA,missing_wp_feed
+nba,2020,401161536,2020-03-01,Phoenix Suns,Golden State Warriors,PHX,GS,STATUS_FINAL,FALSE,NA,NA,missing_wp_feed
+nba,2020,401161530,2020-03-01,Atlanta Hawks,Portland Trail Blazers,ATL,POR,STATUS_FINAL,FALSE,NA,NA,missing_wp_feed
+nba,2020,401161533,2020-02-29,Memphis Grizzlies,Los Angeles Lakers,MEM,LAL,STATUS_FINAL,FALSE,NA,NA,missing_wp_feed
+nba,2020,401161528,2020-02-29,LA Clippers,Denver Nuggets,LAC,DEN,STATUS_FINAL,FALSE,NA,NA,missing_wp_feed
+nba,2020,401161505,2020-02-25,Golden State Warriors,Sacramento Kings,GS,SAC,STATUS_FINAL,FALSE,NA,NA,missing_wp_feed
+nba,2020,401161490,2020-02-24,Portland Trail Blazers,Detroit Pistons,POR,DET,STATUS_FINAL,FALSE,NA,NA,missing_wp_feed

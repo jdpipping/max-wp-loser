@@ -1,0 +1,304 @@
+key,value,formatted,source,league,analysis,sample,estimand
+ChicagoClock,04:21:00,4:21,/Users/Jonathan/research/max-wp-loser/results/figures/manuscript/figures/case_studies/case_study_games.csv,nba,case_study,chicago,clock
+ChicagoDate,2019-11-05,"November 5, 2019",/Users/Jonathan/research/max-wp-loser/results/figures/manuscript/figures/case_studies/case_study_games.csv,nba,case_study,chicago,game_date
+ChicagoFinalAwayScore,118,118,/Users/Jonathan/research/max-wp-loser/results/figures/manuscript/figures/case_studies/case_study_games.csv,nba,case_study,chicago,away_final
+ChicagoFinalHomeScore,112,112,/Users/Jonathan/research/max-wp-loser/results/figures/manuscript/figures/case_studies/case_study_games.csv,nba,case_study,chicago,home_final
+ChicagoGameID,401160742,401160742,/Users/Jonathan/research/max-wp-loser/results/figures/manuscript/figures/case_studies/case_study_games.csv,nba,case_study,chicago,game_id
+ChicagoLoser,Chicago Bulls,Chicago Bulls,/Users/Jonathan/research/max-wp-loser/results/figures/manuscript/figures/case_studies/case_study_games.csv,nba,case_study,chicago,loser
+ChicagoMaxWP,0.969,96.9\%,/Users/Jonathan/research/max-wp-loser/results/figures/manuscript/figures/case_studies/case_study_games.csv,nba,case_study,chicago,max_wp_loser
+ChicagoMinutesRemaining,16.35,16.4,/Users/Jonathan/research/max-wp-loser/results/figures/manuscript/figures/case_studies/case_study_games.csv,nba,case_study,chicago,minutes_remaining
+ChicagoPIT,0.968008255933952,0.968,/Users/Jonathan/research/max-wp-loser/results/figures/manuscript/figures/case_studies/case_study_games.csv,nba,case_study,chicago,pit_u
+ChicagoPeakAwayScore,67,67,/Users/Jonathan/research/max-wp-loser/results/figures/manuscript/figures/case_studies/case_study_games.csv,nba,case_study,chicago,away_score
+ChicagoPeakHomeScore,85,85,/Users/Jonathan/research/max-wp-loser/results/figures/manuscript/figures/case_studies/case_study_games.csv,nba,case_study,chicago,home_score
+ChicagoPeakLead,18,18,/Users/Jonathan/research/max-wp-loser/results/figures/manuscript/figures/case_studies/case_study_games.csv,nba,case_study,chicago,lead
+ChicagoPeriod,3,3,/Users/Jonathan/research/max-wp-loser/results/figures/manuscript/figures/case_studies/case_study_games.csv,nba,case_study,chicago,period
+ChicagoSeason,2020,2020,/Users/Jonathan/research/max-wp-loser/results/figures/manuscript/figures/case_studies/case_study_games.csv,nba,case_study,chicago,season
+ChicagoStartingWP,0.712,71.2\%,/Users/Jonathan/research/max-wp-loser/results/figures/manuscript/figures/case_studies/case_study_games.csv,nba,case_study,chicago,starting_wp_favored
+ChicagoTailProbability,0.0319917440660475,3.2\%,/Users/Jonathan/research/max-wp-loser/results/figures/manuscript/figures/case_studies/case_study_games.csv,nba,case_study,chicago,pit_tail_prob
+ChicagoWinner,Los Angeles Lakers,Los Angeles Lakers,/Users/Jonathan/research/max-wp-loser/results/figures/manuscript/figures/case_studies/case_study_games.csv,nba,case_study,chicago,winner
+DyadicBootstrapReplicates,9999,"9,999",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,,,,
+DyadicBootstrapSeed,20260815,20260815,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,,,,
+NBACompletedGames,8290,"8,290",feed_coverage_by_season.csv,nba,coverage,all,completed_games
+NBACoverageRows,"2018 & 1,230 & 1,230 & 1,222 & 8 \\
+2019 & 1,230 & 1,230 & 1,230 & 0 \\
+2020 & 1,062 & 1,059 & 1,053 & 6 \\
+2021 & 1,112 & 1,080 & 1,080 & 0 \\
+2022 & 1,241 & 1,230 & 1,230 & 0 \\
+2023 & 1,231 & 1,230 & 1,230 & 0 \\
+2024 & 1,233 & 1,231 & 1,231 & 0 \\","
+2018 & 1,230 & 1,230 & 1,222 & 8 \\
+2019 & 1,230 & 1,230 & 1,230 & 0 \\
+2020 & 1,062 & 1,059 & 1,053 & 6 \\
+2021 & 1,112 & 1,080 & 1,080 & 0 \\
+2022 & 1,241 & 1,230 & 1,230 & 0 \\
+2023 & 1,231 & 1,230 & 1,230 & 0 \\
+2024 & 1,233 & 1,231 & 1,231 & 0 \\
+",feed_coverage_by_season.csv,nba,coverage,season,rows
+NBACrossingNinetyCILower,0.0265755869984739,2.7\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal,ci_lower
+NBACrossingNinetyCIUpper,0.0472377440231227,4.7\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal,ci_upper
+NBACrossingNinetyEpisodes,9371,"9,371",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal,episodes
+NBACrossingNinetyFiveAllCILower,0.0141486549341981,1.4\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,all_updates,ci_lower
+NBACrossingNinetyFiveAllCIUpper,0.0311925828884103,3.1\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,all_updates,ci_upper
+NBACrossingNinetyFiveAllEpisodes,8829,"8,829",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,all_updates,episodes
+NBACrossingNinetyFiveAllGames,8266,"8,266",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,all_updates,games
+NBACrossingNinetyFiveAllImplied,0.0412935779816519,4.1\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,all_updates,implied_loss
+NBACrossingNinetyFiveAllLoss,0.0638803941556235,6.4\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,all_updates,observed_loss
+NBACrossingNinetyFiveAllResidual,0.0225868161739716,2.3\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,all_updates,residual
+NBACrossingNinetyFiveCILower,0.0144553516686127,1.4\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal,ci_lower
+NBACrossingNinetyFiveCIUpper,0.0318353791430552,3.2\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal,ci_upper
+NBACrossingNinetyFiveEpisodes,8663,"8,663",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal,episodes
+NBACrossingNinetyFiveGames,8156,"8,156",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal,games
+NBACrossingNinetyFiveImplied,0.0420602562622653,4.2\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal,implied_loss
+NBACrossingNinetyFiveLoss,0.0651044672746162,6.5\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal,observed_loss
+NBACrossingNinetyFiveResidual,0.0230442110123508,2.3\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal,residual
+NBACrossingNinetyFiveStrictCILower,0.014678789971613,1.5\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal_strict,ci_lower
+NBACrossingNinetyFiveStrictCIUpper,0.0319964334376087,3.2\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal_strict,ci_upper
+NBACrossingNinetyFiveStrictEpisodes,8654,"8,654",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal_strict,episodes
+NBACrossingNinetyFiveStrictGames,8154,"8,154",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal_strict,games
+NBACrossingNinetyFiveStrictImplied,0.0411594638317539,4.1\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal_strict,implied_loss
+NBACrossingNinetyFiveStrictLoss,0.0643633002079963,6.4\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal_strict,observed_loss
+NBACrossingNinetyFiveStrictResidual,0.0232038363762419,2.3\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal_strict,residual
+NBACrossingNinetyGames,8250,"8,250",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal,games
+NBACrossingNinetyImplied,0.0878891260271071,8.8\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal,implied_loss
+NBACrossingNinetyLoss,0.125066695123253,12.5\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal,observed_loss
+NBACrossingNinetyNineCILower,0.00087151100764207,0.1\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal,ci_lower
+NBACrossingNinetyNineCIUpper,0.0091925537524452,0.9\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal,ci_upper
+NBACrossingNinetyNineEpisodes,7660,"7,660",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal,episodes
+NBACrossingNinetyNineGames,7598,"7,598",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal,games
+NBACrossingNinetyNineImplied,0.00779412532637078,0.8\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal,implied_loss
+NBACrossingNinetyNineLoss,0.012532637075718,1.3\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal,observed_loss
+NBACrossingNinetyNineResidual,0.00473851174934709,0.5\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal,residual
+NBACrossingNinetyResidual,0.0371775690961472,3.7\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,first_crossing,preterminal,residual
+NBADyadicCalendarGlobalD,0.0967563958679785,0.097,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,global,dyadic_calendar,D_upper
+NBADyadicCalendarGlobalP,1e-04,\ensuremath{<0.001},/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,global,dyadic_calendar,p_value
+NBAEligibleGames,8290,"8,290",feed_coverage_by_season.csv,nba,coverage,all,eligible_games
+NBAExcludePatchedGlobalD,0.0960048426150121,0.096,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,global,exclude_patched,D_upper
+NBAExcludePatchedGlobalP,1e-04,\ensuremath{<0.001},/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,global,exclude_patched,p_value
+NBAExcludedExhibitionEvents,10,10,/Users/Jonathan/research/max-wp-loser/data/derived/nba/excluded_exhibition_games.csv,nba,coverage,excluded_exhibitions,events
+NBAExcludedExhibitionFeeds,5,5,/Users/Jonathan/research/max-wp-loser/data/derived/nba/excluded_exhibition_games.csv,nba,coverage,excluded_exhibitions,analyzed_feeds
+NBAFixedClockExcluded,11,11,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/fixed-clock-feed-summary.csv,nba,fixed_clock,linear,excluded_games
+NBAFixedClockGames,8265,"8,265",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/fixed-clock-feed-summary.csv,nba,fixed_clock,linear,games
+NBAFixedClockLOCFCells,195,195,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,fixed_clock_summary,locf,cells
+NBAFixedClockLOCFRMS,0.0276642411897507,2.8\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,fixed_clock_summary,locf,rms_gap
+NBAFixedClockLOCFSignificantCells,3,3,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,fixed_clock_summary,locf,significant_cells
+NBAFixedClockLinearCells,196,196,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,fixed_clock_summary,linear,cells
+NBAFixedClockLinearRMS,0.0270882907962777,2.7\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,fixed_clock_summary,linear,rms_gap
+NBAFixedClockLinearSignificantCells,2,2,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,fixed_clock_summary,linear,significant_cells
+NBAFranchiseLinkedGlobalD,0.0967563958679785,0.097,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,global,franchise_linked,D_upper
+NBAFranchiseLinkedGlobalP,1e-04,\ensuremath{<0.001},/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,global,franchise_linked,p_value
+NBAGames,8276,"8,276",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,global,corrected,n
+NBAGlobalCritical,0.0227589481936564,0.023,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,global,corrected,critical_value
+NBAGlobalD,0.0967563958679785,0.097,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,global,corrected,D_upper
+NBAGlobalDyadicP,1e-04,\ensuremath{<0.001},/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,global,corrected,p_value
+NBALOSODMax,0.10165234519478,0.102,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/leave-one-season-out.csv,nba,leave_one_season_out,all,D_max
+NBALOSODMin,0.093351506809698,0.093,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/leave-one-season-out.csv,nba,leave_one_season_out,all,D_min
+NBALOSOTailMax,0.0145848119233499,1.5\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/leave-one-season-out.csv,nba,leave_one_season_out,all,tail_max
+NBALOSOTailMin,0.0123048538177689,1.2\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/leave-one-season-out.csv,nba,leave_one_season_out,all,tail_min
+NBALeaveSeasonRows,"2018 & 7,054 & 0.093 & 1.5\% \\
+2019 & 7,046 & 0.097 & 1.2\% \\
+2020 & 7,223 & 0.094 & 1.3\% \\
+2021 & 7,196 & 0.100 & 1.3\% \\
+2022 & 7,046 & 0.102 & 1.3\% \\
+2023 & 7,046 & 0.093 & 1.2\% \\
+2024 & 7,045 & 0.101 & 1.5\% \\","
+2018 & 7,054 & 0.093 & 1.5\% \\
+2019 & 7,046 & 0.097 & 1.2\% \\
+2020 & 7,223 & 0.094 & 1.3\% \\
+2021 & 7,196 & 0.100 & 1.3\% \\
+2022 & 7,046 & 0.102 & 1.3\% \\
+2023 & 7,046 & 0.093 & 1.2\% \\
+2024 & 7,045 & 0.101 & 1.5\% \\
+",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/leave-one-season-out.csv,nba,leave_one_season_out,season,rows
+NBAMedianUpdatesPerGame,466,466,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/fixed-clock-feed-summary.csv,nba,feed,all,median_updates
+NBAMinimumFeedCoverage,0.99349593495935,99.3\%,feed_coverage_by_season.csv,nba,coverage,all,minimum_coverage
+NBAMissingCoverageRows,"2018 & 1,222 & 8 & 99.3\% \\
+2019 & 1,230 & 0 & 100.0\% \\
+2020 & 1,053 & 6 & 99.4\% \\
+2021 & 1,080 & 0 & 100.0\% \\
+2022 & 1,230 & 0 & 100.0\% \\
+2023 & 1,230 & 0 & 100.0\% \\
+2024 & 1,231 & 0 & 100.0\% \\","
+2018 & 1,222 & 8 & 99.3\% \\
+2019 & 1,230 & 0 & 100.0\% \\
+2020 & 1,053 & 6 & 99.4\% \\
+2021 & 1,080 & 0 & 100.0\% \\
+2022 & 1,230 & 0 & 100.0\% \\
+2023 & 1,230 & 0 & 100.0\% \\
+2024 & 1,231 & 0 & 100.0\% \\
+",feed_coverage_by_season.csv,nba,coverage,season,rows
+NBAMissingFeedGames,14,14,feed_coverage_by_season.csv,nba,coverage,all,missing_games
+NBANonfinalGames,49,49,feed_coverage_by_season.csv,nba,coverage,all,cancelled_or_nonfinal_games
+NBAPatchedGames,16,16,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/patch-audit.csv,nba,artifact_audit,exact_one,games
+NBAPublishedUpdates,3877820,"3,877,820",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/fixed-clock-feed-summary.csv,nba,feed,all,updates
+NBARawGlobalD,0.0967563958679785,0.097,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,global,raw,D_upper
+NBARawGlobalP,1e-04,\ensuremath{<0.001},/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,global,raw,p_value
+NBARoundingLowerGlobalD,0.0952270804331679,0.095,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,global,rounding_lower,D_upper
+NBARoundingLowerGlobalP,1e-04,\ensuremath{<0.001},/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,global,rounding_lower,p_value
+NBARoundingLowerTailNinetyFiveRate,0.0631947800869986,6.3\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,tail,rounding_lower,tail_rate
+NBARoundingUpperGlobalD,0.0986254015523051,0.099,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,global,rounding_upper,D_upper
+NBARoundingUpperGlobalP,1e-04,\ensuremath{<0.001},/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,global,rounding_upper,p_value
+NBARoundingUpperTailNinetyFiveRate,0.0657322377960367,6.6\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,tail,rounding_upper,tail_rate
+NBAScheduledGames,8339,"8,339",feed_coverage_by_season.csv,nba,coverage,all,scheduled_games
+NBATailNinetyCILower,0.0144154756296884,1.4\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,tail,corrected,ci_lower
+NBATailNinetyCIUpper,0.0398741642173499,4.0\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,tail,corrected,ci_upper
+NBATailNinetyExcess,0.0269937167713872,2.7\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,tail,corrected,tail_excess
+NBATailNinetyFiveAtomRate,0,0.00\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,boundary,atom,tail_rate
+NBATailNinetyFiveCILower,0.0042726918333115,0.4\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,tail,corrected,ci_lower
+NBATailNinetyFiveCIUpper,0.0228751961708741,2.3\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,tail,corrected,ci_upper
+NBATailNinetyFiveExcess,0.0131947800869985,1.3\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,tail,corrected,tail_excess
+NBATailNinetyFiveRate,0.0631947800869986,6.3\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,tail,corrected,tail_rate
+NBATailNinetyFiveStrictRate,0.0631947800869986,6.3\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,boundary,strict,tail_rate
+NBATailNinetyNineCILower,-0.00290358781801102,-0.3\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,tail,corrected,ci_lower
+NBATailNinetyNineCIUpper,0.00461297730896342,0.5\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,tail,corrected,ci_upper
+NBATailNinetyNineExcess,0.000512324794586749,0.1\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,tail,corrected,tail_excess
+NBATailNinetyNineRate,0.0105123247945868,1.1\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,tail,corrected,tail_rate
+NBATailNinetyRate,0.126993716771387,12.7\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nba,tail,corrected,tail_rate
+NBATiedGames,0,0,feed_coverage_by_season.csv,nba,coverage,all,tied_games
+NBAUpdateQOne,447,447,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/fixed-clock-feed-summary.csv,nba,feed,all,q25_updates
+NBAUpdateQThree,488,488,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/fixed-clock-feed-summary.csv,nba,feed,all,q75_updates
+NFLCompletedGames,1855,"1,855",feed_coverage_by_season.csv,nfl,coverage,all,completed_games
+NFLCoverageRows,"2018 & 256 & 254 & 254 & 0 \\
+2019 & 256 & 255 & 255 & 0 \\
+2020 & 256 & 255 & 255 & 0 \\
+2021 & 272 & 271 & 271 & 0 \\
+2022 & 272 & 269 & 269 & 0 \\
+2023 & 272 & 272 & 272 & 0 \\
+2024 & 272 & 272 & 272 & 0 \\","
+2018 & 256 & 254 & 254 & 0 \\
+2019 & 256 & 255 & 255 & 0 \\
+2020 & 256 & 255 & 255 & 0 \\
+2021 & 272 & 271 & 271 & 0 \\
+2022 & 272 & 269 & 269 & 0 \\
+2023 & 272 & 272 & 272 & 0 \\
+2024 & 272 & 272 & 272 & 0 \\
+",feed_coverage_by_season.csv,nfl,coverage,season,rows
+NFLCrossingNinetyCILower,-0.00946642692562913,-0.9\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal,ci_lower
+NFLCrossingNinetyCIUpper,0.0280041367010763,2.8\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal,ci_upper
+NFLCrossingNinetyEpisodes,1974,"1,974",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal,episodes
+NFLCrossingNinetyFiveAllCILower,-0.00212512356747238,-0.2\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,all_updates,ci_lower
+NFLCrossingNinetyFiveAllCIUpper,0.0269021706082544,2.7\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,all_updates,ci_upper
+NFLCrossingNinetyFiveAllEpisodes,1932,"1,932",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,all_updates,episodes
+NFLCrossingNinetyFiveAllGames,1847,"1,847",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,all_updates,games
+NFLCrossingNinetyFiveAllImplied,0.0319022256728778,3.2\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,all_updates,implied_loss
+NFLCrossingNinetyFiveAllLoss,0.0439958592132505,4.4\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,all_updates,observed_loss
+NFLCrossingNinetyFiveAllResidual,0.0120936335403726,1.2\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,all_updates,residual
+NFLCrossingNinetyFiveCILower,-0.00215296972738445,-0.2\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal,ci_lower
+NFLCrossingNinetyFiveCIUpper,0.0285149680305527,2.9\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal,ci_upper
+NFLCrossingNinetyFiveEpisodes,1842,"1,842",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal,episodes
+NFLCrossingNinetyFiveGames,1772,"1,772",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal,games
+NFLCrossingNinetyFiveImplied,0.0334484799131378,3.3\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal,implied_loss
+NFLCrossingNinetyFiveLoss,0.0461454940282302,4.6\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal,observed_loss
+NFLCrossingNinetyFiveResidual,0.0126970141150922,1.3\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal,residual
+NFLCrossingNinetyFiveStrictCILower,-0.00177993603076654,-0.2\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal_strict,ci_lower
+NFLCrossingNinetyFiveStrictCIUpper,0.0288310330523005,2.9\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal_strict,ci_upper
+NFLCrossingNinetyFiveStrictEpisodes,1841,"1,841",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal_strict,episodes
+NFLCrossingNinetyFiveStrictGames,1771,"1,771",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal_strict,games
+NFLCrossingNinetyFiveStrictImplied,0.0331265073329712,3.3\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal_strict,implied_loss
+NFLCrossingNinetyFiveStrictLoss,0.0461705594785443,4.6\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal_strict,observed_loss
+NFLCrossingNinetyFiveStrictResidual,0.013044052145573,1.3\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal_strict,residual
+NFLCrossingNinetyGames,1818,"1,818",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal,games
+NFLCrossingNinetyImplied,0.0756960992907801,7.6\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal,implied_loss
+NFLCrossingNinetyLoss,0.0851063829787234,8.5\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal,observed_loss
+NFLCrossingNinetyNineCILower,0.00244979965005754,0.2\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal,ci_lower
+NFLCrossingNinetyNineCIUpper,0.0221003782759892,2.2\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal,ci_upper
+NFLCrossingNinetyNineEpisodes,1705,"1,705",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal,episodes
+NFLCrossingNinetyNineGames,1686,"1,686",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal,games
+NFLCrossingNinetyNineImplied,0.00501853372434016,0.5\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal,implied_loss
+NFLCrossingNinetyNineLoss,0.0164222873900293,1.6\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal,observed_loss
+NFLCrossingNinetyNineResidual,0.0114037536656891,1.1\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal,residual
+NFLCrossingNinetyResidual,0.00941028368794326,0.9\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,first_crossing,preterminal,residual
+NFLDyadicCalendarGlobalD,0.0146002276283967,0.015,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,global,dyadic_calendar,D_upper
+NFLDyadicCalendarGlobalP,0.8563,\ensuremath{0.856},/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,global,dyadic_calendar,p_value
+NFLEligibleGames,1848,"1,848",feed_coverage_by_season.csv,nfl,coverage,all,eligible_games
+NFLExcludePatchedGlobalD,0.0136881787228554,0.014,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,global,exclude_patched,D_upper
+NFLExcludePatchedGlobalP,0.7686,\ensuremath{0.769},/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,global,exclude_patched,p_value
+NFLFixedClockExcluded,0,0,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/fixed-clock-feed-summary.csv,nfl,fixed_clock,linear,excluded_games
+NFLFixedClockGames,1848,"1,848",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/fixed-clock-feed-summary.csv,nfl,fixed_clock,linear,games
+NFLFixedClockLOCFCells,197,197,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,fixed_clock_summary,locf,cells
+NFLFixedClockLOCFRMS,0.0261151757953763,2.6\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,fixed_clock_summary,locf,rms_gap
+NFLFixedClockLOCFSignificantCells,8,8,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,fixed_clock_summary,locf,significant_cells
+NFLFixedClockLinearCells,197,197,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,fixed_clock_summary,linear,cells
+NFLFixedClockLinearRMS,0.0286490310975531,2.9\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,fixed_clock_summary,linear,rms_gap
+NFLFixedClockLinearSignificantCells,8,8,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,fixed_clock_summary,linear,significant_cells
+NFLFranchiseLinkedGlobalD,0.0146002276283967,0.015,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,global,franchise_linked,D_upper
+NFLFranchiseLinkedGlobalP,0.7045,\ensuremath{0.705},/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,global,franchise_linked,p_value
+NFLGames,1848,"1,848",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,global,corrected,n
+NFLGlobalCritical,0.0470311189839189,0.047,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,global,corrected,critical_value
+NFLGlobalD,0.0146002276283967,0.015,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,global,corrected,D_upper
+NFLGlobalDyadicP,0.7364,\ensuremath{0.736},/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,global,corrected,p_value
+NFLLOSODMax,0.0254009485623945,0.025,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/leave-one-season-out.csv,nfl,leave_one_season_out,all,D_max
+NFLLOSODMin,0.00786537011996146,0.008,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/leave-one-season-out.csv,nfl,leave_one_season_out,all,D_min
+NFLLOSOTailMax,0.000126903553299487,0.0\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/leave-one-season-out.csv,nfl,leave_one_season_out,all,tail_max
+NFLLOSOTailMin,-0.0104519774011299,-1.0\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/leave-one-season-out.csv,nfl,leave_one_season_out,all,tail_min
+NFLLeaveSeasonRows,"2018 & 1,594 & 0.017 & -0.7\% \\
+2019 & 1,593 & 0.013 & -0.3\% \\
+2020 & 1,593 & 0.014 & -1.0\% \\
+2021 & 1,577 & 0.013 & -0.3\% \\
+2022 & 1,579 & 0.008 & -0.8\% \\
+2023 & 1,576 & 0.024 & -0.4\% \\
+2024 & 1,576 & 0.025 & 0.0\% \\","
+2018 & 1,594 & 0.017 & -0.7\% \\
+2019 & 1,593 & 0.013 & -0.3\% \\
+2020 & 1,593 & 0.014 & -1.0\% \\
+2021 & 1,577 & 0.013 & -0.3\% \\
+2022 & 1,579 & 0.008 & -0.8\% \\
+2023 & 1,576 & 0.024 & -0.4\% \\
+2024 & 1,576 & 0.025 & 0.0\% \\
+",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/leave-one-season-out.csv,nfl,leave_one_season_out,season,rows
+NFLMedianUpdatesPerGame,175,175,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/fixed-clock-feed-summary.csv,nfl,feed,all,median_updates
+NFLMinimumFeedCoverage,1,100.0\%,feed_coverage_by_season.csv,nfl,coverage,all,minimum_coverage
+NFLMissingCoverageRows,"2018 & 254 & 0 & 100.0\% \\
+2019 & 255 & 0 & 100.0\% \\
+2020 & 255 & 0 & 100.0\% \\
+2021 & 271 & 0 & 100.0\% \\
+2022 & 269 & 0 & 100.0\% \\
+2023 & 272 & 0 & 100.0\% \\
+2024 & 272 & 0 & 100.0\% \\","
+2018 & 254 & 0 & 100.0\% \\
+2019 & 255 & 0 & 100.0\% \\
+2020 & 255 & 0 & 100.0\% \\
+2021 & 271 & 0 & 100.0\% \\
+2022 & 269 & 0 & 100.0\% \\
+2023 & 272 & 0 & 100.0\% \\
+2024 & 272 & 0 & 100.0\% \\
+",feed_coverage_by_season.csv,nfl,coverage,season,rows
+NFLMissingFeedGames,0,0,feed_coverage_by_season.csv,nfl,coverage,all,missing_games
+NFLNonfinalGames,1,1,feed_coverage_by_season.csv,nfl,coverage,all,cancelled_or_nonfinal_games
+NFLPatchedGames,4,4,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/patch-audit.csv,nfl,artifact_audit,exact_one,games
+NFLPublishedUpdates,325922,"325,922",/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/fixed-clock-feed-summary.csv,nfl,feed,all,updates
+NFLRawGlobalD,0.0146002276283967,0.015,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,global,raw,D_upper
+NFLRawGlobalP,0.7353,\ensuremath{0.735},/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,global,raw,p_value
+NFLRoundingLowerGlobalD,0.0133747419377805,0.013,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,global,rounding_lower,D_upper
+NFLRoundingLowerGlobalP,0.7752,\ensuremath{0.775},/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,global,rounding_lower,p_value
+NFLRoundingLowerTailNinetyFiveRate,0.0449134199134199,4.5\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,tail,rounding_lower,tail_rate
+NFLRoundingUpperGlobalD,0.0164925654056077,0.016,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,global,rounding_upper,D_upper
+NFLRoundingUpperGlobalP,0.6786,\ensuremath{0.679},/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,global,rounding_upper,p_value
+NFLRoundingUpperTailNinetyFiveRate,0.0454545454545454,4.5\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,tail,rounding_upper,tail_rate
+NFLScheduledGames,1856,"1,856",feed_coverage_by_season.csv,nfl,coverage,all,scheduled_games
+NFLTailNinetyCILower,-0.0348025301738311,-3.5\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,tail,corrected,ci_lower
+NFLTailNinetyCIUpper,0.00678750254521014,0.7\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,tail,corrected,ci_upper
+NFLTailNinetyExcess,-0.01504329004329,-1.5\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,tail,corrected,tail_excess
+NFLTailNinetyFiveAtomRate,0,0.00\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,boundary,atom,tail_rate
+NFLTailNinetyFiveCILower,-0.0198098658845187,-2.0\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,tail,corrected,ci_lower
+NFLTailNinetyFiveCIUpper,0.0114039355866568,1.1\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,tail,corrected,ci_upper
+NFLTailNinetyFiveExcess,-0.00508658008658013,-0.5\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,tail,corrected,tail_excess
+NFLTailNinetyFiveRate,0.0449134199134199,4.5\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,tail,corrected,tail_rate
+NFLTailNinetyFiveStrictRate,0.0449134199134199,4.5\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,boundary,strict,tail_rate
+NFLTailNinetyNineCILower,-0.00311673971472144,-0.3\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,tail,corrected,ci_lower
+NFLTailNinetyNineCIUpper,0.0154095304103682,1.5\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,tail,corrected,ci_upper
+NFLTailNinetyNineExcess,0.00515151515151514,0.5\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,tail,corrected,tail_excess
+NFLTailNinetyNineRate,0.0151515151515152,1.5\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,tail,corrected,tail_rate
+NFLTailNinetyRate,0.08495670995671,8.5\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dependent-inference-results.csv,nfl,tail,corrected,tail_rate
+NFLTiedGames,7,7,feed_coverage_by_season.csv,nfl,coverage,all,tied_games
+NFLUpdateQOne,167,167,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/fixed-clock-feed-summary.csv,nfl,feed,all,q25_updates
+NFLUpdateQThree,185,185,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/fixed-clock-feed-summary.csv,nfl,feed,all,q75_updates
+SimulationBaseGrid,1000,"1,000",/Users/Jonathan/research/max-wp-loser/results/figures/manuscript/figures/simulation/null_pit_profile.csv,,simulation,coarsening,K_base
+SimulationCoarseningN,50000,"50,000",/Users/Jonathan/research/max-wp-loser/results/figures/manuscript/figures/simulation/null_tail_summary.csv,,simulation,coarsening,n
+ValidationInnerReplicates,399,399,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dyadic-bootstrap-validation.csv,,,,
+ValidationNBARhoFiftyDyadic,0.044,4.4\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dyadic-bootstrap-validation.csv,nba,validation,0.5,dyadic_rejection_rate
+ValidationNBARhoTwentyFiveDyadic,0.032,3.2\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dyadic-bootstrap-validation.csv,nba,validation,0.25,dyadic_rejection_rate
+ValidationNBARhoZeroDyadic,0,0.0\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dyadic-bootstrap-validation.csv,nba,validation,0,dyadic_rejection_rate
+ValidationNFLRhoFiftyDyadic,0.032,3.2\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dyadic-bootstrap-validation.csv,nfl,validation,0.5,dyadic_rejection_rate
+ValidationNFLRhoTwentyFiveDyadic,0.008,0.8\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dyadic-bootstrap-validation.csv,nfl,validation,0.25,dyadic_rejection_rate
+ValidationNFLRhoZeroDyadic,0,0.0\%,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dyadic-bootstrap-validation.csv,nfl,validation,0,dyadic_rejection_rate
+ValidationOuterSamples,250,250,/Users/Jonathan/research/max-wp-loser/results/tables/manuscript/dyadic-bootstrap-validation.csv,,,,

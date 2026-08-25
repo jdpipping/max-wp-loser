@@ -1,0 +1,1020 @@
+league,analysis,sample,estimand,threshold,estimate,ci_lower,ci_upper,p_value,n,n_games,replicates,seed,note
+nba,global,corrected,D_upper,,0.09675639586797852,,,1e-4,8276,,9999,20260815,Season-stratified dyadic pigeonhole bootstrap
+nba,global,corrected,dyadic_critical_value_95,,0.022758948193656425,,,,8276,,9999,20260815,
+nba,tail,corrected,tail_rate,0.9,0.12699371677138716,,,,8276,,9999,20260815,
+nba,tail,corrected,tail_excess,0.9,0.026993716771387177,0.014415475629688354,0.03987416421734994,,8276,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nba,tail,corrected,tail_rate,0.95,0.06319478008699855,,,,8276,,9999,20260815,
+nba,tail,corrected,tail_excess,0.95,0.013194780086998509,0.004272691833311505,0.022875196170874103,,8276,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nba,tail,corrected,tail_rate,0.99,0.010512324794586757,,,,8276,,9999,20260815,
+nba,tail,corrected,tail_excess,0.99,5.123247945867486e-4,-0.0029035878180110235,0.0046129773089634216,,8276,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nba,global,raw,D_upper,,0.09675639586797852,,,1e-4,8276,,9999,20260815,Season-stratified dyadic pigeonhole bootstrap
+nba,global,raw,dyadic_critical_value_95,,0.022797500570809915,,,,8276,,9999,20260815,
+nba,tail,raw,tail_rate,0.9,0.12759787336877718,,,,8276,,9999,20260815,
+nba,tail,raw,tail_excess,0.9,0.027597873368777198,0.015011228599754046,0.04052435265513447,,8276,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nba,tail,raw,tail_rate,0.95,0.06416143064282262,,,,8276,,9999,20260815,
+nba,tail,raw,tail_excess,0.95,0.014161430642822576,0.0052838863425536025,0.023811294090288475,,8276,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nba,tail,raw,tail_rate,0.99,0.01208313194780087,,,,8276,,9999,20260815,
+nba,tail,raw,tail_excess,0.99,0.0020831319478008606,-0.0015741765988343483,0.006239486426601138,,8276,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nba,global,exclude_patched,D_upper,,0.09600484261501213,,,1e-4,8260,,9999,20260815,Season-stratified dyadic pigeonhole bootstrap
+nba,global,exclude_patched,dyadic_critical_value_95,,0.02278657550112181,,,,8260,,9999,20260815,
+nba,tail,exclude_patched,tail_rate,0.9,0.12590799031476999,,,,8260,,9999,20260815,
+nba,tail,exclude_patched,tail_excess,0.9,0.025907990314770007,0.013259037795191348,0.03890741696929627,,8260,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nba,tail,exclude_patched,tail_rate,0.95,0.06234866828087167,,,,8260,,9999,20260815,
+nba,tail,exclude_patched,tail_excess,0.95,0.012348668280871625,0.003465803727135923,0.02207497222556212,,8260,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nba,tail,exclude_patched,tail_rate,0.99,0.010169491525423728,,,,8260,,9999,20260815,
+nba,tail,exclude_patched,tail_excess,0.99,1.694915254237192e-4,-0.0032335455954744905,0.004228346904027648,,8260,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nba,global,rounding_lower,D_upper,,0.09522708043316791,,,1e-4,8276,,9999,20260815,Season-stratified dyadic pigeonhole bootstrap
+nba,global,rounding_lower,dyadic_critical_value_95,,0.022776872525191016,,,,8276,,9999,20260815,
+nba,tail,rounding_lower,tail_rate,0.9,0.12699371677138716,,,,8276,,9999,20260815,
+nba,tail,rounding_lower,tail_excess,0.9,0.026993716771387177,0.014415475629688354,0.03987416421734994,,8276,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nba,tail,rounding_lower,tail_rate,0.95,0.06319478008699855,,,,8276,,9999,20260815,
+nba,tail,rounding_lower,tail_excess,0.95,0.013194780086998509,0.004272691833311505,0.022875196170874103,,8276,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nba,tail,rounding_lower,tail_rate,0.99,0.010512324794586757,,,,8276,,9999,20260815,
+nba,tail,rounding_lower,tail_excess,0.99,5.123247945867486e-4,-0.0029035878180110235,0.0046129773089634216,,8276,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nba,global,rounding_upper,D_upper,,0.09862540155230509,,,1e-4,8276,,9999,20260815,Season-stratified dyadic pigeonhole bootstrap
+nba,global,rounding_upper,dyadic_critical_value_95,,0.022744556601448876,,,,8276,,9999,20260815,
+nba,tail,rounding_upper,tail_rate,0.9,0.12820202996616722,,,,8276,,9999,20260815,
+nba,tail,rounding_upper,tail_excess,0.9,0.028202029966167247,0.01571010720886636,0.04123397823763952,,8276,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nba,tail,rounding_upper,tail_rate,0.95,0.06573223779603674,,,,8276,,9999,20260815,
+nba,tail,rounding_upper,tail_excess,0.95,0.01573223779603669,0.006597967571512903,0.025583274169343893,,8276,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nba,tail,rounding_upper,tail_rate,0.99,0.011720637989366844,,,,8276,,9999,20260815,
+nba,tail,rounding_upper,tail_excess,0.99,0.0017206379893668355,-0.0019214827233959395,0.005926902365300326,,8276,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nba,global,dyadic_calendar,D_upper,,0.09675639586797852,,,1e-4,8276,,9999,20260815,Season-stratified dyadic pigeonhole bootstrap
+nba,global,dyadic_calendar,dyadic_critical_value_95,,0.033807752610230966,,,,8276,,9999,20260815,
+nba,tail,dyadic_calendar,tail_rate,0.95,0.06319478008699855,,,,8276,,9999,20260815,
+nba,tail,dyadic_calendar,tail_excess,0.95,0.013194780086998509,6.564799460325791e-4,0.02728668074642262,,8276,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nba,global,franchise_linked,D_upper,,0.09675639586797852,,,1e-4,8276,,9999,20260815,Season-stratified dyadic pigeonhole bootstrap
+nba,global,franchise_linked,dyadic_critical_value_95,,0.02288354840389735,,,,8276,,9999,20260815,
+nba,tail,franchise_linked,tail_rate,0.95,0.06319478008699855,,,,8276,,9999,20260815,
+nba,tail,franchise_linked,tail_excess,0.95,0.013194780086998509,0.004195251080383105,0.022523924885938587,,8276,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nba,boundary,weak,tail_rate,0.9,0.12699371677138716,,,,8276,,9999,20260815,
+nba,boundary,strict,tail_rate,0.9,0.12699371677138716,,,,8276,,9999,20260815,
+nba,boundary,atom,tail_rate,0.9,0,,,,8276,,9999,20260815,
+nba,boundary,weak,tail_rate,0.95,0.06319478008699855,,,,8276,,9999,20260815,
+nba,boundary,strict,tail_rate,0.95,0.06319478008699855,,,,8276,,9999,20260815,
+nba,boundary,atom,tail_rate,0.95,0,,,,8276,,9999,20260815,
+nba,boundary,weak,tail_rate,0.99,0.010512324794586757,,,,8276,,9999,20260815,
+nba,boundary,strict,tail_rate,0.99,0.010512324794586757,,,,8276,,9999,20260815,
+nba,boundary,atom,tail_rate,0.99,0,,,,8276,,9999,20260815,
+nba,first_crossing,preterminal_strict,observed_loss,0.9,0.12413203717551544,0.11369751208079584,0.13415379945326988,,9361,8249,9999,20260815,
+nba,first_crossing,preterminal_strict,implied_loss,0.9,0.08704369191325798,0.08657916454369749,0.08749125864466249,,9361,8249,9999,20260815,
+nba,first_crossing,preterminal_strict,residual,0.9,0.037088345262257905,0.026528414857395356,0.04722797505973658,,9361,8249,9999,20260815,Boundary: strict ; each row from the same game receives the same game weight
+nba,first_crossing,preterminal_strict,observed_loss,0.95,0.0643633002079963,0.05591385031668037,0.0731119890556753,,8654,8154,9999,20260815,
+nba,first_crossing,preterminal_strict,implied_loss,0.95,0.04115946383175389,0.04083639375962586,0.04147607873978178,,8654,8154,9999,20260815,
+nba,first_crossing,preterminal_strict,residual,0.95,0.023203836376241904,0.014678789971613024,0.031996433437608676,,8654,8154,9999,20260815,Boundary: strict ; each row from the same game receives the same game weight
+nba,first_crossing,preterminal_strict,observed_loss,0.99,0.011306863002892454,0.007593038133726626,0.015673792229648712,,7606,7555,9999,20260815,
+nba,first_crossing,preterminal_strict,implied_loss,0.99,0.006997633447278704,0.00690951386260596,0.007085189053984003,,7606,7555,9999,20260815,
+nba,first_crossing,preterminal_strict,residual,0.99,0.004309229555613949,6.034620152579391e-4,0.008689062240788385,,7606,7555,9999,20260815,Boundary: strict ; each row from the same game receives the same game weight
+nba,first_crossing,preterminal,observed_loss,0.9,0.12506669512325258,0.11458075029588068,0.1350684894136707,,9371,8250,9999,20260815,
+nba,first_crossing,preterminal,implied_loss,0.9,0.08788912602710708,0.08741072788879285,0.08834557844358151,,9371,8250,9999,20260815,
+nba,first_crossing,preterminal,residual,0.9,0.03717756909614715,0.026575586998473885,0.04723774402312274,,9371,8250,9999,20260815,Boundary: weak ; each row from the same game receives the same game weight
+nba,first_crossing,preterminal,observed_loss,0.95,0.06510446727461619,0.05660655560680009,0.073878643231791,,8663,8156,9999,20260815,
+nba,first_crossing,preterminal,implied_loss,0.95,0.042060256262265325,0.04173179402762056,0.04238524059635653,,8663,8156,9999,20260815,
+nba,first_crossing,preterminal,residual,0.95,0.023044211012350827,0.01445535166861268,0.03183537914305524,,8663,8156,9999,20260815,Boundary: weak ; each row from the same game receives the same game weight
+nba,first_crossing,preterminal,observed_loss,0.99,0.012532637075718016,0.00865991259010527,0.017000754950840805,,7660,7598,9999,20260815,
+nba,first_crossing,preterminal,implied_loss,0.99,0.007794125326370787,0.0077006982976146506,0.007888137657923643,,7660,7598,9999,20260815,
+nba,first_crossing,preterminal,residual,0.99,0.004738511749347092,8.715110076420704e-4,0.009192553752445203,,7660,7598,9999,20260815,Boundary: weak ; each row from the same game receives the same game weight
+nba,first_crossing,all_updates_strict,observed_loss,0.9,0.12323682256867112,0.11296265828092752,0.1331767067929548,,9429,8269,9999,20260815,
+nba,first_crossing,all_updates_strict,implied_loss,0.9,0.08642538975501195,0.08590638798327786,0.08692864941362913,,9429,8269,9999,20260815,
+nba,first_crossing,all_updates_strict,residual,0.9,0.03681143281365959,0.026323070388551507,0.046871830635562765,,9429,8269,9999,20260815,Boundary: strict ; each row from the same game receives the same game weight
+nba,first_crossing,all_updates_strict,observed_loss,0.95,0.06313761051915666,0.054866284282100046,0.07170349896597385,,8822,8266,9999,20260815,
+nba,first_crossing,all_updates_strict,implied_loss,0.95,0.040399795964633646,0.0400184547279081,0.04077326335889616,,8822,8266,9999,20260815,
+nba,first_crossing,all_updates_strict,residual,0.95,0.022737814554522506,0.014388823961975163,0.03137096799080311,,8822,8266,9999,20260815,Boundary: strict ; each row from the same game receives the same game weight
+nba,first_crossing,all_updates_strict,observed_loss,0.99,0.010416666666666666,0.00704553444903108,0.014375799334140026,,8352,8265,9999,20260815,
+nba,first_crossing,all_updates_strict,implied_loss,0.99,0.0064100814176247375,0.006299073241080133,0.006520963945828734,,8352,8265,9999,20260815,
+nba,first_crossing,all_updates_strict,residual,0.99,0.004006585249042103,6.250657663045608e-4,0.007981691991563433,,8352,8265,9999,20260815,Boundary: strict ; each row from the same game receives the same game weight
+nba,first_crossing,all_updates,observed_loss,0.9,0.12416569551859308,0.11380973631288738,0.13411141631453358,,9439,8269,9999,20260815,
+nba,first_crossing,all_updates,implied_loss,0.9,0.0872653882826592,0.0867324284955624,0.08778210963334115,,9439,8269,9999,20260815,
+nba,first_crossing,all_updates,residual,0.9,0.03690030723593549,0.026394079076339783,0.04687830447318174,,9439,8269,9999,20260815,Boundary: weak ; each row from the same game receives the same game weight
+nba,first_crossing,all_updates,observed_loss,0.95,0.06388039415562351,0.05552601482501335,0.07248387115558635,,8829,8266,9999,20260815,
+nba,first_crossing,all_updates,implied_loss,0.95,0.04129357798165188,0.04090726600446672,0.04167273457470836,,8829,8266,9999,20260815,
+nba,first_crossing,all_updates,residual,0.95,0.022586816173971604,0.014148654934198066,0.031192582888410307,,8829,8266,9999,20260815,Boundary: weak ; each row from the same game receives the same game weight
+nba,first_crossing,all_updates,observed_loss,0.99,0.011600095670892131,0.008014806788019233,0.015657071161687828,,8362,8265,9999,20260815,
+nba,first_crossing,all_updates,implied_loss,0.99,0.0071785458024396336,0.0070634073060275564,0.007294091262908681,,8362,8265,9999,20260815,
+nba,first_crossing,all_updates,residual,0.99,0.004421549868452396,8.251761600586605e-4,0.008517001971708897,,8362,8265,9999,20260815,Boundary: weak ; each row from the same game receives the same game weight
+nba,fixed_clock,linear,gap_t00_bin01,0,-0.00421818181818182,-0.11621113966983765,0.10777477603347402,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t00_bin02,0,-0.007063882063882041,-0.1278026926926786,0.11367492856491453,,814,814,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t00_bin03,0,0.009178016726403823,-0.11486824468775829,0.13322427814056592,,837,837,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t00_bin04,0,-0.001347037484885112,-0.13088852104392013,0.12819444607414993,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t00_bin05,0,-0.01814215686274508,-0.1423916063606445,0.10610729263515432,,816,816,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t00_bin06,0,-0.0032026699029126023,-0.1349829873577643,0.1285776475519391,,824,824,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t00_bin07,0,-0.029836710369487488,-0.1534455182234246,0.09377209748444962,,839,839,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t00_bin08,0,-0.018413202933985306,-0.1366910998317371,0.0998646939637665,,818,818,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t00_bin09,0,-0.028846803377563342,-0.14352818747529933,0.08583458072017264,,829,829,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t00_bin10,0,-0.03912559808612438,-0.13301376058276823,0.054762564410519465,,836,836,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t01_bin01,0.05,0.019603504011482052,-0.09069112079148497,0.1298981288144491,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t01_bin02,0.05,0.024695834814062095,-0.09989839979391918,0.14929006942204337,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t01_bin03,0.05,-0.002472847846988726,-0.13225275153946164,0.12730705584548418,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t01_bin04,0.05,-0.027447018444302244,-0.16247898253358595,0.10758494564498144,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t01_bin05,0.05,-0.01221951647574156,-0.144299682570555,0.11986064961907188,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t01_bin06,0.05,-0.026191993379179473,-0.15191423676253596,0.09953025000417702,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t01_bin07,0.05,-0.03936076918925323,-0.15919086843149077,0.08046933005298433,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t01_bin08,0.05,-0.007361402228917751,-0.12143008694669881,0.10670728248886331,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t01_bin09,0.05,-0.004725302532314211,-0.10974243533552785,0.10029183027089944,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t01_bin10,0.05,-0.04736595874454359,-0.1416990744607342,0.04696715697164704,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t02_bin01,0.1,0.03187370745087174,-0.07925292785679439,0.14300034275853785,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t02_bin02,0.1,0.03822460786582608,-0.08106620199404915,0.1575154177257013,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t02_bin03,0.1,-0.01982894163192014,-0.15124973727354948,0.1115918540097092,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t02_bin04,0.1,-0.013648375483031529,-0.14635278678713,0.11905603582106697,,821,821,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t02_bin05,0.1,-0.012863915090252009,-0.14095405889406853,0.11522622871356453,,832,832,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t02_bin06,0.1,-0.019163391824045087,-0.14284095769377433,0.10451417404568415,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t02_bin07,0.1,-0.01474573005653814,-0.1348810720287485,0.10538961191567223,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t02_bin08,0.1,-0.028035239396397498,-0.13662875160775387,0.08055827281495888,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t02_bin09,0.1,-0.027497355229542282,-0.12889342291709108,0.07389871245800653,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t02_bin10,0.1,-0.03836363748538762,-0.1289237152476934,0.052196440276918145,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t03_bin01,0.15000000000000002,0.05496782885384584,-0.05128185308136099,0.16121751078905266,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t03_bin02,0.15000000000000002,0.010429480440386076,-0.1048314849011454,0.12569044578191754,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t03_bin03,0.15000000000000002,0.01602689343371772,-0.10388887431025766,0.1359426611776931,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t03_bin04,0.15000000000000002,0.018235294000654795,-0.12073273168000703,0.15720331968131662,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t03_bin05,0.15000000000000002,-0.025283465387511393,-0.16549954897225097,0.11493261819722819,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t03_bin06,0.15000000000000002,-0.04717367605135364,-0.17276477197054912,0.07841741986784184,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t03_bin07,0.15000000000000002,-0.008532508067849996,-0.12092957844117037,0.10386456230547038,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t03_bin08,0.15000000000000002,-0.03435120525453971,-0.1485763175539521,0.07987390704487266,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t03_bin09,0.15000000000000002,-0.027098135174044035,-0.12987080980643265,0.07567453945834457,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t03_bin10,0.15000000000000002,-0.035799236720151104,-0.1196138039918195,0.0480153305515173,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t04_bin01,0.2,0.05469112583074769,-0.04823394738485611,0.1576161990463515,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t04_bin02,0.2,0.0225530238085917,-0.10273408248639615,0.14784013010357955,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t04_bin03,0.2,0.01815585763247825,-0.1086722629817276,0.1449839782466841,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t04_bin04,0.2,-0.00656281066380875,-0.1330461231795333,0.11992050185191579,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t04_bin05,0.2,0.0041041410156437775,-0.12413472918614872,0.13234301121743627,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t04_bin06,0.2,-0.04004688666586479,-0.16522366019289558,0.08512988686116602,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t04_bin07,0.2,-0.012010815444392234,-0.12420778465868651,0.10018615376990203,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t04_bin08,0.2,-0.015407350134600076,-0.12926013472936954,0.09844543446016937,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t04_bin09,0.2,-0.03010603675665905,-0.13071981350095305,0.07050773998763493,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t04_bin10,0.2,-0.026409514629487825,-0.1007709020823904,0.04795187282341474,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t05_bin01,0.25,0.04634382566585956,-0.05300705843375384,0.14569470976547297,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t05_bin02,0.25,0.04030334377744306,-0.08367134545329798,0.1642780330081841,,823,823,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t05_bin03,0.25,0.0026884647500894803,-0.12931915151085943,0.13469608101103842,,830,830,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t05_bin04,0.25,-0.005863746958637485,-0.13934028565801387,0.12761279174073892,,822,822,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t05_bin05,0.25,-0.0021465201465201357,-0.13523451665300557,0.13094147635996528,,819,819,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t05_bin06,0.25,-0.03005515587529979,-0.1584749937741674,0.09836468202356784,,834,834,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t05_bin07,0.25,-0.007692400482509035,-0.12176596327725896,0.10638116231224089,,829,829,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t05_bin08,0.25,-0.02907246024833625,-0.1485599112174781,0.09041499072080561,,816,816,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t05_bin09,0.25,-0.02133173652694607,-0.11868444230848604,0.0760209692545939,,835,835,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t05_bin10,0.25,-0.013791817087845973,-0.08268743367569667,0.05510379950000472,,831,831,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t06_bin01,0.30000000000000004,0.033619457710019104,-0.060481298937101524,0.12772021435713973,,824,824,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t06_bin02,0.30000000000000004,0.040184686401345066,-0.07446788261458434,0.15483725541727447,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t06_bin03,0.30000000000000004,0.022842563235146735,-0.09952771192913443,0.1452128383994279,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t06_bin04,0.30000000000000004,-0.007312468043123934,-0.13562479888449458,0.1209998627982467,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t06_bin05,0.30000000000000004,0.009847122779341022,-0.1217199414476165,0.14141418700629854,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t06_bin06,0.30000000000000004,-0.014095061975118934,-0.14061734809151674,0.11242722414127888,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t06_bin07,0.30000000000000004,-0.012652886218884206,-0.13256434641523906,0.10725857397747064,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t06_bin08,0.30000000000000004,-0.027762699080179642,-0.1374839805483707,0.0819585823880114,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t06_bin09,0.30000000000000004,-0.03676033851035255,-0.13967976252569084,0.06615908550498573,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t06_bin10,0.30000000000000004,-0.013869780962215007,-0.08136447763012528,0.053624915705695254,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t07_bin01,0.35000000000000003,0.04597738040164395,-0.03956870160500932,0.1315234624082972,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t07_bin02,0.35000000000000003,0.02031342070118429,-0.0962409690280817,0.13686781043045027,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t07_bin03,0.35000000000000003,0.022271133491520396,-0.10282997023811992,0.14737223722116072,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t07_bin04,0.35000000000000003,0.01234734258549269,-0.11875138207924993,0.14344606725023532,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t07_bin05,0.35000000000000003,0.007048398759506979,-0.11616973132012062,0.1302665288391346,,824,824,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t07_bin06,0.35000000000000003,0.006646707180675211,-0.11573462070853954,0.12902803506988997,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t07_bin07,0.35000000000000003,-0.029821932081116567,-0.1486324490673862,0.08898858490515309,,829,829,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t07_bin08,0.35000000000000003,-0.033284321036175214,-0.1463613069908101,0.07979266491845965,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t07_bin09,0.35000000000000003,-0.02799149089922668,-0.11608492908014481,0.06010194728169146,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t07_bin10,0.35000000000000003,-0.01770680574721914,-0.0819534656188188,0.046539854124380525,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t08_bin01,0.4,0.039422998588109714,-0.04233562647392662,0.12118162365014605,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t08_bin02,0.4,0.04540098362138317,-0.06982315718769194,0.1606251244304583,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t08_bin03,0.4,0.02482084543967036,-0.0930233584579891,0.14266504933732982,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t08_bin04,0.4,0.017718674834999372,-0.11211410416813614,0.14755145383813487,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t08_bin05,0.4,-0.014179834368648702,-0.14262153601043037,0.11426186727313298,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t08_bin06,0.4,0.013833002382100328,-0.11255744625824782,0.1402234510224485,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t08_bin07,0.4,-0.019381941496442966,-0.1443418758096415,0.10557799281675556,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t08_bin08,0.4,-0.029639605387801075,-0.13256160071786446,0.07328238994226233,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t08_bin09,0.4,-0.03159519295703522,-0.12118714803292832,0.057996762118857875,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t08_bin10,0.4,-0.008412972437903376,-0.06276652536063324,0.04594058048482648,,829,829,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t09_bin01,0.45,0.03489479192799257,-0.04024599106229577,0.11003557491828092,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t09_bin02,0.45,0.0585786519125027,-0.04989662249845676,0.16705392632346217,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t09_bin03,0.45,0.00621329713141445,-0.11324314776341773,0.12566974202624664,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t09_bin04,0.45,0.026860796543630085,-0.10396625293856501,0.15768784602582517,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t09_bin05,0.45,-0.00653466204396261,-0.13180559032038594,0.11873626623246072,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t09_bin06,0.45,0.028274126311791038,-0.09804262668184587,0.15459087930542795,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t09_bin07,0.45,-0.01964071711217059,-0.1366058128222789,0.09732437859793773,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t09_bin08,0.45,-0.027393155754358,-0.13097577307408806,0.07618946156537207,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t09_bin09,0.45,-0.0382649561234272,-0.12396813503939026,0.04743822279253586,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t09_bin10,0.45,-0.014706712176458536,-0.06852899295414308,0.039115568601226,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t10_bin01,0.5,0.04336969696969697,-0.03363830736539288,0.12037770130478681,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t10_bin02,0.5,0.020752740560292336,-0.08130405584551821,0.12280953696610288,,821,821,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t10_bin03,0.5,0.04460796698355999,-0.07637108958635777,0.16558702355347774,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t10_bin04,0.5,5.57575757575751e-4,-0.12610133003826748,0.127216481553419,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t10_bin05,0.5,0.04667148014440432,-0.079109284035259,0.17245224432406764,,831,831,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t10_bin06,0.5,-0.014542021924482338,-0.14265582838213897,0.11357178453317429,,821,821,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t10_bin07,0.5,-0.0010870616686819714,-0.11207079399350883,0.10989667065614489,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t10_bin08,0.5,-0.03128705436781293,-0.129901443349695,0.06732733461406915,,830,830,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t10_bin09,0.5,-0.03048964677222902,-0.11297371075652671,0.051994417212068676,,821,821,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t10_bin10,0.5,-0.013620813397129141,-0.06225532529005032,0.03501369849579203,,836,836,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t11_bin01,0.55,0.03382174884460975,-0.03152660976228388,0.09917010745150337,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t11_bin02,0.55,0.03740422284674456,-0.06355272314315746,0.13836116883664656,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t11_bin03,0.55,0.05212357604611258,-0.07142310708709386,0.175670259179319,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t11_bin04,0.55,0.03343248813399299,-0.09165448280978672,0.1585194590777727,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t11_bin05,0.55,0.017226917967934744,-0.11240168222793234,0.14685551816380182,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t11_bin06,0.55,0.0034683968286086933,-0.11714125156728523,0.12407804522450262,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t11_bin07,0.55,-0.020922322357272594,-0.1403229338481988,0.09847828913365361,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t11_bin08,0.55,-0.021762746984486204,-0.11875477948602875,0.07522928551705635,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t11_bin09,0.55,-0.03342297210317734,-0.11044993155425485,0.04360398734790018,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t11_bin10,0.55,-0.008235670697108876,-0.04795874715234075,0.03148740575812299,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t12_bin01,0.6000000000000001,0.025214728303023768,-0.03214979207924379,0.08257924868529133,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t12_bin02,0.6000000000000001,0.0372374580788417,-0.05443649466579341,0.1289114108234768,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t12_bin03,0.6000000000000001,0.05005820291974482,-0.0709482755375465,0.17106468137703612,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t12_bin04,0.6000000000000001,0.04384597863373498,-0.08563025684747902,0.173322214114949,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t12_bin05,0.6000000000000001,0.03182218921387428,-0.09116502667186954,0.1548094050996181,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t12_bin06,0.6000000000000001,-6.276425153340199e-4,-0.12283239296997847,0.12157710793931042,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t12_bin07,0.6000000000000001,-0.01866714059865162,-0.12640668761410553,0.08907240641680231,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t12_bin08,0.6000000000000001,-0.03749453008648517,-0.13073848096437282,0.055749420791402486,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t12_bin09,0.6000000000000001,-0.02411216128260708,-0.09703277144133154,0.04880844887611738,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t12_bin10,0.6000000000000001,-0.0072717176768843225,-0.041190396539057005,0.026646961185288358,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t13_bin01,0.65,0.017460837097980908,-0.031830958048049834,0.06675263224401165,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t13_bin02,0.65,0.043655187000528166,-0.04843740202565001,0.13574777602670635,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t13_bin03,0.65,0.044616107512868076,-0.07154993843037602,0.16078215345611216,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t13_bin04,0.65,0.04075570121680039,-0.08199212487085596,0.16350352730445672,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t13_bin05,0.65,0.026687598035695016,-0.09497050812423255,0.14834570419562257,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t13_bin06,0.65,0.026421722322991024,-0.0919510922865189,0.14479453693250097,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t13_bin07,0.65,-0.022753204455545857,-0.1332852500811153,0.0877788411700236,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t13_bin08,0.65,-0.03130670301727256,-0.12311623585361361,0.06050282981906851,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t13_bin09,0.65,-0.023240513348676696,-0.08478976889506526,0.038308742197711874,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t13_bin10,0.65,-0.005620939804198474,-0.035474490060457095,0.024232610452060144,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t14_bin01,0.7000000000000001,0.012587138637613137,-0.027040060396643483,0.052214337671869754,,824,824,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t14_bin02,0.7000000000000001,0.04709055133213319,-0.04016913904641338,0.13435024171067977,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t14_bin03,0.7000000000000001,0.050298059991476914,-0.06422466884201775,0.1648207888249716,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t14_bin04,0.7000000000000001,0.04166572220738154,-0.08311473053123425,0.16644617494599734,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t14_bin05,0.7000000000000001,0.017803843385988737,-0.1044184835582392,0.14002617033021666,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t14_bin06,0.7000000000000001,0.01083295399382905,-0.10606295725053984,0.12772886523819793,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t14_bin07,0.7000000000000001,-0.022320478139191493,-0.12803828013092933,0.08339732385254635,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t14_bin08,0.7000000000000001,-0.016432904790239632,-0.09802191530542612,0.06515610572494684,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t14_bin09,0.7000000000000001,-0.024412766853862487,-0.0838396677064582,0.035014133998733224,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t14_bin10,0.7000000000000001,-0.0013523701337119563,-0.022476024804311157,0.019771284536887243,,829,829,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t15_bin01,0.75,0.001389024390243889,-0.021618339038183994,0.02439638781867177,,820,820,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t15_bin02,0.75,0.03419588875453445,-0.04186173936675456,0.11025351687582347,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t15_bin03,0.75,0.06536911942098915,-0.04644583901546388,0.17718407785744217,,829,829,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t15_bin04,0.75,0.024486714975845435,-0.09750759311357439,0.14648102306526525,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t15_bin05,0.75,0.041231515151515165,-0.08311981673102012,0.16558284703405043,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t15_bin06,0.75,0.008900900212005774,-0.11099338543808818,0.12879518586209973,,829,829,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t15_bin07,0.75,-0.007532174009667205,-0.1034615339475033,0.0883971859281689,,820,820,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t15_bin08,0.75,-0.016019230769230782,-0.09363458522013285,0.06159612368167128,,832,832,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t15_bin09,0.75,-0.020891072363011125,-0.07157867768047037,0.02979653295444812,,784,784,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t15_bin10,0.75,3.24050717775527e-4,-0.011571699541072228,0.012219800976623283,,871,871,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t16_bin01,0.8,0.0012440412890967418,-0.01634771236663298,0.018835794944826463,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t16_bin02,0.8,0.03385366869877463,-0.03259895627493723,0.1003062936724865,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t16_bin03,0.8,0.05971759536326721,-0.05196630230732834,0.17140149303386276,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t16_bin04,0.8,0.05366897319748064,-0.06982389462292521,0.17716184101788648,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t16_bin05,0.8,0.02000502369468899,-0.11124807314139107,0.15125812053076904,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t16_bin06,0.8,-4.002878148933548e-4,-0.11598019607125427,0.11517962044146755,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t16_bin07,0.8,-0.021756210123395306,-0.11719771864803401,0.0736852984012434,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t16_bin08,0.8,-0.0104975528721013,-0.07469792965304074,0.05370282390883814,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t16_bin09,0.8,-0.004716442560497086,-0.03983261842801089,0.030399733307016716,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t16_bin10,0.8,0.0013604204904488458,0.0011979310454460238,0.0015229099354516678,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t17_bin01,0.8500000000000001,-4.4444537474948016e-4,-0.009350014493534991,0.008461123744036032,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t17_bin02,0.8500000000000001,0.018203232400608838,-0.03323958229059128,0.06964604709180895,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t17_bin03,0.8500000000000001,0.0513835047617691,-0.04705702542493874,0.14982403494847696,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t17_bin04,0.8500000000000001,0.051316223502951286,-0.0702868140380348,0.17291926104393737,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t17_bin05,0.8500000000000001,0.009883278946520989,-0.11869476492315159,0.13846132281619358,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t17_bin06,0.8500000000000001,0.014133387384394172,-0.09939865786299854,0.12766543263178687,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t17_bin07,0.8500000000000001,-0.01116862494879711,-0.1008328905554775,0.07849564065788328,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t17_bin08,0.8500000000000001,-0.003680241845444031,-0.057115327753539565,0.04975484406265151,,822,822,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t17_bin09,0.8500000000000001,-0.0014022282996575945,-0.023911720951829495,0.021107264352514303,,831,831,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t17_bin10,0.8500000000000001,-2.0899670831654192e-4,-0.00912645339280084,0.008708459976167756,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t18_bin01,0.9,-0.0010148788005288113,-0.0010343121144263511,-9.954454866312715e-4,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t18_bin02,0.9,0.007039899646700549,-0.02789062575204039,0.04197042504544149,,824,824,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t18_bin03,0.9,0.03530706812557089,-0.04938305503475742,0.1199971912858992,,829,829,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t18_bin04,0.9,0.04054698933771233,-0.07557072570636822,0.15666470438179286,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t18_bin05,0.9,0.031367687146976866,-0.09532703176520284,0.15806240605915656,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t18_bin06,0.9,0.01486201714242113,-0.08968323052416696,0.11940726480900923,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t18_bin07,0.9,-0.027910393598275334,-0.11165040608169896,0.055829618885148286,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t18_bin08,0.9,0.0037196350344398765,-0.03044718744988292,0.03788645751876267,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t18_bin09,0.9,6.195934178730289e-4,-0.005620656889810905,0.006859843725556963,,1655,1655,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t19_bin01,0.95,-0.0018558996651821579,-0.006298196865306922,0.0025863975349426065,,1652,1652,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t19_bin02,0.95,-0.0054723315688227055,-0.057830872895992216,0.0468862097583468,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t19_bin03,0.95,0.008808533048651788,-0.10435472079047162,0.12197178688777519,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t19_bin04,0.95,0.05411738545584544,-0.06931283717492476,0.17754760808661565,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t19_bin05,0.95,0.02380723787696009,-0.07784929183317077,0.12546376758709094,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t19_bin06,0.95,0.0017138311875986097,-0.05611239110480203,0.05954005347999925,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,linear,gap_t19_bin07,0.95,0.0015431718386146162,-0.0037259535801022385,0.006812297257331471,,2480,2480,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t00_bin01,0,-0.00421818181818182,-0.1103984244606034,0.10196206082423977,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t00_bin02,0,-0.007063882063882041,-0.12153604580389404,0.10740828167612995,,814,814,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t00_bin03,0,0.009178016726403823,-0.10842993281348996,0.12678596626629762,,837,837,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t00_bin04,0,-0.001347037484885112,-0.1241649933672267,0.12147091839745647,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t00_bin05,0,-0.01814215686274508,-0.13594274851556395,0.0996584347900738,,816,816,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t00_bin06,0,-0.0032026699029126023,-0.12814325859051298,0.12173791878468779,,824,824,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t00_bin07,0,-0.029836710369487488,-0.1470299112853561,0.08735649054638113,,839,839,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t00_bin08,0,-0.018413202933985306,-0.13055218053357484,0.09372577466560424,,818,818,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t00_bin09,0,-0.028846803377563342,-0.13757593620567998,0.07988232945055329,,829,829,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t00_bin10,0,-0.03912559808612438,-0.12814072962992756,0.0498895334576788,,836,836,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t01_bin01,0.05,0.020999999999999994,-0.08236238505523816,0.12436238505523814,,824,824,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t01_bin02,0.05,0.031533007334963295,-0.09079617887090613,0.15386219354083272,,818,818,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t01_bin03,0.05,-0.005192583732057397,-0.1269665606781822,0.11658139321406742,,836,836,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t01_bin04,0.05,-0.02834587378640777,-0.15259301566010902,0.09590126808729349,,824,824,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t01_bin05,0.05,-0.010888077858880768,-0.1322814059841086,0.11050525026634704,,822,822,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t01_bin06,0.05,-0.024218487394957976,-0.1397126606952439,0.09127568590532796,,833,833,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t01_bin07,0.05,-0.034410909090909096,-0.15019628095027293,0.08137446276845473,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t01_bin08,0.05,-0.013882208588957006,-0.12440595673605202,0.09664153955813802,,815,815,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t01_bin09,0.05,-0.009977299880525705,-0.11210714392887308,0.09215254416782168,,837,837,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t01_bin10,0.05,-0.049051744885679906,-0.13998984725652258,0.04188635748516276,,831,831,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t02_bin01,0.1,0.02824205378973105,-0.07697035484423048,0.13345446242369258,,818,818,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t02_bin02,0.1,0.02251022864019254,-0.0938466079056765,0.1388670651860616,,831,831,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t02_bin03,0.1,0.0037146311970979655,-0.12357960248905862,0.13100886488325456,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t02_bin04,0.1,-0.020600487210718648,-0.15215968618998296,0.11095871176854567,,821,821,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t02_bin05,0.1,-0.004216545012165441,-0.12681467084771433,0.11838158082338346,,822,822,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t02_bin06,0.1,-0.023540119760479036,-0.1424825251534228,0.09540228563246472,,835,835,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t02_bin07,0.1,-0.019040000000000026,-0.13829811154175387,0.10021811154175381,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t02_bin08,0.1,-0.019622572815533965,-0.12646953469159997,0.08722438906053204,,824,824,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t02_bin09,0.1,-0.02940530759951749,-0.1271781767322279,0.06836756153319293,,829,829,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t02_bin10,0.1,-0.04052460984393759,-0.1243073584288018,0.04325813874092663,,833,833,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t03_bin01,0.15000000000000002,0.053590024330900224,-0.04764591978593305,0.1548259684477335,,822,822,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t03_bin02,0.15000000000000002,0.018669481302774436,-0.09300392082790332,0.13034288343345218,,829,829,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t03_bin03,0.15000000000000002,0.0014920634920634833,-0.11585438030902469,0.11883850729315167,,819,819,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t03_bin04,0.15000000000000002,0.027406962785114026,-0.09798790398030087,0.15280182955052893,,833,833,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t03_bin05,0.15000000000000002,-0.03469660194174758,-0.16697633058236222,0.09758312669886704,,824,824,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t03_bin06,0.15000000000000002,-0.04241155234657041,-0.16184717317147881,0.07702406847833801,,831,831,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t03_bin07,0.15000000000000002,0.0038604368932038773,-0.10739450715252948,0.11511538093893724,,824,824,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t03_bin08,0.15000000000000002,-0.04329079754601227,-0.15734804689284404,0.07076645180081952,,815,815,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t03_bin09,0.15000000000000002,-0.030155952380952377,-0.12949134451097635,0.06917943974907159,,840,840,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t03_bin10,0.15000000000000002,-0.035423913043478264,-0.11376150748457713,0.0429136813976206,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t04_bin01,0.2,0.06018712029161604,-0.037639833665565454,0.15801407424879754,,823,823,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t04_bin02,0.2,0.02781182147165259,-0.09228336605993992,0.1479070090032451,,829,829,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t04_bin03,0.2,0.015008536585365868,-0.11288920741556409,0.14290628058629581,,820,820,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t04_bin04,0.2,-0.0127139393939394,-0.13941055988138765,0.11398268109350886,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t04_bin05,0.2,0.002043321299638972,-0.11986912209335672,0.12395576469263465,,831,831,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t04_bin06,0.2,-0.03852753977968175,-0.1558007944205192,0.07874571486115571,,817,817,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t04_bin07,0.2,-0.009025301204819286,-0.11651954808257138,0.09846894567293281,,830,830,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t04_bin08,0.2,-0.016731559854897233,-0.12532809779358792,0.09186497808379346,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t04_bin09,0.2,-0.0402581032412965,-0.13675585729057055,0.056239650807977534,,833,833,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t04_bin10,0.2,-0.01983253012048193,-0.08889871212967607,0.049233651888712204,,830,830,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t05_bin01,0.25,0.04634382566585956,-0.04785049853807149,0.1405381498697906,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t05_bin02,0.25,0.03951338199513382,-0.07792947585382454,0.15695623984409218,,822,822,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t05_bin03,0.25,0.0026674698795180886,-0.12249602486652515,0.12783096462556132,,830,830,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t05_bin04,0.25,-0.0051725394896719274,-0.131536479424121,0.12119140044477715,,823,823,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t05_bin05,0.25,-0.0021465201465201357,-0.12832691606543592,0.12403387577239564,,819,819,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t05_bin06,0.25,-0.03005515587529979,-0.1518096823185051,0.09169937056790554,,834,834,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t05_bin07,0.25,-0.007692400482509035,-0.11584525945669479,0.10046045849167672,,829,829,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t05_bin08,0.25,-0.029342331288343577,-0.14274507025755725,0.08406040768087011,,815,815,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t05_bin09,0.25,-0.021087320574162648,-0.11341705311766415,0.07124241196933884,,836,836,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t05_bin10,0.25,-0.013791817087845973,-0.07911157849630022,0.051527944320608275,,831,831,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t06_bin01,0.30000000000000004,0.03666463414634145,-0.05397574033187729,0.12730500862456018,,820,820,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t06_bin02,0.30000000000000004,0.043051932367149756,-0.06601597149928168,0.1521198362335812,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t06_bin03,0.30000000000000004,0.011572803850782189,-0.10695454029407596,0.13010014799564035,,831,831,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t06_bin04,0.30000000000000004,0.00263349514563107,-0.11606944723337691,0.12133643752463906,,824,824,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t06_bin05,0.30000000000000004,0.009921116504854343,-0.11538603483006495,0.13522826783977362,,824,824,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t06_bin06,0.30000000000000004,-0.00934666666666665,-0.12998815267516456,0.11129481934183126,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t06_bin07,0.30000000000000004,-0.030389156626505997,-0.14466624758977145,0.08388793433675946,,830,830,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t06_bin08,0.30000000000000004,-0.022907654921020676,-0.12300603238890728,0.07719072254686593,,823,823,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t06_bin09,0.30000000000000004,-0.03354698795180722,-0.12899415399797132,0.06190017809435687,,830,830,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t06_bin10,0.30000000000000004,-0.014502409638554205,-0.07897632670439608,0.049971507427287676,,830,830,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t07_bin01,0.35000000000000003,0.038976800976800965,-0.04352946436897294,0.12148306632257487,,819,819,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t07_bin02,0.35000000000000003,0.028159420289855068,-0.08419702536201526,0.1405158659417254,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t07_bin03,0.35000000000000003,0.01475698663426487,-0.10493929800476401,0.13445327127329376,,823,823,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t07_bin04,0.35000000000000003,0.025186440677966083,-0.09499109759110833,0.1453639789470405,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t07_bin05,0.35000000000000003,7.796407185628667e-4,-0.11574768822165354,0.11730696965877926,,835,835,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t07_bin06,0.35000000000000003,0.007784503631961246,-0.11008297383311254,0.12565198109703504,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t07_bin07,0.35000000000000003,-0.02403631961259079,-0.142197831315222,0.09412519209004042,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t07_bin08,0.35000000000000003,-0.03299879227053141,-0.13985926316328148,0.07386167862221868,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t07_bin09,0.35000000000000003,-0.03181796116504854,-0.11799772200216369,0.054361799672066606,,824,824,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t07_bin10,0.35000000000000003,-0.020885542168674696,-0.08275086383671035,0.04097977949936095,,830,830,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t08_bin01,0.4,0.03902181818181819,-0.037759433369948435,0.11580306973358481,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t08_bin02,0.4,0.04049331713244229,-0.06711896582528329,0.14810560009016785,,823,823,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t08_bin03,0.4,0.03227951807228915,-0.07898963535474554,0.14354867149932385,,830,830,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t08_bin04,0.4,0.015723095525997564,-0.10503794120380827,0.13648413225580341,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t08_bin05,0.4,-0.030477521263669483,-0.1533358050285245,0.09238076250118553,,823,823,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t08_bin06,0.4,0.03442028985507246,-0.08119761588820648,0.15003819559835138,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t08_bin07,0.4,-0.017894289185905216,-0.13797591139104043,0.10218733301922998,,823,823,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t08_bin08,0.4,-0.03573944511459589,-0.1344149522935646,0.0629360620643728,,829,829,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t08_bin09,0.4,-0.03326876513317192,-0.12002044897401709,0.05348291870767325,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t08_bin10,0.4,-0.008034897713598069,-0.05997513667761504,0.0439053412504189,,831,831,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t09_bin01,0.45,0.034391041162227604,-0.03510231824660284,0.10388440057105805,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t09_bin02,0.45,0.051126520681265206,-0.05305594007137972,0.15530898143391014,,822,822,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t09_bin03,0.45,0.018111786148238163,-0.09676095557742181,0.13298452787389814,,823,823,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t09_bin04,0.45,0.02364380264741277,-0.09882071091736899,0.14610831621219453,,831,831,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t09_bin05,0.45,0.006167070217917679,-0.11106868984862474,0.1234028302844601,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t09_bin06,0.45,0.01681067961165047,-0.10338997768919475,0.13701133691249567,,824,824,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t09_bin07,0.45,-0.013866265060240931,-0.126636626475884,0.09890409635540215,,830,830,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t09_bin08,0.45,-0.03464390243902438,-0.13557540322437894,0.06628759834633018,,820,820,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t09_bin09,0.45,-0.039431680773881525,-0.12024912865510935,0.0413857671073463,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t09_bin10,0.45,-0.013782296650717691,-0.06412010740490842,0.03655551410347303,,836,836,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t10_bin01,0.5,0.04336969696969697,-0.029641398929201097,0.11638079286859504,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t10_bin02,0.5,0.020752740560292336,-0.07600705231910401,0.11751253343968868,,821,821,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t10_bin03,0.5,0.04495767835550183,-0.06976952994738705,0.15968488665839073,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t10_bin04,0.5,0.0037343750000000306,-0.11554943474389841,0.12301818474389846,,832,832,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t10_bin05,0.5,0.043855582524271866,-0.07603922361619385,0.16375038866473757,,824,824,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t10_bin06,0.5,-0.015283454987834587,-0.1367024062127295,0.10613549623706031,,822,822,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t10_bin07,0.5,-0.0010870616686819714,-0.1063104601186181,0.10413633678125415,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t10_bin08,0.5,-0.031306024096385526,-0.12479898199740615,0.062186933804635094,,830,830,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t10_bin09,0.5,-0.03048964677222902,-0.10869258109946328,0.04771328755500525,,821,821,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t10_bin10,0.5,-0.013620813397129141,-0.05973107222631638,0.0324894454320581,,836,836,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t11_bin01,0.55,0.02952503052503053,-0.031305191771791585,0.09035525282185265,,819,819,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t11_bin02,0.55,0.04190447400241836,-0.05327209337747333,0.13708104138231006,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t11_bin03,0.55,0.052785114045618226,-0.06370390348908905,0.1692741315803255,,833,833,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t11_bin04,0.55,0.04343926380368097,-0.07409947965734204,0.160978007264704,,815,815,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t11_bin05,0.55,-0.0043985594237695,-0.12669421761577118,0.11789709876823219,,833,833,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t11_bin06,0.55,0.017260290556900728,-0.09818033692167778,0.13270091803547923,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t11_bin07,0.55,-0.023692865779927418,-0.1315097783034861,0.08412404674363125,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t11_bin08,0.55,-0.02068599033816425,-0.10923999635148793,0.06786801567515943,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t11_bin09,0.55,-0.03408262454434995,-0.10721369815441317,0.039048449065713274,,823,823,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t11_bin10,0.55,-0.01004676258992805,-0.04918598939763676,0.02909246421778066,,834,834,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t12_bin01,0.6000000000000001,0.027403422982885096,-0.027155769754390623,0.08196261572016081,,818,818,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t12_bin02,0.6000000000000001,0.031238895558223297,-0.0526299377829161,0.11510772889936269,,833,833,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t12_bin03,0.6000000000000001,0.05842060606060605,-0.059208358192645416,0.1760495703138575,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t12_bin04,0.6000000000000001,0.03685748792270532,-0.08619213671328906,0.15990711255869972,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t12_bin05,0.6000000000000001,0.035013333333333306,-0.08340867278788958,0.1534353394545562,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t12_bin06,0.6000000000000001,0.0029768292682926744,-0.10798066742271499,0.11393432595930035,,820,820,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t12_bin07,0.6000000000000001,-0.011294964028776984,-0.1125902662992659,0.09000033824171193,,834,834,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t12_bin08,0.6000000000000001,-0.04497293972939728,-0.13857173866672357,0.048625859207929,,813,813,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t12_bin09,0.6000000000000001,-0.028353790613718413,-0.09905482423796984,0.04234724301053301,,831,831,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t12_bin10,0.6000000000000001,-0.005415274463007136,-0.035742430056268495,0.02491188113025422,,838,838,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t13_bin01,0.65,0.019748786407766977,-0.028222982025205706,0.06772055484073966,,824,824,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t13_bin02,0.65,0.041949152542372886,-0.04150939533088305,0.12540770041562882,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t13_bin03,0.65,0.04711942098914356,-0.062390393078441984,0.1566292350567291,,829,829,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t13_bin04,0.65,0.032510948905109485,-0.08524164705945451,0.15026354486967347,,822,822,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t13_bin05,0.65,0.03429759036144577,-0.08179032398286795,0.15038550470575948,,830,830,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t13_bin06,0.65,0.022229927007299262,-0.09200041141157064,0.13646026542616915,,822,822,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t13_bin07,0.65,-0.021182587666263616,-0.12558167459805358,0.08321649926552635,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t13_bin08,0.65,-0.025100000000000004,-0.11167113917964563,0.06147113917964563,,830,830,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t13_bin09,0.65,-0.028831719128329283,-0.09081962017067179,0.03315618191401322,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t13_bin10,0.65,-0.005433051869722549,-0.033687891079364485,0.02282178733991939,,829,829,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t14_bin01,0.7000000000000001,0.00785121951219512,-0.026001464850625974,0.04170390387501621,,820,820,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t14_bin02,0.7000000000000001,0.052165458937198095,-0.033654538287852115,0.1379854561622483,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t14_bin03,0.7000000000000001,0.04365342960288808,-0.06274297168226016,0.1500498308880363,,831,831,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t14_bin04,0.7000000000000001,0.04403757575757573,-0.07581458121792495,0.16388973273307642,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t14_bin05,0.7000000000000001,0.022179049939098628,-0.09597300428595752,0.14033110416415479,,821,821,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t14_bin06,0.7000000000000001,0.019474127557160045,-0.09122120084562998,0.13016945595995008,,831,831,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t14_bin07,0.7000000000000001,-0.026946601941747576,-0.12918979532840882,0.07529659144491369,,824,824,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t14_bin08,0.7000000000000001,-0.01970681265206814,-0.10124595118873862,0.06183232588460234,,822,822,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t14_bin09,0.7000000000000001,-0.02552392344497606,-0.08190693531408197,0.030859088424129856,,836,836,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t14_bin10,0.7000000000000001,-0.0024945586457073878,-0.023775878274197894,0.01878676098278312,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t15_bin01,0.75,0.001389024390243889,-0.02042419921108927,0.02320224799157705,,820,820,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t15_bin02,0.75,0.03419588875453445,-0.03791415783806148,0.10630593534713037,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t15_bin03,0.75,0.06536911942098915,-0.04064236242201255,0.17138060126399085,,829,829,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t15_bin04,0.75,0.024486714975845435,-0.09117578275983174,0.14014921271152261,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t15_bin05,0.75,0.041231515151515165,-0.07666567093482118,0.1591287012378515,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t15_bin06,0.75,0.008902291917973489,-0.10476955737868868,0.12257414121463564,,829,829,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t15_bin07,0.75,-0.007560975609756134,-0.0984871345162672,0.08336518329675494,,820,820,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t15_bin08,0.75,-0.016019230769230782,-0.08960615379068118,0.05756769225221961,,832,832,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t15_bin09,0.75,-0.020911989795918313,-0.06896868005837173,0.0271447004665351,,784,784,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t15_bin10,0.75,3.260619977037853e-4,-0.010952364691619365,0.011604488687026935,,871,871,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t16_bin01,0.8,0.002642066420664208,-0.015766333380751042,0.021050466222079456,,813,813,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t16_bin02,0.8,0.03170419161676645,-0.031205968121847158,0.09461435135538006,,835,835,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t16_bin03,0.8,0.0635409638554217,-0.03902526791376759,0.166107195624611,,830,830,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t16_bin04,0.8,0.04996852300242131,-0.0684446502295912,0.16838169623443383,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t16_bin05,0.8,0.023655797101449258,-0.09948061141713978,0.1467922056200383,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t16_bin06,0.8,-0.01227317073170733,-0.1249104372976683,0.10036409583425364,,820,820,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t16_bin07,0.8,-0.008901085645355846,-0.09939500382513983,0.08159283253442814,,829,829,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t16_bin08,0.8,-0.013946601941747573,-0.07727026282083754,0.0493770589373424,,824,824,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t16_bin09,0.8,-0.00798910411622275,-0.044161651504910034,0.028183443272464533,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t16_bin10,0.8,0.0013764988009592326,0.0012092095387711112,0.001543788063147354,,834,834,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t17_bin01,0.8500000000000001,-0.0015245901639344263,-0.0017496979320963191,-0.0012994823957725335,,793,793,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t17_bin02,0.8500000000000001,0.018809133489461352,-0.029536165104196085,0.06715443208311879,,854,854,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t17_bin03,0.8500000000000001,0.05624278846153847,-0.035543598265826766,0.1480291751889037,,832,832,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t17_bin04,0.8500000000000001,0.044521263669501814,-0.07193638071504485,0.16097890805404846,,823,823,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t17_bin05,0.8500000000000001,0.01024484848484847,-0.1098315302011389,0.13032122717083583,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t17_bin06,0.8500000000000001,0.017493961352656993,-0.08770383263494996,0.12269175534026394,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t17_bin07,0.8500000000000001,-0.016175970873786406,-0.10136482600882728,0.06901288426125447,,824,824,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t17_bin08,0.8500000000000001,-0.0016601226993864901,-0.0503525399285048,0.047032294529731816,,815,815,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t17_bin09,0.8500000000000001,-6.325553560741964e-4,-0.012100466675902059,0.010835355963753667,,1671,1671,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t18_bin01,0.9,-0.001,-0.0010000000000000102,-9.999999999999898e-4,,808,808,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t18_bin02,0.9,0.008029868578255684,-0.025805078806682535,0.0418648159631939,,837,837,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t18_bin03,0.9,0.03345968712394706,-0.045329181017269335,0.11224855526516346,,831,831,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t18_bin04,0.9,0.042191051995163244,-0.07168698189801886,0.15606908588834534,,827,827,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t18_bin05,0.9,0.03915552855407048,-0.07932407378189565,0.1576351308900366,,823,823,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t18_bin06,0.9,0.013684019370460057,-0.0844024845745373,0.11177052331545742,,826,826,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t18_bin07,0.9,-0.03401328502415459,-0.11705000773383767,0.04902343768552848,,828,828,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t18_bin08,0.9,0.0053682219419924565,-0.027361953587604494,0.038098397471589406,,793,793,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t18_bin09,0.9,2.594562647754047e-4,-0.00672464368225188,0.007243556211802689,,1692,1692,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t19_bin01,0.95,-0.00183587553386212,-0.006125115216092614,0.0024533641483683736,,1639,1639,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t19_bin02,0.95,6.396181384248217e-4,-0.051615624522250284,0.05289486079909993,,838,838,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t19_bin03,0.95,0.007184242424242434,-0.09702172445989067,0.11139020930837555,,825,825,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t19_bin04,0.95,0.05801204819277105,-0.06029008438438132,0.17631418076992342,,830,830,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t19_bin05,0.95,0.020628048780487816,-0.07659854959888468,0.1178546471598603,,820,820,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t19_bin06,0.95,-0.002109243697478965,-0.057936269050913446,0.05371778165595551,,833,833,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock,locf,gap_t19_bin07,0.95,0.0012411290322580603,-0.004461552822783076,0.006943810887299197,,2480,2480,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nba,fixed_clock_summary,linear,rms_gap,,0.027088290796277687,,,,196,,9999,20260815,Descriptive RMS gap across fixed-time adaptive bins
+nba,fixed_clock_summary,locf,rms_gap,,0.027664241189750714,,,,195,,9999,20260815,Descriptive RMS gap across fixed-time adaptive bins
+nba,leave_one_season_out,2018,D_upper,,0.0933643132063573,,,,7054,,9999,20260815,Descriptive; seven seasons do not support season-level inference
+nba,leave_one_season_out,2018,tail_excess,0.95,0.014502409980153105,,,,7054,,9999,20260815,Descriptive
+nba,leave_one_season_out,2019,D_upper,,0.09706304995742243,,,,7046,,9999,20260815,Descriptive; seven seasons do not support season-level inference
+nba,leave_one_season_out,2019,tail_excess,0.95,0.012446778313936986,,,,7046,,9999,20260815,Descriptive
+nba,leave_one_season_out,2020,D_upper,,0.09435401965519402,,,,7223,,9999,20260815,Descriptive; seven seasons do not support season-level inference
+nba,leave_one_season_out,2020,tail_excess,0.95,0.012854769486363007,,,,7223,,9999,20260815,Descriptive
+nba,leave_one_season_out,2021,D_upper,,0.10036555148340415,,,,7196,,9999,20260815,Descriptive; seven seasons do not support season-level inference
+nba,leave_one_season_out,2021,tail_excess,0.95,0.013090605892162308,,,,7196,,9999,20260815,Descriptive
+nba,leave_one_season_out,2022,D_upper,,0.10165234519478039,,,,7046,,9999,20260815,Descriptive; seven seasons do not support season-level inference
+nba,leave_one_season_out,2022,tail_excess,0.95,0.012588702810105018,,,,7046,,9999,20260815,Descriptive
+nba,leave_one_season_out,2023,D_upper,,0.093351506809698,,,,7046,,9999,20260815,Descriptive; seven seasons do not support season-level inference
+nba,leave_one_season_out,2023,tail_excess,0.95,0.012304853817768947,,,,7046,,9999,20260815,Descriptive
+nba,leave_one_season_out,2024,D_upper,,0.10073894710474668,,,,7045,,9999,20260815,Descriptive; seven seasons do not support season-level inference
+nba,leave_one_season_out,2024,tail_excess,0.95,0.014584811923349886,,,,7045,,9999,20260815,Descriptive
+nba,artifact_audit,exact_one_correction,patched_games,,16,,,,8276,,9999,20260815,
+nba,missingness,2018,feed_coverage,,0.9934959349593496,,,,1222,,9999,20260815,schedule inventory
+nba,missingness,2019,feed_coverage,,1,,,,1230,,9999,20260815,schedule inventory
+nba,missingness,2020,feed_coverage,,0.9943342776203966,,,,1053,,9999,20260815,schedule inventory
+nba,missingness,2021,feed_coverage,,1,,,,1080,,9999,20260815,schedule inventory
+nba,missingness,2022,feed_coverage,,1,,,,1230,,9999,20260815,schedule inventory
+nba,missingness,2023,feed_coverage,,1,,,,1230,,9999,20260815,schedule inventory
+nba,missingness,2024,feed_coverage,,1,,,,1231,,9999,20260815,schedule inventory
+nfl,global,corrected,D_upper,,0.01460022762839669,,,0.7364,1848,,9999,20260815,Season-stratified dyadic pigeonhole bootstrap
+nfl,global,corrected,dyadic_critical_value_95,,0.04703111898391894,,,,1848,,9999,20260815,
+nfl,tail,corrected,tail_rate,0.9,0.08495670995670995,,,,1848,,9999,20260815,
+nfl,tail,corrected,tail_excess,0.9,-0.015043290043290025,-0.03480253017383112,0.006787502545210144,,1848,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nfl,tail,corrected,tail_rate,0.95,0.04491341991341991,,,,1848,,9999,20260815,
+nfl,tail,corrected,tail_excess,0.95,-0.005086580086580132,-0.019809865884518718,0.011403935586656802,,1848,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nfl,tail,corrected,tail_rate,0.99,0.015151515151515152,,,,1848,,9999,20260815,
+nfl,tail,corrected,tail_excess,0.99,0.005151515151515143,-0.003116739714721443,0.01540953041036824,,1848,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nfl,global,raw,D_upper,,0.01460022762839669,,,0.7353,1848,,9999,20260815,Season-stratified dyadic pigeonhole bootstrap
+nfl,global,raw,dyadic_critical_value_95,,0.04703111898391894,,,,1848,,9999,20260815,
+nfl,tail,raw,tail_rate,0.9,0.0854978354978355,,,,1848,,9999,20260815,
+nfl,tail,raw,tail_excess,0.9,-0.014502164502164475,-0.03419904954207434,0.007288243993990197,,1848,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nfl,tail,raw,tail_rate,0.95,0.04599567099567099,,,,1848,,9999,20260815,
+nfl,tail,raw,tail_excess,0.95,-0.004004329004329052,-0.018902089886145473,0.012988922166678938,,1848,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nfl,tail,raw,tail_rate,0.99,0.016774891774891776,,,,1848,,9999,20260815,
+nfl,tail,raw,tail_excess,0.99,0.006774891774891767,-0.0019515758875893238,0.017463713147934358,,1848,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nfl,global,exclude_patched,D_upper,,0.013688178722855382,,,0.7686,1844,,9999,20260815,Season-stratified dyadic pigeonhole bootstrap
+nfl,global,exclude_patched,dyadic_critical_value_95,,0.04691274534316523,,,,1844,,9999,20260815,
+nfl,tail,exclude_patched,tail_rate,0.9,0.08351409978308026,,,,1844,,9999,20260815,
+nfl,tail,exclude_patched,tail_excess,0.9,-0.016485900216919716,-0.036005681708659934,0.005162835323252601,,1844,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nfl,tail,exclude_patched,tail_rate,0.95,0.04392624728850325,,,,1844,,9999,20260815,
+nfl,tail,exclude_patched,tail_excess,0.95,-0.006073752711496794,-0.02058937874796844,0.010429259035535838,,1844,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nfl,tail,exclude_patched,tail_rate,0.99,0.014642082429501085,,,,1844,,9999,20260815,
+nfl,tail,exclude_patched,tail_excess,0.99,0.004642082429501076,-0.0034090340457290256,0.014585533023684087,,1844,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nfl,global,rounding_lower,D_upper,,0.013374741937780488,,,0.7752,1848,,9999,20260815,Season-stratified dyadic pigeonhole bootstrap
+nfl,global,rounding_lower,dyadic_critical_value_95,,0.046957028806555466,,,,1848,,9999,20260815,
+nfl,tail,rounding_lower,tail_rate,0.9,0.08495670995670995,,,,1848,,9999,20260815,
+nfl,tail,rounding_lower,tail_excess,0.9,-0.015043290043290025,-0.03480253017383112,0.006787502545210144,,1848,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nfl,tail,rounding_lower,tail_rate,0.95,0.04491341991341991,,,,1848,,9999,20260815,
+nfl,tail,rounding_lower,tail_excess,0.95,-0.005086580086580132,-0.019809865884518718,0.011403935586656802,,1848,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nfl,tail,rounding_lower,tail_rate,0.99,0.015151515151515152,,,,1848,,9999,20260815,
+nfl,tail,rounding_lower,tail_excess,0.99,0.005151515151515143,-0.003116739714721443,0.01540953041036824,,1848,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nfl,global,rounding_upper,D_upper,,0.01649256540560773,,,0.6786,1848,,9999,20260815,Season-stratified dyadic pigeonhole bootstrap
+nfl,global,rounding_upper,dyadic_critical_value_95,,0.047074289010635456,,,,1848,,9999,20260815,
+nfl,tail,rounding_upper,tail_rate,0.9,0.08495670995670995,,,,1848,,9999,20260815,
+nfl,tail,rounding_upper,tail_excess,0.9,-0.015043290043290025,-0.03480253017383112,0.006787502545210144,,1848,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nfl,tail,rounding_upper,tail_rate,0.95,0.045454545454545456,,,,1848,,9999,20260815,
+nfl,tail,rounding_upper,tail_excess,0.95,-0.004545454545454589,-0.019387145013042242,0.012238942757620934,,1848,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nfl,tail,rounding_upper,tail_rate,0.99,0.015151515151515152,,,,1848,,9999,20260815,
+nfl,tail,rounding_upper,tail_excess,0.99,0.005151515151515143,-0.003116739714721443,0.01540953041036824,,1848,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nfl,global,dyadic_calendar,D_upper,,0.01460022762839669,,,0.8563,1848,,9999,20260815,Season-stratified dyadic pigeonhole bootstrap
+nfl,global,dyadic_calendar,dyadic_critical_value_95,,0.06746131946372183,,,,1848,,9999,20260815,
+nfl,tail,dyadic_calendar,tail_rate,0.95,0.04491341991341991,,,,1848,,9999,20260815,
+nfl,tail,dyadic_calendar,tail_excess,0.95,-0.005086580086580132,-0.02529482084319132,0.019952516121543685,,1848,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nfl,global,franchise_linked,D_upper,,0.01460022762839669,,,0.7045,1848,,9999,20260815,Season-stratified dyadic pigeonhole bootstrap
+nfl,global,franchise_linked,dyadic_critical_value_95,,0.049025193408402924,,,,1848,,9999,20260815,
+nfl,tail,franchise_linked,tail_rate,0.95,0.04491341991341991,,,,1848,,9999,20260815,
+nfl,tail,franchise_linked,tail_excess,0.95,-0.005086580086580132,-0.019045757336533294,0.012159631905070844,,1848,,9999,20260815,Two-sided 95% percentile dyadic-bootstrap interval
+nfl,boundary,weak,tail_rate,0.9,0.08495670995670995,,,,1848,,9999,20260815,
+nfl,boundary,strict,tail_rate,0.9,0.08495670995670995,,,,1848,,9999,20260815,
+nfl,boundary,atom,tail_rate,0.9,0,,,,1848,,9999,20260815,
+nfl,boundary,weak,tail_rate,0.95,0.04491341991341991,,,,1848,,9999,20260815,
+nfl,boundary,strict,tail_rate,0.95,0.04491341991341991,,,,1848,,9999,20260815,
+nfl,boundary,atom,tail_rate,0.95,0,,,,1848,,9999,20260815,
+nfl,boundary,weak,tail_rate,0.99,0.015151515151515152,,,,1848,,9999,20260815,
+nfl,boundary,strict,tail_rate,0.99,0.015151515151515152,,,,1848,,9999,20260815,
+nfl,boundary,atom,tail_rate,0.99,0,,,,1848,,9999,20260815,
+nfl,first_crossing,preterminal_strict,observed_loss,0.9,0.08375634517766498,0.06526273794369478,0.10186948402057462,,1970,1817,9999,20260815,
+nfl,first_crossing,preterminal_strict,implied_loss,0.9,0.07515690355329947,0.07322757771225749,0.07703134748482143,,1970,1817,9999,20260815,
+nfl,first_crossing,preterminal_strict,residual,0.9,0.00859944162436548,-0.010418904752288533,0.02724997072226868,,1970,1817,9999,20260815,Boundary: strict ; each row from the same game receives the same game weight
+nfl,first_crossing,preterminal_strict,observed_loss,0.95,0.04617055947854427,0.031611441484749654,0.061684462839633955,,1841,1771,9999,20260815,
+nfl,first_crossing,preterminal_strict,implied_loss,0.95,0.033126507332971164,0.03190571342543032,0.03431409890005717,,1841,1771,9999,20260815,
+nfl,first_crossing,preterminal_strict,residual,0.95,0.013044052145573016,-0.001779936030766543,0.028831033052300496,,1841,1771,9999,20260815,Boundary: strict ; each row from the same game receives the same game weight
+nfl,first_crossing,preterminal_strict,observed_loss,0.99,0.01645123384253819,0.007565453684405399,0.027195240964884033,,1702,1683,9999,20260815,
+nfl,first_crossing,preterminal_strict,implied_loss,0.99,0.004776968272620444,0.004513905021906932,0.005046046077973078,,1702,1683,9999,20260815,
+nfl,first_crossing,preterminal_strict,residual,0.99,0.011674265569917701,0.002758217537704113,0.02242225418485254,,1702,1683,9999,20260815,Boundary: strict ; each row from the same game receives the same game weight
+nfl,first_crossing,preterminal,observed_loss,0.9,0.0851063829787234,0.06673182750022728,0.10305038092530501,,1974,1818,9999,20260815,
+nfl,first_crossing,preterminal,implied_loss,0.9,0.07569609929078014,0.07377127011522387,0.07755282036958056,,1974,1818,9999,20260815,
+nfl,first_crossing,preterminal,residual,0.9,0.00941028368794326,-0.009466426925629138,0.028004136701076352,,1974,1818,9999,20260815,Boundary: weak ; each row from the same game receives the same game weight
+nfl,first_crossing,preterminal,observed_loss,0.95,0.046145494028230184,0.031565966718401686,0.06166652888804553,,1842,1772,9999,20260815,
+nfl,first_crossing,preterminal,implied_loss,0.95,0.03344847991313784,0.03221939896915267,0.034636121044647784,,1842,1772,9999,20260815,
+nfl,first_crossing,preterminal,residual,0.95,0.012697014115092248,-0.0021529697273844576,0.028514968030552718,,1842,1772,9999,20260815,Boundary: weak ; each row from the same game receives the same game weight
+nfl,first_crossing,preterminal,observed_loss,0.99,0.016422287390029325,0.007560881929438601,0.027142839892648603,,1705,1686,9999,20260815,
+nfl,first_crossing,preterminal,implied_loss,0.99,0.005018533724340162,0.004740730329363978,0.005301388373844144,,1705,1686,9999,20260815,
+nfl,first_crossing,preterminal,residual,0.99,0.011403753665689104,0.002449799650057548,0.022100378275989242,,1705,1686,9999,20260815,Boundary: weak ; each row from the same game receives the same game weight
+nfl,first_crossing,all_updates_strict,observed_loss,0.9,0.08200795228628231,0.06392459056790022,0.09970555260556621,,2012,1847,9999,20260815,
+nfl,first_crossing,all_updates_strict,implied_loss,0.9,0.07358802186878727,0.07156448220676997,0.07553729205480582,,2012,1847,9999,20260815,
+nfl,first_crossing,all_updates_strict,residual,0.9,0.008419930417495027,-0.010242917512095509,0.02661289084261126,,2012,1847,9999,20260815,Boundary: strict ; each row from the same game receives the same game weight
+nfl,first_crossing,all_updates_strict,observed_loss,0.95,0.04399585921325052,0.03010137197047097,0.05827942866316111,,1932,1847,9999,20260815,
+nfl,first_crossing,all_updates_strict,implied_loss,0.95,0.03157810559006206,0.030296469958743112,0.03280054506853641,,1932,1847,9999,20260815,
+nfl,first_crossing,all_updates_strict,residual,0.95,0.012417753623188367,-0.0016905098910022006,0.027201490157472398,,1932,1847,9999,20260815,Boundary: strict ; each row from the same game receives the same game weight
+nfl,first_crossing,all_updates_strict,observed_loss,0.99,0.014941302027748132,0.006821365806892977,0.024467873193830897,,1874,1846,9999,20260815,
+nfl,first_crossing,all_updates_strict,implied_loss,0.99,0.004339594450373531,0.004083145878451446,0.004601324796173749,,1874,1846,9999,20260815,
+nfl,first_crossing,all_updates_strict,residual,0.99,0.010601707577374556,0.002487638382612669,0.020145506156884707,,1874,1846,9999,20260815,Boundary: strict ; each row from the same game receives the same game weight
+nfl,first_crossing,all_updates,observed_loss,0.9,0.08337468982630274,0.06540060296937927,0.10069069549233636,,2015,1847,9999,20260815,
+nfl,first_crossing,all_updates,implied_loss,0.9,0.07415588089330023,0.07210901091520419,0.0761076496841137,,2015,1847,9999,20260815,
+nfl,first_crossing,all_updates,residual,0.9,0.009218808933002478,-0.009354124333944624,0.027210469828682703,,2015,1847,9999,20260815,Boundary: weak ; each row from the same game receives the same game weight
+nfl,first_crossing,all_updates,observed_loss,0.95,0.04399585921325052,0.03010137197047097,0.05827942866316111,,1932,1847,9999,20260815,
+nfl,first_crossing,all_updates,implied_loss,0.95,0.031902225672877794,0.03061996228515805,0.033140240170101136,,1932,1847,9999,20260815,
+nfl,first_crossing,all_updates,residual,0.95,0.012093633540372632,-0.0021251235674723855,0.026902170608254443,,1932,1847,9999,20260815,Boundary: weak ; each row from the same game receives the same game weight
+nfl,first_crossing,all_updates,observed_loss,0.99,0.014941302027748132,0.006821365806892977,0.024467873193830897,,1874,1846,9999,20260815,
+nfl,first_crossing,all_updates,implied_loss,0.99,0.00456702241195303,0.004294372930441483,0.004846682583976517,,1874,1846,9999,20260815,
+nfl,first_crossing,all_updates,residual,0.99,0.010374279615795044,0.002261874558321573,0.01990860519025681,,1874,1846,9999,20260815,Boundary: weak ; each row from the same game receives the same game weight
+nfl,fixed_clock,linear,gap_t00_bin01,0,0.018875000000000013,-0.21937492499907574,0.25712492499907574,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t00_bin02,0,-0.03692486486486486,-0.2825770597186314,0.2087273299889017,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t00_bin03,0,-0.03529510869565217,-0.303045413490381,0.23245519609907667,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t00_bin04,0,0.022351612903225807,-0.2557639230659389,0.3004671488723905,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t00_bin05,0,-0.050370652173913066,-0.31998178218186885,0.2192404778340427,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t00_bin06,0,-0.020432967032967004,-0.27700902738485567,0.23614309331892167,,182,182,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t00_bin07,0,-0.0333210810810811,-0.289259829342793,0.22261766718063075,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t00_bin08,0,0.02109840425531914,-0.2242061082978486,0.2664029168084869,,188,188,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t00_bin09,0,-0.005929189189189193,-0.23088896544534754,0.21903058706696915,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t00_bin10,0,-0.025230810810810828,-0.22052967400673965,0.170068052385118,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t01_bin01,0.05,0.05324870153249375,-0.17868407396157912,0.2851814770265666,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t01_bin02,0.05,-0.08505360916109668,-0.3329263437415241,0.16281912541933075,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t01_bin03,0.05,-0.035857095431518445,-0.3114513916653588,0.23973720080232191,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t01_bin04,0.05,-0.018342954508489807,-0.28430911421387856,0.24762320519689893,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t01_bin05,0.05,-0.013023461072913464,-0.2874013794419431,0.26135445729611617,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t01_bin06,0.05,0.030950078330082068,-0.23438506387360453,0.29628522053376866,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t01_bin07,0.05,-0.0363709512229705,-0.2937259134244387,0.22098401097849768,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t01_bin08,0.05,-0.016743751128560462,-0.2792891229094634,0.24580162065234246,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t01_bin09,0.05,0.020881656201057405,-0.1984238328512058,0.24018714525332058,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t01_bin10,0.05,-0.015498212561813832,-0.2072553301308646,0.17625890500723695,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t02_bin01,0.1,0.014936623461791868,-0.20766763134874813,0.23754087827233186,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t02_bin02,0.1,-0.05084742301652796,-0.2897639263125457,0.18806908027948976,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t02_bin03,0.1,-0.020962206593242487,-0.28596576781329897,0.24404135462681398,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t02_bin04,0.1,-0.013327885078498051,-0.2733298219766581,0.24667405181966204,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t02_bin05,0.1,-0.03614370916588984,-0.30562444740524164,0.233337029073462,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t02_bin06,0.1,0.04125647770040454,-0.21179239143755751,0.29430534683836657,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t02_bin07,0.1,-0.06536931039665542,-0.33340567026994383,0.20266704947663297,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t02_bin08,0.1,0.009979470041348536,-0.23309097182789545,0.2530499119105925,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t02_bin09,0.1,-0.004432611388821102,-0.2264546599168401,0.21758943713919793,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t02_bin10,0.1,0.001531949013997628,-0.1804593423411991,0.18352324036919437,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t03_bin01,0.15000000000000002,4.286204791192353e-4,-0.2144462352772034,0.21530347623544188,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t03_bin02,0.15000000000000002,-0.0570814273202896,-0.2928630380766642,0.17870018343608499,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t03_bin03,0.15000000000000002,0.023983561413348183,-0.24072986606691238,0.28869698889360873,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t03_bin04,0.15000000000000002,-0.04696499515891205,-0.3211662842336631,0.227236293915839,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t03_bin05,0.15000000000000002,-0.011330906603497674,-0.2759091939405533,0.25324738073355796,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t03_bin06,0.15000000000000002,-0.011680531274303659,-0.26328987656591457,0.23992881401730723,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t03_bin07,0.15000000000000002,-0.033094204770043614,-0.28902898948891736,0.22284057994883016,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t03_bin08,0.15000000000000002,-0.011339065325262219,-0.24721049350179747,0.22453236285127304,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t03_bin09,0.15000000000000002,0.022125104209147536,-0.1894745576472634,0.23372476606555848,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t03_bin10,0.15000000000000002,0.018185822326669755,-0.14704783761212967,0.1834194822654692,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t04_bin01,0.2,-0.007078750036184138,-0.20505725754065335,0.19089975746828508,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t04_bin02,0.2,-0.054468993804783546,-0.3002967520127091,0.19135876440314203,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t04_bin03,0.2,0.022934741457863755,-0.25191144578246516,0.2977809286981926,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t04_bin04,0.2,-0.047937234504556676,-0.31746924767340123,0.2215947786642879,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t04_bin05,0.2,-0.006665841607293935,-0.26891214146795295,0.25558045825336506,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t04_bin06,0.2,-0.039304869349743476,-0.29848703862169745,0.2198772999222105,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t04_bin07,0.2,0.008105190010178858,-0.24883763140254492,0.26504801142290263,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t04_bin08,0.2,-0.018133773195968154,-0.2517271015851106,0.21545955519317425,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t04_bin09,0.2,0.038720324694250775,-0.16641382361009363,0.24385447299859517,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t04_bin10,0.2,0.0215699836438236,-0.13933022730795186,0.18247019459559904,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t05_bin01,0.25,-0.028436956521739127,-0.21271796391871767,0.1558440508752394,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t05_bin02,0.25,-0.008411351351351362,-0.2508658616616631,0.23404315895896038,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t05_bin03,0.25,-4.864864864864539e-5,-0.2530214110606249,0.2529241137633277,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t05_bin04,0.25,6.270270270270756e-4,-0.2667939149958463,0.2680479690499004,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t05_bin05,0.25,-0.01474076086956523,-0.2749426300382784,0.24546110829914797,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t05_bin06,0.25,-0.052432972972972954,-0.32343010987958437,0.21856416393363848,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t05_bin07,0.25,-0.06104767724245988,-0.32048723617162045,0.19839188168670066,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t05_bin08,0.25,0.03240869565217392,-0.19531699447938944,0.26013438578373727,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t05_bin09,0.25,0.023648387096774196,-0.18050616517540352,0.2278029393689519,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t05_bin10,0.25,0.011212432432432416,-0.13286782342900652,0.15529268829387136,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t06_bin01,0.30000000000000004,-0.01528724005659825,-0.19912923593357873,0.1685547558203822,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t06_bin02,0.30000000000000004,-0.012586495145002046,-0.24377135635348932,0.21859836606348523,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t06_bin03,0.30000000000000004,-0.02491926974851007,-0.2822938221989026,0.23245528270188245,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t06_bin04,0.30000000000000004,-0.06363554750998773,-0.3307058334252285,0.20343473840525306,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t06_bin05,0.30000000000000004,-0.011298890991755043,-0.28452605607664977,0.26192827409313973,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t06_bin06,0.30000000000000004,-3.486529100870568e-4,-0.2646096611806817,0.26391235536050756,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t06_bin07,0.30000000000000004,-0.015838549605485298,-0.26130767727712023,0.22963057806614962,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t06_bin08,0.30000000000000004,-0.045113900796968774,-0.2875378849889537,0.19731008339501618,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t06_bin09,0.30000000000000004,0.039935222671250575,-0.14215905729376244,0.2220295026362636,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t06_bin10,0.30000000000000004,0.03125006228904044,-0.08282597778339923,0.1453261023614801,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t07_bin01,0.35000000000000003,0.008034556944485334,-0.17328632952721262,0.18935544341618327,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t07_bin02,0.35000000000000003,-0.0410496675250289,-0.26286564997435713,0.18076631492429932,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t07_bin03,0.35000000000000003,-0.05058533088540156,-0.30889370013292655,0.2077230383621234,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t07_bin04,0.35000000000000003,-0.055299595707409395,-0.3234399137968366,0.21284072238201784,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t07_bin05,0.35000000000000003,0.033377933170141184,-0.234386157080021,0.3011420234203034,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t07_bin06,0.35000000000000003,-0.0568389247576288,-0.32241662330625803,0.20873877379100042,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t07_bin07,0.35000000000000003,-0.011725030972084365,-0.2604308969891029,0.23698083504493414,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t07_bin08,0.35000000000000003,0.02961514116514791,-0.1908707117157008,0.2501009940459966,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t07_bin09,0.35000000000000003,0.0299619636831211,-0.15344074069646169,0.21336466806270388,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t07_bin10,0.35000000000000003,0.011881351305521324,-0.11378036080250044,0.13754306341354308,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t08_bin01,0.4,0.005011775195325307,-0.16603940605854126,0.17606295644919187,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t08_bin02,0.4,2.698908232204272e-4,-0.22175074679871595,0.22229052844515682,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t08_bin03,0.4,-0.04114488790645466,-0.29064188026958904,0.2083521044566797,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t08_bin04,0.4,-0.07786980369353663,-0.3212639879404061,0.16552438055333285,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t08_bin05,0.4,-0.012968268797498314,-0.27499568300669147,0.24905914541169485,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t08_bin06,0.4,-0.0075022286613312455,-0.26992571473692534,0.2549212574142628,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t08_bin07,0.4,-0.012498190978831798,-0.2646687663304877,0.2396723843728241,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t08_bin08,0.4,0.012220589104066587,-0.20764976061302462,0.2320909388211578,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t08_bin09,0.4,0.03341852165987262,-0.1411823821636617,0.2080194254834069,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t08_bin10,0.4,0.025263723982123832,-0.07729093785704012,0.1278183858212878,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t09_bin01,0.45,0.009956923410168721,-0.14567097799412967,0.1655848248144671,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t09_bin02,0.45,-0.01401881968168935,-0.23124427144738274,0.20320663208400402,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t09_bin03,0.45,-0.026889280826079325,-0.2779015383426709,0.22412297669051223,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t09_bin04,0.45,-0.05219317192052827,-0.2993213333777373,0.19493498953668076,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t09_bin05,0.45,-0.0739489546614707,-0.3352937946665525,0.1873958853436111,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t09_bin06,0.45,-0.010666228034571453,-0.2676562737022326,0.2463238176330897,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t09_bin07,0.45,-0.008104492811014254,-0.25836340007624237,0.24215441445421385,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t09_bin08,0.45,0.060533590330683194,-0.1365506432806499,0.25761782394201627,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t09_bin09,0.45,0.03904541278481415,-0.1265858572810564,0.20467668285068472,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t09_bin10,0.45,0.01477585622756273,-0.08756518587478923,0.11711689832991468,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t10_bin01,0.5,-0.008990217391304352,-0.1274002235047262,0.1094197887221175,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t10_bin02,0.5,-0.013383783783783782,-0.20657352703485984,0.1798059594672923,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t10_bin03,0.5,-0.008548648648648651,-0.2625905448939603,0.245493247596663,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t10_bin04,0.5,-0.054812499999999965,-0.2997498304130069,0.19012483041300698,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t10_bin05,0.5,-0.0028243243243243157,-0.27453107004758354,0.26888242139893487,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t10_bin06,0.5,-0.020210270270270277,-0.27987531915366065,0.2394547786131201,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t10_bin07,0.5,0.0072772972972972964,-0.23292188840752687,0.24747648300212144,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t10_bin08,0.5,0.011859459459459442,-0.17935572699037974,0.2030746459092986,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t10_bin09,0.5,0.013870652173913048,-0.13212387062221242,0.1598651749700385,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t10_bin10,0.5,0.0031569892473118388,-0.08470717630026976,0.09102115479489344,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t11_bin01,0.55,-0.0015137105013117347,-0.1091134040861241,0.10608598308350065,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t11_bin02,0.55,-0.0018219243717916439,-0.2038255779986788,0.20018172925509548,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t11_bin03,0.55,-0.03745759324899702,-0.27024300202737644,0.1953278155293824,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t11_bin04,0.55,-0.016668441338804695,-0.2775869492743575,0.24425006659674814,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t11_bin05,0.55,9.404339990061328e-4,-0.267209035224119,0.2690899032221312,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t11_bin06,0.55,-0.034804269176787125,-0.31039263264996736,0.24078409429639308,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t11_bin07,0.55,-0.010142929482131397,-0.25615389005340594,0.23586803108914317,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t11_bin08,0.55,0.03143334639206242,-0.15356189753123667,0.2164285903153615,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t11_bin09,0.55,0.01170702932543393,-0.13743844099363356,0.16085249964450143,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t11_bin10,0.55,0.008657851088018035,-0.05887638444905981,0.07619208662509587,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t12_bin01,0.6000000000000001,0.0046092783109661275,-0.09643679357691197,0.10565535019884421,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t12_bin02,0.6000000000000001,-0.021104805667339657,-0.19166986741221548,0.14946025607753616,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t12_bin03,0.6000000000000001,0.028027917092580977,-0.2368623978081805,0.29291823199334244,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t12_bin04,0.6000000000000001,-0.0721366484486256,-0.32883948698396176,0.18456619008671055,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t12_bin05,0.6000000000000001,-0.0133853701965947,-0.27464263378113213,0.24787189338794274,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t12_bin06,0.6000000000000001,-0.008143274406881323,-0.2773825951637918,0.26109604635002914,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t12_bin07,0.6000000000000001,-0.02428156511184337,-0.25954265815173494,0.21097952792804822,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t12_bin08,0.6000000000000001,0.05784376046336668,-0.0974834587662379,0.21317097969297125,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t12_bin09,0.6000000000000001,-0.01188313266046386,-0.17107263963141875,0.147306374310491,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t12_bin10,0.6000000000000001,0.01859472930742541,0.012282577401484562,0.024906881213366254,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t13_bin01,0.65,-0.0027478808894893848,-0.07946284915785977,0.07396708737888101,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t13_bin02,0.65,0.022291485943419516,-0.1709667828652012,0.21554975475204022,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t13_bin03,0.65,-0.0457109176411634,-0.2581889580006259,0.1667671227182991,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t13_bin04,0.65,-0.012611803324543338,-0.28674962520310265,0.261526018554016,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t13_bin05,0.65,-0.029455725967811486,-0.3051991634661496,0.24628771153052664,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t13_bin06,0.65,0.02024005897985316,-0.24268776481626736,0.28316788277597366,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t13_bin07,0.65,0.004290842649628391,-0.2230200580905918,0.2316017433898486,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t13_bin08,0.65,0.040879072176073214,-0.11195866703950115,0.1937168113916476,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t13_bin09,0.65,-0.010707708730873235,-0.14762727063590517,0.1262118531741587,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t13_bin10,0.65,0.00646564162732369,-0.03260161166521932,0.045532894919866694,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t14_bin01,0.7000000000000001,-9.230228916289159e-4,-0.07142491450640273,0.0695788687231449,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t14_bin02,0.7000000000000001,-0.024012019693267373,-0.15718930056174246,0.10916526117520771,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t14_bin03,0.7000000000000001,0.010208023284580717,-0.21598598635657024,0.2364020329257317,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t14_bin04,0.7000000000000001,0.013793339409462008,-0.2488128574831762,0.27639953630210023,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t14_bin05,0.7000000000000001,-0.030987352796713153,-0.3013219279033639,0.23934722230993755,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t14_bin06,0.7000000000000001,-0.011603652581709704,-0.2655609629274791,0.2423536577640597,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t14_bin07,0.7000000000000001,0.036931060861980246,-0.17230737357497405,0.24616949529893456,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t14_bin08,0.7000000000000001,0.03599919043066557,-0.12543247292798304,0.1974308537893142,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t14_bin09,0.7000000000000001,-0.005730822870995132,-0.1261759619493697,0.11471431620737943,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t14_bin10,0.7000000000000001,0.002102307300024818,-0.03622151361194695,0.04042612821199658,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t15_bin01,0.75,0.0056048913043478255,-0.06191410778669941,0.07312389039539506,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t15_bin02,0.75,-0.006468648648648651,-0.14262319427893821,0.1296858969816409,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t15_bin03,0.75,-0.01215243243243243,-0.22304203582937618,0.1987371709645113,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t15_bin04,0.75,-0.028896756756756747,-0.27351488770684795,0.21572137419333445,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t15_bin05,0.75,0.015969021739130448,-0.25221121444551076,0.28414925792377166,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t15_bin06,0.75,0.005380540540540555,-0.25986982188523294,0.27063090296631404,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t15_bin07,0.75,-0.008270270270270266,-0.23515538738121256,0.218614846840672,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t15_bin08,0.75,0.04714098360655736,-0.08229473110593336,0.17657669831904807,,183,183,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t15_bin09,0.75,5.77540106951879e-4,-0.10011547130634552,0.10127055152024927,,187,187,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t15_bin10,0.75,-0.006835135135135141,-0.06183241594685127,0.048162145676580996,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t16_bin01,0.8,-0.0064076158423487335,-0.009628210220406908,-0.0031870214642905595,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t16_bin02,0.8,-0.01768776656726116,-0.11843384777346232,0.08305831463893999,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t16_bin03,0.8,0.007983758637624887,-0.1871042624616265,0.20307177973687626,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t16_bin04,0.8,-0.013875511672561323,-0.2548598235031899,0.22710880015806728,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t16_bin05,0.8,-0.025043051645260182,-0.2866012723441096,0.23651516905358924,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t16_bin06,0.8,0.07077458280551935,-0.1755663237569781,0.3171154893680168,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t16_bin07,0.8,0.011370952234390688,-0.19088180029129645,0.21362370476007783,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t16_bin08,0.8,0.0016049166316172742,-0.15245323224244026,0.1556630655056748,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t16_bin09,0.8,-0.0013280916187798169,-0.08953950951068898,0.08688332627312934,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t16_bin10,0.8,0.0021387371826992966,0.0011637532990554037,0.0031137210663431895,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t17_bin01,0.8500000000000001,-0.0030744476900931984,-0.004665904641377652,-0.001482990738808745,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t17_bin02,0.8500000000000001,-0.008302068400304369,-0.09326069532048689,0.07665655851987815,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t17_bin03,0.8500000000000001,-0.023245453797800665,-0.1874562548766345,0.1409653472810332,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t17_bin04,0.8500000000000001,0.007254541521424916,-0.23008746946739306,0.24459655251024287,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t17_bin05,0.8500000000000001,0.01182654476889748,-0.26183046721834835,0.28548355675614334,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t17_bin06,0.8500000000000001,0.04027353456980417,-0.19935211053056778,0.27989917967017613,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t17_bin07,0.8500000000000001,-0.008435548092459473,-0.20792670546482198,0.19105560927990303,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t17_bin08,0.8500000000000001,0.015503163611515054,-0.10034014750710135,0.13134647473013145,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t17_bin09,0.8500000000000001,-0.013422270787571106,-0.1046827176333419,0.07783817605819969,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t17_bin10,0.8500000000000001,0.0011038329255499695,9.602392800421152e-4,0.0012474265710578237,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t18_bin01,0.9,-0.0010898771473147534,-0.0012172831943264232,-9.624711003030836e-4,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t18_bin02,0.9,-1.1500775510809689e-4,-0.06801339261862577,0.06778337710840956,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t18_bin03,0.9,-0.00981380335980673,-0.16296043294409934,0.1433328262244859,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t18_bin04,0.9,-0.011472751789902967,-0.24226515485949246,0.2193196512796865,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t18_bin05,0.9,0.057827141536393095,-0.22247963507617322,0.33813391814895943,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t18_bin06,0.9,-0.0024634676730350947,-0.250605134121884,0.24567819877581382,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t18_bin07,0.9,-0.023774078584020687,-0.21384339921992784,0.16629524205188645,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t18_bin08,0.9,-0.00511516751762307,-0.12756116001153953,0.11733082497629338,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t18_bin09,0.9,0.0028814690565748214,0.0016319409957771642,0.004130997117372479,,370,370,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t19_bin01,0.95,7.80449954820809e-4,-0.01907911528583595,0.020640015195477566,,369,369,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t19_bin02,0.95,-0.002427260898228598,-0.13359961257778852,0.12874509078133134,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t19_bin03,0.95,-0.0359041106870325,-0.23644274357140727,0.16463452219734226,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t19_bin04,0.95,0.06857803326719518,-0.19131320297507504,0.3284692695094654,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t19_bin05,0.95,0.004433510346447755,-0.23635146278517138,0.2452184834780669,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t19_bin06,0.95,-0.014177251654938352,-0.1847623609285709,0.1564078576186942,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t19_bin07,0.95,-0.007256301725685406,-0.08464183505926248,0.07012923160789167,,182,182,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,linear,gap_t19_bin08,0.95,0.0010573753115765575,9.83536455767629e-4,0.0011312141673854859,,373,373,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t00_bin01,0,0.018875000000000013,-0.22330500608431464,0.26105500608431464,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t00_bin02,0,-0.03692486486486486,-0.2866292458611704,0.2127795161314407,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t00_bin03,0,-0.03529510869565217,-0.3074621217367521,0.23687190434544775,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t00_bin04,0,0.022351612903225807,-0.2603516122642786,0.3050548380707302,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t00_bin05,0,-0.050370652173913066,-0.3244291859005406,0.22368788155271446,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t00_bin06,0,-0.020432967032967004,-0.28124140950089616,0.24037547543496215,,182,182,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t00_bin07,0,-0.0333210810810811,-0.2934816985984789,0.22683953643631666,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t00_bin08,0,0.02109840425531914,-0.22825255920402493,0.2704493677146632,,188,188,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t00_bin09,0,-0.005929189189189193,-0.23459981723935056,0.22274143886097217,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t00_bin10,0,-0.025230810810810828,-0.2237512505433029,0.17328962892168123,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t01_bin01,0.05,0.05497934782608696,-0.18063047489682688,0.2905891705490008,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t01_bin02,0.05,-0.06282432432432432,-0.31520982386023344,0.18956117521158478,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t01_bin03,0.05,-0.057776216216216224,-0.32654396876384023,0.2109915363314078,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t01_bin04,0.05,-0.03363513513513514,-0.2929342247326894,0.22566395446241908,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t01_bin05,0.05,-3.1902173913042435e-4,-0.27954413748838025,0.27890609401011945,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t01_bin06,0.05,0.020567567567567554,-0.24646409661213325,0.28759923174726837,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t01_bin07,0.05,-0.023211891891891906,-0.29451369490954604,0.24808991112576226,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t01_bin08,0.05,0.014998918918918929,-0.2317396567897819,0.26173749462761975,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t01_bin09,0.05,-0.010455135135135128,-0.24468166644287567,0.2237713961726054,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t01_bin10,0.05,-0.010779999999999993,-0.20557299550288033,0.18401299550288036,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t02_bin01,0.1,0.013586413043478233,-0.2174214182968408,0.2445942443837973,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t02_bin02,0.1,-0.050187027027027015,-0.29035303245587296,0.18997897840181893,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t02_bin03,0.1,-0.010561621621621603,-0.27610889202463906,0.25498564878139585,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t02_bin04,0.1,-0.020223913043478262,-0.29456023524329555,0.25411240915633904,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t02_bin05,0.1,-0.013372432432432427,-0.2871652951136568,0.26042043024879197,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t02_bin06,0.1,0.014409189189189188,-0.26112685630040944,0.28994523467878786,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t02_bin07,0.1,-0.04971956521739132,-0.3287737777420847,0.22933464730730205,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t02_bin08,0.1,-0.014861290322580625,-0.2705962247424631,0.24087364409730186,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t02_bin09,0.1,0.006282702702702681,-0.22059223741438244,0.2331576428197878,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t02_bin10,0.1,-0.006347027027027035,-0.18984589693355705,0.177151842879503,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t03_bin01,0.15000000000000002,0.0010429347826086974,-0.2137812003290797,0.2158670698942971,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t03_bin02,0.15000000000000002,-0.05732756756756757,-0.30204697170321015,0.187391836568075,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t03_bin03,0.15000000000000002,0.009919021739130424,-0.2501932856173035,0.2700313290955644,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t03_bin04,0.15000000000000002,-0.017146774193548393,-0.3004115059415443,0.26611795755444756,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t03_bin05,0.15000000000000002,0.0108130434782609,-0.27184236001407547,0.29346844697059726,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t03_bin06,0.15000000000000002,-0.02252702702702701,-0.2909405922969432,0.24588653824288914,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t03_bin07,0.15000000000000002,-0.048919459459459476,-0.310348274600768,0.2125093556818491,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t03_bin08,0.15000000000000002,-0.029644565217391308,-0.2865668255097464,0.2272776950749638,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t03_bin09,0.15000000000000002,0.028765053763440865,-0.19795063429883003,0.2554807418257118,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t03_bin10,0.15000000000000002,0.01729783783783784,-0.1471307042353288,0.1817263799110045,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t04_bin01,0.2,-0.015082065217391282,-0.21317951919789682,0.18301538876311427,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t04_bin02,0.2,-0.03192391304347826,-0.28575878496372853,0.22191095887677204,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t04_bin03,0.2,0.008702150537634384,-0.25894198119615447,0.27634628227142327,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t04_bin04,0.2,-0.03167445652173913,-0.3010923556531031,0.23774344260962488,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t04_bin05,0.2,-0.039151891891891916,-0.3195796989247629,0.24127591514097904,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t04_bin06,0.2,-0.00155837837837841,-0.26623946787783376,0.26312271112107694,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t04_bin07,0.2,-0.010798378378378371,-0.26311168991046113,0.24151493315370437,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t04_bin08,0.2,-0.01628415300546445,-0.2592865135985991,0.22671820758767022,,183,183,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t04_bin09,0.2,0.03358502673796791,-0.16533886002480364,0.2325089135007395,,187,187,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t04_bin10,0.2,0.010987567567567568,-0.15791994874461276,0.17989508387974792,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t05_bin01,0.25,-0.028436956521739127,-0.21575779405315504,0.15888388100967676,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t05_bin02,0.25,-0.008411351351351362,-0.25486530000358537,0.23804259730088267,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t05_bin03,0.25,-4.864864864864539e-5,-0.2571943545301341,0.2570970572328369,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t05_bin04,0.25,6.270270270270756e-4,-0.2712051901979054,0.2724592442519595,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t05_bin05,0.25,-0.01474076086956523,-0.2792348221318026,0.24975330039267218,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t05_bin06,0.25,-0.052432972972972954,-0.32790037664636174,0.22303443070041584,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t05_bin07,0.25,-0.06108972972972977,-0.3248054705352107,0.20262601107575118,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t05_bin08,0.25,0.03240869565217392,-0.19907347174758797,0.2638908630519358,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t05_bin09,0.25,0.023648387096774196,-0.18387382182567702,0.2311705960192254,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t05_bin10,0.25,0.011212432432432416,-0.13524451709772276,0.1576693819625876,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t06_bin01,0.30000000000000004,-0.01349670329670329,-0.19694415816572186,0.16995075157231526,,182,182,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t06_bin02,0.30000000000000004,-0.025166129032258042,-0.2543361597546063,0.2040039016900902,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t06_bin03,0.30000000000000004,-0.004004324324324339,-0.26563860889433444,0.25762996024568574,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t06_bin04,0.30000000000000004,-0.04988655913978491,-0.3159835046712955,0.21621038639172568,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t06_bin05,0.30000000000000004,-0.005261413043478273,-0.28741274266494865,0.2768899165779921,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t06_bin06,0.30000000000000004,-0.03690918918918915,-0.29441445902892677,0.22059608065054845,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t06_bin07,0.30000000000000004,-0.014187567567567574,-0.26150264957792,0.2331275144427849,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t06_bin08,0.30000000000000004,-0.031279999999999995,-0.26963155247673243,0.20707155247673242,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t06_bin09,0.30000000000000004,0.04586702702702703,-0.13305056681912372,0.22478462087317777,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t06_bin10,0.30000000000000004,0.02147189189189188,-0.10681161264309086,0.14975539642687463,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t07_bin01,0.35000000000000003,0.0017021739130434785,-0.18092845093300142,0.18433279875908837,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t07_bin02,0.35000000000000003,-0.05713097826086957,-0.28076918549757296,0.16650722897583384,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t07_bin03,0.35000000000000003,-0.02805645161290321,-0.28181970125163147,0.22570679802582505,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t07_bin04,0.35000000000000003,-0.026933513513513536,-0.2880872830267997,0.23422025599977264,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t07_bin05,0.35000000000000003,1.4293478260870012e-4,-0.2599778886422447,0.26026375820746206,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t07_bin06,0.35000000000000003,-0.03415189189189187,-0.3038299980661986,0.23552621428241483,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t07_bin07,0.35000000000000003,-0.021838378378378393,-0.2834627322176414,0.23978597546088462,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t07_bin08,0.35000000000000003,0.03490108695652174,-0.1847279337732256,0.2545301076862691,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t07_bin09,0.35000000000000003,0.019277837837837833,-0.17276931385761324,0.21132498953328893,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t07_bin10,0.35000000000000003,0.008013978494623663,-0.12369155462856808,0.1397195116178154,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t08_bin01,0.4,0.0036173913043478266,-0.17030155503251918,0.17753633764121482,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t08_bin02,0.4,-0.010465945945945925,-0.24155022487086789,0.220618332978976,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t08_bin03,0.4,-0.023824043715846985,-0.2825767599637609,0.23492867253206692,,183,183,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t08_bin04,0.4,-0.07287326203208558,-0.33191213400991837,0.18616560994574718,,187,187,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t08_bin05,0.4,-0.03639891304347825,-0.2981268727308899,0.22532904664393338,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t08_bin06,0.4,0.014427027027027013,-0.23923416410581597,0.26808821815987,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t08_bin07,0.4,-0.015250270270270292,-0.26355612004676265,0.23305557950622205,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t08_bin08,0.4,0.0073021621621621735,-0.2182852887525636,0.23288961307688794,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t08_bin09,0.4,0.02452594594594596,-0.16611636369089586,0.21516825558278777,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t08_bin10,0.4,0.025101621621621623,-0.07873327159531801,0.12893651483856125,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t09_bin01,0.45,0.003173369565217386,-0.15368340109475664,0.1600301402251914,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t09_bin02,0.45,0.012212972972972988,-0.21385938576175942,0.2382853317077054,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t09_bin03,0.45,-0.05784702702702703,-0.3004068110541847,0.18471275700013062,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t09_bin04,0.45,-0.06159837837837837,-0.3288971201748016,0.20570036341804485,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t09_bin05,0.45,-0.03186250000000001,-0.2902904846182396,0.22656548461823955,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t09_bin06,0.45,-0.034933695652173934,-0.29939425417350063,0.22952686286915278,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t09_bin07,0.45,-0.005088172043010733,-0.2540502331090089,0.24387388902298746,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t09_bin08,0.45,0.061450810810810795,-0.13826194512353995,0.26116356674516156,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t09_bin09,0.45,0.023094594594594616,-0.15495005506826381,0.20113924425745305,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t09_bin10,0.45,0.021147027027027022,-0.0764223423225444,0.11871639637659843,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t10_bin01,0.5,-0.008990217391304352,-0.1293534703959107,0.111373035613302,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t10_bin02,0.5,-0.013383783783783782,-0.209760312322688,0.18299274475512045,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t10_bin03,0.5,-0.008548648648648651,-0.2667811243927609,0.24968382709546363,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t10_bin04,0.5,-0.054812499999999965,-0.30379022442080694,0.194165224420807,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t10_bin05,0.5,-0.0028243243243243157,-0.2790130422543028,0.2733643936056541,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t10_bin06,0.5,-0.020210270270270277,-0.28415865606181795,0.2437381155212774,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t10_bin07,0.5,0.0072772972972972964,-0.23688412376366383,0.25143871835825843,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t10_bin08,0.5,0.011859459459459442,-0.18250994073244012,0.20622885965135898,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t10_bin09,0.5,0.013870652173913048,-0.134532141317751,0.16227344566557705,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t10_bin10,0.5,0.0031569892473118388,-0.08615655050296968,0.09247052899759335,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t11_bin01,0.55,0.0037293478260869424,-0.11064185344478317,0.11810054909695705,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t11_bin02,0.55,-0.014204864864864867,-0.20755416699668874,0.17914443726695903,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t11_bin03,0.55,-0.03824810810810811,-0.276201653605447,0.19970543738923077,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t11_bin04,0.55,-0.0014210810810810696,-0.2599462750083876,0.2571041128462254,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t11_bin05,0.55,0.007775274725274687,-0.26635793027856447,0.2819084797291138,,182,182,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t11_bin06,0.55,-0.041052941176470584,-0.31481503454630544,0.2327091521933643,,187,187,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t11_bin07,0.55,-0.015939673913043465,-0.2713387837152111,0.23945943588912416,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t11_bin08,0.55,0.03843027027027029,-0.14188945480968992,0.21874999535023051,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t11_bin09,0.55,0.004066666666666657,-0.15393045769936473,0.16206379103269805,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t11_bin10,0.55,0.008810270270270282,-0.05965934504668181,0.07727988558722237,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t12_bin01,0.6000000000000001,0.00342663043478261,-0.10001955279623857,0.1068728136658038,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t12_bin02,0.6000000000000001,-0.0037524590163934357,-0.18903539231499594,0.1815304742822091,,183,183,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t12_bin03,0.6000000000000001,-0.005041176470588244,-0.2566302366410503,0.24654788369987377,,187,187,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t12_bin04,0.6000000000000001,-0.04573837837837835,-0.30381612389513396,0.21233936713837726,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t12_bin05,0.6000000000000001,-0.02989239130434782,-0.2941652836606376,0.23438050105194194,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t12_bin06,0.6000000000000001,-0.026168648648648634,-0.2993085898614029,0.24697129256410563,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t12_bin07,0.6000000000000001,0.005540437158469952,-0.23230145618394077,0.24338233050088065,,183,183,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t12_bin08,0.6000000000000001,0.0605909090909091,-0.0972931983891586,0.2184750165709768,,187,187,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t12_bin09,0.6000000000000001,-0.017034054054054053,-0.1770680796356801,0.142999971527572,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t12_bin10,0.6000000000000001,0.013336216216216227,-0.02608188395923344,0.05275431639166589,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t13_bin01,0.65,0.0012717391304347795,-0.08476515886296669,0.08730863712383626,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t13_bin02,0.65,0.002803783783783788,-0.1812215556111029,0.18682912317867048,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t13_bin03,0.65,-0.03527675675675676,-0.25663591566473126,0.18608240215121774,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t13_bin04,0.65,-0.010577837837837872,-0.28222023449512346,0.2610645588194477,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t13_bin05,0.65,-0.02326902173913044,-0.29057080620915915,0.24403276273089827,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t13_bin06,0.65,0.027033513513513508,-0.22801740153192057,0.2820844285589476,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t13_bin07,0.65,0.005377837837837842,-0.22131239978076675,0.23206807545644245,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t13_bin08,0.65,0.028589189189189197,-0.13681725376350795,0.19399563214188636,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t13_bin09,0.65,-0.015068108108108103,-0.15968712793657688,0.12955091172036068,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t13_bin10,0.65,0.007019459459459453,-0.03225770496058539,0.0462966238795043,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t14_bin01,0.7000000000000001,-0.0014586956521739118,-0.07318706825405857,0.07026967694971076,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t14_bin02,0.7000000000000001,-0.025279459459459468,-0.16347117705702582,0.11291225813810687,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t14_bin03,0.7000000000000001,0.004459999999999994,-0.22301923195841242,0.2319392319584124,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t14_bin04,0.7000000000000001,0.017000540540540513,-0.25008951339862306,0.2840905944797041,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t14_bin05,0.7000000000000001,-0.032039130434782584,-0.30420052198496367,0.24012226111539853,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t14_bin06,0.7000000000000001,0.0017421621621621915,-0.2506178490961708,0.2541021734204951,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t14_bin07,0.7000000000000001,0.0341827027027027,-0.1796927463836634,0.24805815178906881,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t14_bin08,0.7000000000000001,0.030274054054054055,-0.13046194592446095,0.19101005403256907,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t14_bin09,0.7000000000000001,-0.01133513513513513,-0.1433237180800985,0.12065344780982824,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t14_bin10,0.7000000000000001,0.007749729729729727,0.00423840306597377,0.011261056393485683,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t15_bin01,0.75,0.0056048913043478255,-0.0630278757814764,0.07423765839017205,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t15_bin02,0.75,-0.006468648648648651,-0.14486914841492787,0.13193185111763056,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t15_bin03,0.75,-0.01215243243243243,-0.22652079134792283,0.20221592648305795,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t15_bin04,0.75,-0.028896756756756747,-0.27755001632045473,0.21975650280694126,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t15_bin05,0.75,0.015969021739130448,-0.25663501467826316,0.28857305815652406,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t15_bin06,0.75,0.005380540540540555,-0.26424529202326696,0.27500637310434806,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t15_bin07,0.75,-0.008270270270270266,-0.23889799887325555,0.222357458332715,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t15_bin08,0.75,0.04714098360655736,-0.08442985393607869,0.1787118211491934,,183,183,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t15_bin09,0.75,4.839572192513557e-4,-0.1018437190097451,0.10281163344824783,,187,187,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t15_bin10,0.75,-0.006835135135135141,-0.06273963039008158,0.0490693601198113,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t16_bin01,0.8,-0.006445054945054945,-0.009853851878946638,-0.0030362580111632526,,182,182,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t16_bin02,0.8,-0.006939247311827954,-0.12299937634351794,0.10912088171986205,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t16_bin03,0.8,0.009539784946236555,-0.19600065827589988,0.215080228168373,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t16_bin04,0.8,-0.02028315217391302,-0.2679746766689469,0.22740837232112085,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t16_bin05,0.8,-0.009987567567567572,-0.2791916896876228,0.25921655455248765,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t16_bin06,0.8,0.05858486486486486,-0.19701304608046116,0.3141827758101909,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t16_bin07,0.8,0.003714594594594608,-0.21007273345511948,0.2175019226443087,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t16_bin08,0.8,0.002525405405405407,-0.154307749439832,0.15935856025064282,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t16_bin09,0.8,2.2594594594595706e-4,-0.08847250847888403,0.08892440037077594,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t16_bin10,0.8,0.002240540540540539,0.0011712514024402544,0.0033098296786408235,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t17_bin01,0.8500000000000001,-0.0030830601092896176,-0.004709450046685257,-0.0014566701718939782,,183,183,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t17_bin02,0.8500000000000001,-0.009455913978494615,-0.09553773666604347,0.07662590870905424,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t17_bin03,0.8500000000000001,0.0018481081081081173,-0.17943244438915004,0.18312866060536628,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t17_bin04,0.8500000000000001,-0.02456594594594593,-0.2645112950954227,0.21537940320353083,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t17_bin05,0.8500000000000001,0.00523206521739133,-0.27002429602742467,0.28048842646220734,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t17_bin06,0.8500000000000001,0.026967027027027017,-0.22180049337318195,0.27573454742723597,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t17_bin07,0.8500000000000001,0.034489729729729725,-0.14770389485685703,0.21668335431631647,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t17_bin08,0.8500000000000001,0.002250270270270258,-0.12817551729792923,0.13267605783846972,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t17_bin09,0.8500000000000001,-0.007888586956521752,-0.09370098110738995,0.07792380719434644,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t17_bin10,0.8500000000000001,0.0011252688172043006,9.476541281749564e-4,0.0013028835062336448,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t18_bin01,0.9,-0.0010830601092896176,-0.0012224316566214481,-9.43688561957787e-4,,183,183,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t18_bin02,0.9,-0.0018844086021505388,-0.07066218324373416,0.06689336603943308,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t18_bin03,0.9,-0.01645297297297297,-0.1663914972975247,0.13348555135157877,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t18_bin04,0.9,-0.007479999999999988,-0.24738276222802313,0.23242276222802316,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t18_bin05,0.9,0.06724510869565216,-0.21346412824251665,0.34795434563382094,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t18_bin06,0.9,-0.012105405405405422,-0.26644131038988933,0.24223049957907847,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t18_bin07,0.9,-0.02746162162162163,-0.2247142865367732,0.16979104329352993,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t18_bin08,0.9,-0.0038324324324324434,-0.12831848906149648,0.12065362419663159,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t18_bin09,0.9,0.0031308108108108108,0.0017209710533478753,0.004540650568273746,,370,370,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t19_bin01,0.95,6.461956521739102e-4,-0.019672290308411264,0.020964681612759085,,368,368,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t19_bin02,0.95,0.006336021505376341,-0.13471933299931194,0.14739137601006463,,186,186,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t19_bin03,0.95,-0.017737297297297273,-0.2348290470275524,0.19935445243295782,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t19_bin04,0.95,0.05178260869565219,-0.2188055099695073,0.3223707273608117,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t19_bin05,0.95,-0.012208648648648636,-0.25651921821420626,0.23210192091690898,,185,185,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t19_bin06,0.95,-0.006501086956521742,-0.1763442593551516,0.16334208544210813,,184,184,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t19_bin07,0.95,-0.013177900552486183,-0.10148258813649916,0.07512678703152678,,181,181,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock,locf,gap_t19_bin08,0.95,0.0010503999999999995,9.753084233619564e-4,0.0011254915766380426,,375,375,9999,20260815,One game per fixed time; simultaneous dyadic-bootstrap band
+nfl,fixed_clock_summary,linear,rms_gap,,0.028649031097553106,,,,197,,9999,20260815,Descriptive RMS gap across fixed-time adaptive bins
+nfl,fixed_clock_summary,locf,rms_gap,,0.026115175795376342,,,,197,,9999,20260815,Descriptive RMS gap across fixed-time adaptive bins
+nfl,leave_one_season_out,2018,D_upper,,0.016512850546582303,,,,1594,,9999,20260815,Descriptive; seven seasons do not support season-level inference
+nfl,leave_one_season_out,2018,tail_excess,0.95,-0.006712672521957341,,,,1594,,9999,20260815,Descriptive
+nfl,leave_one_season_out,2019,D_upper,,0.012608219470823079,,,,1593,,9999,20260815,Descriptive; seven seasons do not support season-level inference
+nfl,leave_one_season_out,2019,tail_excess,0.95,-0.0029190207156308892,,,,1593,,9999,20260815,Descriptive
+nfl,leave_one_season_out,2020,D_upper,,0.014464691475911395,,,,1593,,9999,20260815,Descriptive; seven seasons do not support season-level inference
+nfl,leave_one_season_out,2020,tail_excess,0.95,-0.010451977401129943,,,,1593,,9999,20260815,Descriptive
+nfl,leave_one_season_out,2021,D_upper,,0.012977356250319594,,,,1577,,9999,20260815,Descriptive; seven seasons do not support season-level inference
+nfl,leave_one_season_out,2021,tail_excess,0.95,-0.003075459733671529,,,,1577,,9999,20260815,Descriptive
+nfl,leave_one_season_out,2022,D_upper,,0.007865370119961468,,,,1579,,9999,20260815,Descriptive; seven seasons do not support season-level inference
+nfl,leave_one_season_out,2022,tail_excess,0.95,-0.008201393286890443,,,,1579,,9999,20260815,Descriptive
+nfl,leave_one_season_out,2023,D_upper,,0.024201900218894123,,,,1576,,9999,20260815,Descriptive; seven seasons do not support season-level inference
+nfl,leave_one_season_out,2023,tail_excess,0.95,-0.004314720812182746,,,,1576,,9999,20260815,Descriptive
+nfl,leave_one_season_out,2024,D_upper,,0.0254009485623945,,,,1576,,9999,20260815,Descriptive; seven seasons do not support season-level inference
+nfl,leave_one_season_out,2024,tail_excess,0.95,1.2690355329948722e-4,,,,1576,,9999,20260815,Descriptive
+nfl,artifact_audit,exact_one_correction,patched_games,,4,,,,1848,,9999,20260815,
+nfl,missingness,2018,feed_coverage,,1,,,,254,,9999,20260815,schedule inventory
+nfl,missingness,2019,feed_coverage,,1,,,,255,,9999,20260815,schedule inventory
+nfl,missingness,2020,feed_coverage,,1,,,,255,,9999,20260815,schedule inventory
+nfl,missingness,2021,feed_coverage,,1,,,,271,,9999,20260815,schedule inventory
+nfl,missingness,2022,feed_coverage,,1,,,,269,,9999,20260815,schedule inventory
+nfl,missingness,2023,feed_coverage,,1,,,,272,,9999,20260815,schedule inventory
+nfl,missingness,2024,feed_coverage,,1,,,,272,,9999,20260815,schedule inventory

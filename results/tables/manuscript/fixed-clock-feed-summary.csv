@@ -1,0 +1,5 @@
+league,method,n_games,complete_games,games_with_any_point,games_with_regulation_clock,games_excluded_incomplete_clock,n_published_updates,median_updates_per_game,q25_updates_per_game,q75_updates_per_game
+nfl,linear,1848,1848,1848,1848,0,325922,175,167,185
+nfl,locf,1848,1848,1848,1848,0,325922,175,167,185
+nba,linear,8276,8265,8265,8276,11,3877820,466,447,488
+nba,locf,8276,8265,8265,8276,11,3877820,466,447,488

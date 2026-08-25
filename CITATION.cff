@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the paper below."
+title: "The Blown Lead Paradox"
+type: software
+authors:
+  - family-names: "Pipping-Gamón"
+    given-names: "Jonathan"
+    orcid: "https://orcid.org/0009-0000-2540-2469"
+  - family-names: "Wyner"
+    given-names: "Abraham J."
+repository-code: "https://github.com/jdpipping/max-wp-loser"
+license: MIT
+version: 1.0.0
+date-released: 2026-08-25
+keywords:
+  - calibration
+  - martingales
+  - pigeonhole bootstrap
+  - sports analytics
+  - win probability
+preferred-citation:
+  type: article
+  title: "The Blown Lead Paradox: A Pathwise Calibration Benchmark for Win Probability Forecasts"
+  authors:
+    - family-names: "Pipping-Gamón"
+      given-names: "Jonathan"
+    - family-names: "Wyner"
+      given-names: "Abraham J."
+  year: 2026

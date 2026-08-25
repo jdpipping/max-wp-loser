@@ -1,0 +1,8 @@
+league,season,scheduled_games,completed_games,tied_games,cancelled_games,other_nonfinal_games,cancelled_or_nonfinal_games,eligible_games,raw_available_games,analyzed_games,missing_games,raw_failures,enrichment_failures,feed_coverage
+nba,2018,1230,1230,0,0,0,0,1230,1222,1222,8,0,0,0.9934959349593496
+nba,2019,1230,1230,0,0,0,0,1230,1230,1230,0,0,0,1
+nba,2020,1062,1059,0,0,3,3,1059,1053,1053,6,0,0,0.9943342776203966
+nba,2021,1112,1080,0,0,32,32,1080,1080,1080,0,0,0,1
+nba,2022,1241,1230,0,0,11,11,1230,1230,1230,0,0,0,1
+nba,2023,1231,1230,0,0,1,1,1230,1230,1230,0,0,0,1
+nba,2024,1233,1231,0,0,2,2,1231,1231,1231,0,0,0,1

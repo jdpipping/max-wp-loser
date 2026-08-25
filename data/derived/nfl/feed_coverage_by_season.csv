@@ -1,0 +1,8 @@
+league,season,scheduled_games,completed_games,tied_games,cancelled_games,other_nonfinal_games,cancelled_or_nonfinal_games,eligible_games,raw_available_games,analyzed_games,missing_games,raw_failures,enrichment_failures,feed_coverage
+nfl,2018,256,256,2,0,0,0,254,254,254,0,0,0,1
+nfl,2019,256,256,1,0,0,0,255,255,255,0,0,0,1
+nfl,2020,256,256,1,0,0,0,255,255,255,0,0,0,1
+nfl,2021,272,272,1,0,0,0,271,271,271,0,0,0,1
+nfl,2022,272,271,2,1,0,1,269,269,269,0,0,0,1
+nfl,2023,272,272,0,0,0,0,272,272,272,0,0,0,1
+nfl,2024,272,272,0,0,0,0,272,272,272,0,0,0,1

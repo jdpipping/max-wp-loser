@@ -5,9 +5,18 @@
 # historical project material
 archive/
 
-# journal submission prep deliverables
-writing/aoas/
-writing/arxiv/
+# local scratch and rendered review artifacts
+tmp/
+
+# duplicate/raw feed exports and local analysis intermediates
+data/derived/*/*_wp_paths.csv
+data/derived/*/*_paths.csv
+data/derived/*/*_sample_*.csv
+results/figures/manuscript/figures/*/fixed_clock_bins.csv
+results/figures/manuscript/figures/*/fixed_clock_forecasts.csv
+results/figures/manuscript/figures/*/first_crossing_rows_*.csv
+results/figures/manuscript/figures/*/pointwise_*
+results/figures/manuscript/figures/decomp/
 
 #############
 ### FILES ###

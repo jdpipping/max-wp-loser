@@ -18,6 +18,7 @@ if (length(file_arg) > 0) {
 }
 repo_root = normalizePath(file.path(dirname(script_path), "..", ".."))
 source(file.path(repo_root, "R", "plot-style.R"))
+source(file.path(repo_root, "R", "dyadic-bootstrap.R"))
 
 ##################
 ### PARAMETERS ###
@@ -47,33 +48,22 @@ pit_cdf = function(m, p0) {
   pmin(pmax(u, 0), 1)
 }
 
-#' PIT analysis on U_i: upper-tail frequencies, one-sided KS, signature plot
+#' PIT analysis on U_i: upper-tail frequencies, global discrepancy, signature plot
 pit_analysis = function(game_data, out_dir_fig, league_name = "NBA") {
   game_data = game_data |> filter(!is.na(max_wp_loser) & !is.na(starting_wp_favored))
   p0 = game_data$starting_wp_favored
   m  = game_data$max_wp_loser
-  u = pit_cdf(m, p0)
+  u = pit_cdf_two_team(m, p0)
   n = length(u)
 
   prop_90 = mean(u >= 0.90)
   prop_95 = mean(u >= 0.95)
   prop_99 = mean(u >= 0.99)
 
-  # One-sided KS upper-tail direction on U:
-  # D_upper = sup_t (t - F_hat_U(t)); reject for excess large U_i.
-  ks_result = tryCatch(
-    stats::ks.test(u, "punif", 0, 1, alternative = "less", exact = FALSE),
-    error = function(e) list(statistic = NA_real_, p.value = NA_real_)
-  )
-  ks_stat = if (!is.na(ks_result$statistic)) as.numeric(ks_result$statistic) else NA_real_
-  ks_pval = if (!is.na(ks_result$p.value)) as.numeric(ks_result$p.value) else NA_real_
+  # Its inferential reference distribution is supplied by dependent-inference.R.
+  d_upper = ks_upper_stat(u)
 
-  u_sorted = sort(u)
-  sig_df = tibble(
-    t = c(0, u_sorted, 1),
-    fhat = c(0, seq_along(u_sorted) / n, 1)
-  ) |>
-    mutate(upper_gap = t - fhat)
+  sig_df = as_tibble(pit_signature_data(u))
 
   y_lim = max(0.05, 1.1 * max(abs(sig_df$upper_gap), na.rm = TRUE))
 
@@ -92,35 +82,40 @@ pit_analysis = function(game_data, out_dir_fig, league_name = "NBA") {
   ggsave(file.path(out_dir_fig, "pit.png"), u_signature, width = 6, height = 4, dpi = 300)
 
   list(n = n, prop_90 = prop_90, prop_95 = prop_95, prop_99 = prop_99,
-       ks_stat = ks_stat, ks_pval = ks_pval)
+       d_upper = d_upper)
 }
 
 ##################
 ### MAIN EXECUTION ###
 ##################
 
-all_games_path = file.path(data_dir, "all_games.csv")
+all_games_path = file.path(data_dir, "all_games_enriched.csv")
 if (!file.exists(all_games_path)) {
-  season_files = list.files(data_dir, pattern = "_games\\.csv$", full.names = TRUE)
-  season_files = season_files[!grepl("all_games\\.csv$", season_files)]
-  if (length(season_files) == 0) {
-    stop("No game files found under data/derived/nba.")
-  }
-  all_games = bind_rows(lapply(season_files, read.csv))
-  write.csv(all_games, all_games_path, row.names = FALSE)
+  stop(
+    "Missing corrected enriched game data: ", all_games_path,
+    ". Run scripts/manuscript/build-espn-enriched-data.R first."
+  )
 } else {
   all_games = read.csv(all_games_path)
 }
 
 pit_result = pit_analysis(all_games, out_dir)
+write_csv(tibble(
+  league = "NBA",
+  n = pit_result$n,
+  prop_90 = pit_result$prop_90,
+  prop_95 = pit_result$prop_95,
+  prop_99 = pit_result$prop_99,
+  Dn_upper = pit_result$d_upper
+), file.path(out_dir, "pit_summary.csv"))
 writeLines(sprintf(
-  "n=%d prop_90=%.3f prop_95=%.3f prop_99=%.3f ks_stat=%.4f ks_pval=%.4f",
+  "n=%d prop_90=%.3f prop_95=%.3f prop_99=%.3f Dn_upper=%.4f",
   pit_result$n, pit_result$prop_90, pit_result$prop_95, pit_result$prop_99,
-  pit_result$ks_stat, pit_result$ks_pval
+  pit_result$d_upper
 ), file.path(data_dir, "pit_summary.txt"))
 
 message("\nNBA PIT diagnostics:")
-message(sprintf("  n=%d  P(U>=0.90)=%.3f  P(U>=0.95)=%.3f  P(U>=0.99)=%.3f  KS=%.4f  p=%.4f",
+message(sprintf("  n=%d  P(U>=0.90)=%.3f  P(U>=0.95)=%.3f  P(U>=0.99)=%.3f  D_upper=%.4f",
   pit_result$n, pit_result$prop_90, pit_result$prop_95, pit_result$prop_99,
-  pit_result$ks_stat, pit_result$ks_pval))
+  pit_result$d_upper))
 message("\nNBA analysis complete! Output in ", out_dir)

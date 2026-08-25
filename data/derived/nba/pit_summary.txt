@@ -1,1 +1,1 @@
-n=8261 prop_90=0.131 prop_95=0.070 prop_99=0.020 ks_stat=0.0962 ks_pval=0.0000
+n=8276 prop_90=0.127 prop_95=0.063 prop_99=0.011 Dn_upper=0.0968

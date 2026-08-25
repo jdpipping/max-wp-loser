@@ -1,0 +1,15 @@
+league,season,scheduled_games,eligible_games,observed_games,missing_games,coverage,audit_status
+nba,2018,1230,1230,1222,8,0.9934959349593496,schedule inventory
+nba,2019,1230,1230,1230,0,1,schedule inventory
+nba,2020,1062,1059,1053,6,0.9943342776203966,schedule inventory
+nba,2021,1112,1080,1080,0,1,schedule inventory
+nba,2022,1241,1230,1230,0,1,schedule inventory
+nba,2023,1231,1230,1230,0,1,schedule inventory
+nba,2024,1233,1231,1231,0,1,schedule inventory
+nfl,2018,256,254,254,0,1,schedule inventory
+nfl,2019,256,255,255,0,1,schedule inventory
+nfl,2020,256,255,255,0,1,schedule inventory
+nfl,2021,272,271,271,0,1,schedule inventory
+nfl,2022,272,269,269,0,1,schedule inventory
+nfl,2023,272,272,272,0,1,schedule inventory
+nfl,2024,272,272,272,0,1,schedule inventory

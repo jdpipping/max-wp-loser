@@ -1,0 +1,510 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\graphicspath{{../../results/figures/manuscript/}}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{parskip}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{natbib}
+
+\geometry{
+    letterpaper,
+    margin=2cm
+}
+
+\definecolor{linkcolor}{RGB}{0, 90, 160}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=linkcolor,
+    pdftitle={Supplementary Material for The Blown Lead Paradox: A Pathwise Calibration Benchmark for Win Probability Forecasts},
+    pdfauthor={Jonathan Pipping-Gamon and Abraham J. Wyner} }
+
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+\input{../../results/tables/manuscript/inference-results.tex}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\title{Supplementary Material for\\[0.25em]\large The Blown Lead Paradox: A Pathwise Calibration Benchmark for Win Probability Forecasts}
+\author{Jonathan Pipping-Gam\'on \and Abraham J. Wyner}
+\date{August 25, 2026}
+
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thesubsection}{S\arabic{section}.\arabic{subsection}}
+\counterwithin{table}{section}
+\counterwithin{figure}{section}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\setcounter{section}{0}
+
+\begin{document}
+
+\maketitle
+
+\input{technical-supplement}
+
+\section{Numerical Benchmarks} \label{sec:supp-benchmarks}
+
+The piecewise CDF in Supplementary Section~S3 gives the selected values in Table~\ref{tab:supp-numerical-benchmarks}.
+When the peak threshold satisfies $x\ge p_0$, the tail is universal:
+\[
+\P(M_\lambda\ge x)=\frac{1}{x}-1.
+\]
+In the intermediate region, $1-p_0\le x<p_0$, the corresponding probability is $(1-p_0)/x$.
+The first three rows follow a game with $p_0=2/3$ across the boundary between these regions; the remaining rows give the practically important upper-tail thresholds.
+For discretely reported paths, these continuous-path probabilities are conservative upper bounds.
+
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Selected benchmark probabilities for the eventual loser's peak.}
+\label{tab:supp-numerical-benchmarks}
+\begin{tabular}{lccc}
+\hline
+Case & Starting favorite & Peak threshold $x$ & $\P(M_\lambda\ge x)$ \\
+\hline
+Intermediate region & $p_0=2/3$ & $1/2$ & $2/3$ \\
+Universal boundary & $p_0=2/3$ & $2/3$ & $1/2$ \\
+Universal tail & $p_0=2/3$ & $3/4$ & $1/3$ \\
+Universal tail & $p_0\le 0.90$ & $0.90$ & $1/9\;(0.111)$ \\
+Universal tail & $p_0\le 0.95$ & $0.95$ & $1/19\;(0.0526)$ \\
+Universal tail & $p_0\le 0.99$ & $0.99$ & $1/99\;(0.0101)$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Dependence Validity and Bootstrap} \label{sec:supp-inference}
+
+Intervals and $p$-values in Sections~S5--S7 use $B=\DyadicBootstrapReplicates$ season-stratified dyadic draws with seed \DyadicBootstrapSeed.
+
+\subsection{Exchangeable-array specialization}
+
+The empirical-process bootstrap theorem of \citet{DaveziesDHAultfoeuilleGuyonvarch2021} and its multiple-observations-per-dyad extension cover zero or repeated sports matches between a pair.
+The following corollary specializes those results to an equal-game empirical CDF with within-season normalization.
+
+For season $s$, let $n_s$ be the number of teams, $N_{s,ab}$ the number of games between teams $a<b$, and $U_{s,ab\ell}$ the benchmark score in meeting $\ell$.
+For $h_t(u)=\mathbf 1\{u<t\}$, define the empirical numerator and denominator
+\[
+\widehat A_s(t)
+=\binom{n_s}{2}^{-1}
+  \sum_{a<b}\sum_{\ell=1}^{N_{s,ab}}h_t(U_{s,ab\ell}),
+\qquad
+\widehat B_s
+=\binom{n_s}{2}^{-1}\sum_{a<b}N_{s,ab}.
+\]
+The strict empirical CDF among games in season $s$ is therefore
+\[
+\widehat F_s(t-)=\frac{\widehat A_s(t)}{\widehat B_s}.
+\]
+Its population counterpart is $F_s(t-)=A_s(t)/B_s$, where
+\[
+A_s(t)=\E\!\left[\sum_{\ell=1}^{N_{s,12}}h_t(U_{s,12\ell})\right],
+\qquad
+B_s=\E[N_{s,12}].
+\]
+Let $\omega_{s,n}\ge0$ be fixed stratification weights, with $\sum_s\omega_{s,n}=1$ and $\omega_{s,n}\to\omega_s$.
+The application conditions on the observed season composition and sets these weights to each season's share of analyzed games.
+Thus
+\[
+\widehat F(t-)=\sum_{s=1}^S\omega_{s,n}\widehat F_s(t-),
+\qquad
+F_{\omega,n}(t-)=\sum_{s=1}^S\omega_{s,n}F_s(t-).
+\]
+
+Within season $s$, let $(W_{s1},\ldots,W_{sn_s})$ be multinomial team multiplicities from $n_s$ draws.
+The bootstrap analogues are
+\begin{align*}
+\widehat A_s^*(t)
+&=\binom{n_s}{2}^{-1}
+  \sum_{a<b}W_{sa}W_{sb}
+  \sum_{\ell=1}^{N_{s,ab}}h_t(U_{s,ab\ell}),\\
+\widehat B_s^*
+&=\binom{n_s}{2}^{-1}
+  \sum_{a<b}W_{sa}W_{sb}N_{s,ab},
+\qquad
+\widehat F_s^*(t-)=\frac{\widehat A_s^*(t)}{\widehat B_s^*},
+\end{align*}
+and $\widehat F^*(t-)=\sum_s\omega_{s,n}\widehat F_s^*(t-)$.
+This ratio is exactly the CDF obtained by normalizing the raw game weights $W_{sa}W_{sb}$ within season.
+
+\begin{corollary}[CDF specialization of the exchangeable-array bootstrap] \label{cor:dyadic-cdf}
+Let the number of seasons $S$ be fixed, $n_{\min}=\min_s n_s\to\infty$, and $n_{\min}/n_s\to\kappa_s\in(0,1]$.
+Within each season, suppose
+\[
+\bigl(N_{s,ab},(U_{s,ab\ell})_{\ell\ge1}\bigr)_{a<b}
+\]
+is jointly exchangeable and dissociated under team relabeling, and suppose the season arrays are independent.
+Assume $N_{s,ab}\le C<\infty$ almost surely and $B_s>0$.
+Assume also that the first-order dyadic projection of the normalized CDF process is nondegenerate, meaning that its limiting covariance function is not identically zero.
+Then, in $\ell^\infty([0,1])$,
+\[
+\sqrt{n_{\min}}\{\widehat F(t-)-F_{\omega,n}(t-)\}
+\rightsquigarrow \mathbb G(t),
+\]
+and, conditionally on the observed arrays,
+\[
+\sqrt{n_{\min}}\{\widehat F^*(t-)-\widehat F(t-)\}
+\rightsquigarrow \mathbb G(t).
+\]
+Consequently, at continuity points of the limiting supremum law, the conditional distribution of
+\[
+\sqrt{n_{\min}}\sup_t\{\widehat F(t-)-\widehat F^*(t-)\}
+\]
+consistently estimates the distribution of
+\[
+\sqrt{n_{\min}}\sup_t\{F_{\omega,n}(t-)-\widehat F(t-)\}.
+\]
+\end{corollary}
+
+\begin{proof}
+The class
+\[
+\mathcal H_+=\{u\mapsto\mathbf 1(u<t):t\in[0,1]\}\cup\{1\}
+\]
+is a pointwise measurable VC class with bounded envelope: rational thresholds form a countable pointwise-dense subclass.
+Parts 2 and 3 of Supplemental Theorem S1 in \citet{DaveziesDHAultfoeuilleGuyonvarch2021} therefore give joint weak convergence of
+$\sqrt{n_s}(\widehat A_s-A_s,\widehat B_s-B_s)$ and its multinomial-team bootstrap counterpart.
+The bounded cell count supplies the extension's moment conditions.
+An unordered symmetric dyad can be embedded in the theorem's ordered-array notation by assigning the same cell to $(a,b)$ and $(b,a)$; the common factor of two cancels from the CDF ratio.
+
+Because $B_s>0$, the map $\Psi(A,B)=A/B$ is Hadamard differentiable, with derivative
+\[
+\dot\Psi_{(A_s,B_s)}(\alpha,\beta)
+=\frac{\alpha}{B_s}-\frac{A_s\beta}{B_s^2}.
+\]
+The bootstrap functional delta method therefore gives the two process limits for each normalized season CDF.
+The second term carries the denominator fluctuation into the normalized process.
+A finite independent weighted sum, together with $n_{\min}/n_s\to\kappa_s$, gives the pooled limits.
+Finally, $f\mapsto\sup_t\{-f(t)\}$ is Lipschitz on $\ell^\infty([0,1])$, which gives the last assertion directly, without a symmetry argument.
+\end{proof}
+
+\begin{corollary}[Conservative upper-tail test] \label{cor:conservative-test}
+Suppose in addition that the discrete-feed null satisfies $F_{\omega,n}(t-)\ge t$ for every $t\in[0,1]$.
+Let $c_{1-\alpha}^*$ be the conditional $(1-\alpha)$ quantile of the scaled recentered bootstrap statistic in Corollary~\ref{cor:dyadic-cdf}.
+Define
+\[
+D_n^{\mathrm{upper}}=\sup_t\{t-\widehat F(t-)\}
+\]
+and reject when $\sqrt{n_{\min}}D_n^{\mathrm{upper}}>c_{1-\alpha}^*$.
+This test has asymptotic size at most $\alpha$ whenever the limiting supremum distribution is continuous at its $(1-\alpha)$ quantile.
+\end{corollary}
+
+\begin{proof}
+Under the null,
+\[
+t-\widehat F(t-)
+\le F_{\omega,n}(t-)-\widehat F(t-)
+\]
+pointwise.
+The result follows by taking suprema and applying Corollary~\ref{cor:dyadic-cdf}.
+\end{proof}
+
+Corollaries~\ref{cor:dyadic-cdf}--\ref{cor:conservative-test} use a dense-array asymptotic and a nondegenerate first-order dyadic projection.
+A vanishing projection can produce a second-order limit and conservative pigeonhole resampling; more generally, \citet{Menzel2021} rules out uniform bootstrap consistency across all multiway-dependence regimes.
+Professional schedules have fixed conference and division structures, and franchises persist across seasons.
+Section~S8 evaluates finite-sample size on the observed schedules, and the franchise-linked specification in Table~\ref{tab:supp-specification} carries team effects across seasons.
+
+\subsection{Season-stratified dyadic pigeonhole bootstrap}
+
+Write game $g$ in season $s$ as the dyad $(a_g,b_g)$.
+The resampling algorithm is:
+\begin{enumerate}[leftmargin=2em]
+\item Within each season, sample its observed teams multinomially with replacement and record team multiplicities $W_{sa}$.
+\item Give game $g$ raw weight $W_{s a_g}W_{s b_g}$. Repeat meetings between the same teams therefore receive the same endpoint weight. If a season draw assigns zero total weight to its observed schedule, redraw that season.
+\item Normalize the positive game weights within season to sum to that season's observed number of contributions. This retains the empirical season composition while allowing arbitrary dependence among games that share a team.
+\item Reuse the same team multiplicities for the PIT process, tail rates, first-crossing residuals, and fixed-clock calibration cells.
+\end{enumerate}
+This applies Owen's pigeonhole principle---resampling indexing units rather than treating cells as independent---to a symmetric dyadic schedule \citep{Owen2007}.
+The exchangeable-array empirical-process results of \citet{DaveziesDHAultfoeuilleGuyonvarch2021} cover recentered empirical CDF and Kolmogorov--Smirnov processes for dyads, including repeated observations between the same pair.
+
+For tied PIT scores $u_1,\ldots,u_n$, the observed upper statistic is computed exactly as
+\[
+D_n^{\mathrm{upper}}
+=\max_{u\in\{u_1,\ldots,u_n\}}\{u-\hat F_U(u-)\}.
+\]
+For bootstrap draw $b$, let $\hat F_{U,b}^*$ be the season-normalized weighted CDF and calculate
+\[
+D_{n,b}^*=\sup_t\{\hat F_U(t)-\hat F_{U,b}^*(t)\}.
+\]
+For the common observed support, this right-continuous supremum equals the strict-CDF supremum in Corollary~\ref{cor:dyadic-cdf}: both empirical CDFs have the same total mass, so their right-limit and left-limit differences run through the same values, with zero at opposite endpoints.
+The finite-bootstrap $p$-value is $(1+\sum_b\mathbf 1\{D_{n,b}^*\ge D_n^{\mathrm{upper}}\})/(B+1)$.
+
+\section{Published Feeds and Fixed-Time Calibration} \label{sec:supp-data}
+
+Both applications contain completed regular-season games only.
+NFL seasons are labeled by starting year and include January games from the following calendar year; NBA seasons are labeled by ending year.
+Because ESPN's NBA season-type field also includes All-Star exhibitions, both participants must be NBA franchises; this excludes \NBAExcludedExhibitionEvents{} All-Star or Rising Stars events, including \NBAExcludedExhibitionFeeds{} with usable probability paths.
+Table~\ref{tab:supp-coverage} gives the complete acquisition ledger.
+``Eligible'' means completed and non-tied, while ``analyzed'' additionally requires a usable public probability path.
+
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Regular-season schedule and public-feed coverage by season.}
+\label{tab:supp-coverage}
+\textbf{NFL}\\[0.3em]
+\begin{tabular}{lrrrr}
+\hline
+Season & Scheduled & Eligible & Analyzed & Missing \\
+\hline
+\NFLCoverageRows
+\hline
+\end{tabular}
+\par\vspace{0.8em}
+\textbf{NBA}\\[0.3em]
+\begin{tabular}{lrrrr}
+\hline
+Season & Scheduled & Eligible & Analyzed & Missing \\
+\hline
+\NBACoverageRows
+\hline
+\end{tabular}
+\end{table}
+
+Each application retains its published resolution.
+The NFL paths contain \NFLPublishedUpdates{} updates, with median \NFLMedianUpdatesPerGame{} per game (interquartile range \NFLUpdateQOne--\NFLUpdateQThree); the NBA paths contain \NBAPublishedUpdates{}, with median \NBAMedianUpdatesPerGame{} (\NBAUpdateQOne--\NBAUpdateQThree).
+
+\FloatBarrier
+\subsection{Yeh-style fixed-clock comparison}
+
+Following the calibration-surface motivation of \citet{YehRiceDubin2022}, every retained home-team forecast is evaluated at $t=0,.05,\ldots,.95$ of regulation.
+Linear interpolation is primary and last observation carried forward (LOCF) is the sensitivity.
+At each time and for each method, empirical probability quantiles define at most ten bins; a repeated forecast value is never split between bins.
+Every complete game therefore contributes exactly once to every time point.
+Overtime updates are omitted from this common-clock comparison but remain in the collapse statistic.
+
+The linear and LOCF analyses use the same \NFLFixedClockGames{} NFL games and \NBAFixedClockGames{} NBA games.
+All NFL games have a complete common clock; \NBAFixedClockExcluded{} NBA paths are incomplete by $t=.95$ and are excluded from this comparison only.
+For each time--probability cell, the observed-minus-forecast gap is resampled using the common dyadic draws.
+A simultaneous band is obtained from the 95th percentile of the maximum absolute studentized gap over all cells.
+Under linear interpolation, the simultaneous bands exclude zero in \NFLFixedClockLinearSignificantCells{} of \NFLFixedClockLinearCells{} NFL cells and \NBAFixedClockLinearSignificantCells{} of \NBAFixedClockLinearCells{} NBA cells; LOCF gives \NFLFixedClockLOCFSignificantCells{} of \NFLFixedClockLOCFCells{} and \NBAFixedClockLOCFSignificantCells{} of \NBAFixedClockLOCFCells{}, respectively.
+The flagged cells lie almost entirely at or after 80\% of regulation and in the extreme probability bins.
+In each flagged cell, the observed win rate is exactly zero or one while the corresponding mean forecast remains just inside the boundary.
+Thus the fixed-clock analysis finds sparse late-game boundary discrepancies, while the interior cells remain within the simultaneous bands.
+The descriptive root-mean-square cell gaps are \NFLFixedClockLinearRMS{} (linear) and \NFLFixedClockLOCFRMS{} (LOCF) in the NFL, and \NBAFixedClockLinearRMS{} and \NBAFixedClockLOCFRMS{} in the NBA.
+Figure~\ref{fig:supp-fixed-clock} displays the full surfaces.
+
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.49\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{figures/nfl/fixed_clock_surface_linear.png}
+  \\[-0.2em]{\small (a) NFL, linear interpolation}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.49\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{figures/nba/fixed_clock_surface_linear.png}
+  \\[-0.2em]{\small (b) NBA, linear interpolation}
+\end{minipage}\\[0.8em]
+\begin{minipage}[t]{0.49\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{figures/nfl/fixed_clock_surface_locf.png}
+  \\[-0.2em]{\small (c) NFL, LOCF}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.49\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{figures/nba/fixed_clock_surface_locf.png}
+  \\[-0.2em]{\small (d) NBA, LOCF}
+\end{minipage}
+\caption{Fixed-clock calibration surfaces. Color is observed win rate minus mean published probability; outlined cells exclude zero under the simultaneous dyadic band. The bin locations adapt to the forecast distribution at each time.}
+\label{fig:supp-fixed-clock}
+\end{figure}
+
+The fixed-clock surfaces evaluate reliability at prespecified times; the collapse benchmark evaluates the selected losing path.
+
+\section{Full Collapse Results and Robustness} \label{sec:supp-results}
+
+\subsection{Full tail and first-crossing results}
+
+Table~\ref{tab:supp-tail} reports upper-tail rates at $0.90$, $0.95$, and $0.99$.
+The NBA excess is positive at $0.90$ and $0.95$; its $0.99$ interval includes zero.
+
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Upper-tail rates and excess over the continuous benchmark. Intervals are two-sided percentile dyadic-bootstrap intervals for the excess.}
+\label{tab:supp-tail}
+\begin{tabular}{lcccc}
+\hline
+League & Threshold & Tail rate & Benchmark rate & Excess (95\% CI) \\
+\hline
+NFL & 0.90 & \NFLTailNinetyRate & 10.0\% & \NFLTailNinetyExcess{} [\NFLTailNinetyCILower, \NFLTailNinetyCIUpper] \\
+NFL & 0.95 & \NFLTailNinetyFiveRate & 5.0\% & \NFLTailNinetyFiveExcess{} [\NFLTailNinetyFiveCILower, \NFLTailNinetyFiveCIUpper] \\
+NFL & 0.99 & \NFLTailNinetyNineRate & 1.0\% & \NFLTailNinetyNineExcess{} [\NFLTailNinetyNineCILower, \NFLTailNinetyNineCIUpper] \\
+NBA & 0.90 & \NBATailNinetyRate & 10.0\% & \NBATailNinetyExcess{} [\NBATailNinetyCILower, \NBATailNinetyCIUpper] \\
+NBA & 0.95 & \NBATailNinetyFiveRate & 5.0\% & \NBATailNinetyFiveExcess{} [\NBATailNinetyFiveCILower, \NBATailNinetyFiveCIUpper] \\
+NBA & 0.99 & \NBATailNinetyNineRate & 1.0\% & \NBATailNinetyNineExcess{} [\NBATailNinetyNineCILower, \NBATailNinetyNineCIUpper] \\
+\hline
+\end{tabular}
+\end{table}
+
+For a team-side path, let $\tau_q$ be the first published update at or above $q$ with positive game time remaining.
+If no preterminal crossing occurs, set $\tau_q=N$ and retain the indicator of crossing.
+Because $\tau_q$ is bounded and $\{\tau_q<N\}\in\mathcal F_{\tau_q}$, sequential calibration implies
+\[
+\E\{(p_{\tau_q}-Y)\mathbf 1(\tau_q<N)\}=0.
+\]
+Optional stopping therefore centers the first-crossing residual at zero under sequential calibration.
+Table~\ref{tab:supp-crossing} reports $\overline{1-Y}$, $\overline{1-p_{\tau_q}}$, and their difference $\bar R=\overline{p_{\tau_q}-Y}$.
+The estimand is an average over crossing episodes; when two episodes come from the same game, they receive the same dyadic game weight.
+The crossing estimand uses a published probability $p\ge q$; the tail estimand in Table~\ref{tab:supp-tail} uses the game-level benchmark score $U\ge q$.
+
+\begin{table}[!htbp]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Preterminal first crossings. The interval is for the mean residual $\bar R$.}
+\label{tab:supp-crossing}
+\begin{tabular}{lcrrrrr}
+\hline
+League & $q$ & Episodes & Games & Observed loss & Implied loss & $\bar R$ (95\% CI) \\
+\hline
+NFL & 0.90 & \NFLCrossingNinetyEpisodes & \NFLCrossingNinetyGames & \NFLCrossingNinetyLoss & \NFLCrossingNinetyImplied & \NFLCrossingNinetyResidual{} [\NFLCrossingNinetyCILower, \NFLCrossingNinetyCIUpper] \\
+NFL & 0.95 & \NFLCrossingNinetyFiveEpisodes & \NFLCrossingNinetyFiveGames & \NFLCrossingNinetyFiveLoss & \NFLCrossingNinetyFiveImplied & \NFLCrossingNinetyFiveResidual{} [\NFLCrossingNinetyFiveCILower, \NFLCrossingNinetyFiveCIUpper] \\
+NFL & 0.99 & \NFLCrossingNinetyNineEpisodes & \NFLCrossingNinetyNineGames & \NFLCrossingNinetyNineLoss & \NFLCrossingNinetyNineImplied & \NFLCrossingNinetyNineResidual{} [\NFLCrossingNinetyNineCILower, \NFLCrossingNinetyNineCIUpper] \\
+NBA & 0.90 & \NBACrossingNinetyEpisodes & \NBACrossingNinetyGames & \NBACrossingNinetyLoss & \NBACrossingNinetyImplied & \NBACrossingNinetyResidual{} [\NBACrossingNinetyCILower, \NBACrossingNinetyCIUpper] \\
+NBA & 0.95 & \NBACrossingNinetyFiveEpisodes & \NBACrossingNinetyFiveGames & \NBACrossingNinetyFiveLoss & \NBACrossingNinetyFiveImplied & \NBACrossingNinetyFiveResidual{} [\NBACrossingNinetyFiveCILower, \NBACrossingNinetyFiveCIUpper] \\
+NBA & 0.99 & \NBACrossingNinetyNineEpisodes & \NBACrossingNinetyNineGames & \NBACrossingNinetyNineLoss & \NBACrossingNinetyNineImplied & \NBACrossingNinetyNineResidual{} [\NBACrossingNinetyNineCILower, \NBACrossingNinetyNineCIUpper] \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Feed and specification sensitivity}
+
+Table~\ref{tab:supp-specification} reports sensitivity to feed corrections, rounding, dependence structure, threshold convention, and time sampling.
+The crossing rows report the $0.95$ residual, while the fixed-clock rows report descriptive root-mean-square calibration gaps over time--probability cells.
+For reported probabilities rounded to three decimals, lower and upper PIT vectors are obtained by allowing each probability to range within $\pm0.0005$ and using monotonicity of the benchmark transform.
+The dyad-plus-calendar row multiplies the team multiplicity by a circular two-week block multiplicity within each season, retaining team dependence while allowing common model-period shocks.
+The franchise-linked row maps relocations to a common franchise and applies one team multiplicity across all seasons, allowing persistent team effects.
+
+\begin{table}[!htbp]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Feed and specification sensitivity. Brackets denote 95\% intervals where shown.}
+\label{tab:supp-specification}
+\begin{tabular}{lll}
+\hline
+Specification & NFL & NBA \\
+\hline
+Global, corrected: $D$ ($p$) & \NFLGlobalD{} (\NFLGlobalDyadicP) & \NBAGlobalD{} (\NBAGlobalDyadicP) \\
+Global, raw: $D$ ($p$) & \NFLRawGlobalD{} (\NFLRawGlobalP) & \NBARawGlobalD{} (\NBARawGlobalP) \\
+Exclude patched games: $D$ ($p$) & \NFLExcludePatchedGlobalD{} (\NFLExcludePatchedGlobalP) & \NBAExcludePatchedGlobalD{} (\NBAExcludePatchedGlobalP) \\
+Rounding bound for $D$ & [\NFLRoundingLowerGlobalD, \NFLRoundingUpperGlobalD] & [\NBARoundingLowerGlobalD, \NBARoundingUpperGlobalD] \\
+Rounding bound for $\widehat\P(U\ge.95)$ & [\NFLRoundingLowerTailNinetyFiveRate, \NFLRoundingUpperTailNinetyFiveRate] & [\NBARoundingLowerTailNinetyFiveRate, \NBARoundingUpperTailNinetyFiveRate] \\
+Dyad plus calendar: $D$ ($p$) & \NFLDyadicCalendarGlobalD{} (\NFLDyadicCalendarGlobalP) & \NBADyadicCalendarGlobalD{} (\NBADyadicCalendarGlobalP) \\
+Franchise linked: $D$ ($p$) & \NFLFranchiseLinkedGlobalD{} (\NFLFranchiseLinkedGlobalP) & \NBAFranchiseLinkedGlobalD{} (\NBAFranchiseLinkedGlobalP) \\
+Crossing, preterminal $p\ge.95$ & \NFLCrossingNinetyFiveResidual{} [\NFLCrossingNinetyFiveCILower, \NFLCrossingNinetyFiveCIUpper] & \NBACrossingNinetyFiveResidual{} [\NBACrossingNinetyFiveCILower, \NBACrossingNinetyFiveCIUpper] \\
+Crossing, preterminal $p>.95$ & \NFLCrossingNinetyFiveStrictResidual{} [\NFLCrossingNinetyFiveStrictCILower, \NFLCrossingNinetyFiveStrictCIUpper] & \NBACrossingNinetyFiveStrictResidual{} [\NBACrossingNinetyFiveStrictCILower, \NBACrossingNinetyFiveStrictCIUpper] \\
+Crossing, terminal-inclusive & \NFLCrossingNinetyFiveAllResidual{} [\NFLCrossingNinetyFiveAllCILower, \NFLCrossingNinetyFiveAllCIUpper] & \NBACrossingNinetyFiveAllResidual{} [\NBACrossingNinetyFiveAllCILower, \NBACrossingNinetyFiveAllCIUpper] \\
+Fixed clock, linear RMS & \NFLFixedClockLinearRMS & \NBAFixedClockLinearRMS \\
+Fixed clock, LOCF RMS & \NFLFixedClockLOCFRMS & \NBAFixedClockLOCFRMS \\
+\hline
+\end{tabular}
+\end{table}
+
+At $0.95$, strict versus weak tail counting differs only through the observed atom: the weak and strict NBA rates are \NBATailNinetyFiveRate{} and \NBATailNinetyFiveStrictRate{}, with \NBATailNinetyFiveAtomRate{} exactly at the boundary; the corresponding NFL values are \NFLTailNinetyFiveRate{}, \NFLTailNinetyFiveStrictRate{}, and \NFLTailNinetyFiveAtomRate{}.
+The path audit identified \NBAPatchedGames{} NBA and \NFLPatchedGames{} NFL games containing loser-side exact-one feed values.
+The raw, corrected, and exclusion rows in Table~\ref{tab:supp-specification} use identical team draws.
+
+\subsection{Season persistence}
+
+The acquisition ledger in Table~\ref{tab:supp-coverage} gives explicit missing-feed accounting for both leagues.
+NFL coverage is complete; minimum NBA season coverage is \NBAMinimumFeedCoverage{}.
+
+Table~\ref{tab:supp-loso} gives descriptive stability summaries after omitting one season at a time.
+Across omissions, the NBA global statistic ranges from \NBALOSODMin{} to \NBALOSODMax{}, while the NFL statistic ranges from \NFLLOSODMin{} to \NFLLOSODMax{}.
+
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Leave-one-season-out global statistic and $0.95$ tail excess.}
+\label{tab:supp-loso}
+\begin{minipage}[t]{0.47\textwidth}
+\centering
+\textbf{NFL}\\[0.3em]
+\begin{tabular}{lrrr}
+\hline
+Omitted & Games & $D$ & Excess \\
+\hline
+\NFLLeaveSeasonRows
+\hline
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.47\textwidth}
+\centering
+\textbf{NBA}\\[0.3em]
+\begin{tabular}{lrrr}
+\hline
+Omitted & Games & $D$ & Excess \\
+\hline
+\NBALeaveSeasonRows
+\hline
+\end{tabular}
+\end{minipage}
+\end{table}
+
+\FloatBarrier
+Across specifications, the NBA departure remains a recurrent upper-tail feature.
+The tail excess is positive at $0.90$ and $0.95$, first-crossing residuals are positive at all three thresholds, and the global test rejects for the raw paths, corrected paths, patched-game exclusion, calendar blocks, and franchise linkage.
+Across the leave-one-season-out samples, $D_n^{\mathrm{upper}}$ ranges from \NBALOSODMin{} to \NBALOSODMax{} and the $0.95$ tail excess ranges from \NBALOSOTailMin{} to \NBALOSOTailMax{}.
+The game-level $0.99$ tail interval includes zero, marking the limit of the upper-tail evidence.
+Across specifications, the NFL retains the global conclusion of no detected departure; its positive $0.99$ first-crossing residual is a localized result.
+
+\section{Finite-Schedule Null Simulation} \label{sec:supp-validation}
+
+Finite-sample Type I error is evaluated while retaining the teams and matchups in each observed season schedule.
+For game $g$ between teams $a_g$ and $b_g$, generate
+\[
+Z_g=\sqrt{\rho}\,(A_{s,a_g}+A_{s,b_g})/\sqrt{2}
+    +\sqrt{1-\rho}\,E_g,
+\qquad U_g=\Phi(Z_g),
+\]
+where team effects and game shocks are independent standard normals and team effects are redrawn by season.
+Marginally, $Z_g$ is standard normal and $U_g$ is uniform, placing every simulation on the boundary of the continuous calibration null.
+Games sharing a team are correlated through the team effect, with $\rho$ controlling the strength of that dependence.
+For each $\rho\in\{0,0.25,0.5\}$, the global test is applied to \ValidationOuterSamples{} Monte Carlo samples using \ValidationInnerReplicates{} inner pigeonhole draws.
+The proportion rejected estimates finite-schedule Type I error at nominal level 5\%.
+When $\rho=0$, the pigeonhole procedure is expected to be conservative because the dyadic projection is degenerate; this is the regime in which multiway bootstrap behavior requires particular care \citep{Menzel2021}.
+
+\begin{table}[H]
+\centering
+\caption{Empirical 5\% rejection rates in the finite-schedule null simulation (\ValidationOuterSamples{} Monte Carlo samples; \ValidationInnerReplicates{} inner draws).}
+\label{tab:supp-validation}
+\begin{tabular}{lcc}
+\hline
+League & $\rho$ & Dyadic rejection rate \\
+\hline
+NFL & 0 & \ValidationNFLRhoZeroDyadic \\
+NFL & 0.25 & \ValidationNFLRhoTwentyFiveDyadic \\
+NFL & 0.5 & \ValidationNFLRhoFiftyDyadic \\
+NBA & 0 & \ValidationNBARhoZeroDyadic \\
+NBA & 0.25 & \ValidationNBARhoTwentyFiveDyadic \\
+NBA & 0.5 & \ValidationNBARhoFiftyDyadic \\
+\hline
+\end{tabular}
+\end{table}
+The test is conservative under these schedule-specific nulls.
+Rejection rates rise with the shared-team component, from \ValidationNFLRhoZeroDyadic{} to \ValidationNFLRhoFiftyDyadic{} on the NFL schedule and from \ValidationNBARhoZeroDyadic{} to \ValidationNBARhoFiftyDyadic{} on the NBA schedule, remaining at or below the nominal 5\% level.
+The simulation targets finite-schedule size under shared-team dependence; calendar and cross-season dependence are examined through the sensitivities in Section~S7.
+
+\bibliographystyle{apalike}
+\bibliography{references}
+
+\end{document}
