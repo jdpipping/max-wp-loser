@@ -458,7 +458,7 @@ When $p_0\ne 1/2$, the intermediate region $[1-p_0,p_0)$ produces a kink (Figure
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.8\textwidth]{sports_cdf.png}
+\includegraphics[width=0.8\textwidth]{figures/distributions/sports_cdf.png}
 \caption{Benchmark CDF $F_{M_\lambda}(x)$ for different pre-game favorite probabilities $p_0$.}
 \label{fig:sports-cdf}
 \end{figure}
@@ -471,7 +471,7 @@ For the Chicago game, $p_0=\ChicagoStartingWP$, the observed published-path maxi
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.88\textwidth]{nba_extreme_case_study.png}
+\includegraphics[width=0.88\textwidth]{figures/case_studies/nba_extreme_case_study.png}
 \caption{Chicago's published win probability paths. The eventual loser's observed peak is \ChicagoMaxWP{} with \ChicagoMinutesRemaining{} minutes remaining; the game-specific benchmark maps that peak and $p_0=\ChicagoStartingWP$ to $U=\ChicagoPIT$.}
 \label{fig:nba-extreme-case}
 \end{figure}
@@ -596,7 +596,7 @@ The two diagnostics answer different questions: fixed-clock calibration evaluate
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.95\textwidth]{fixed_clock_calibration_envelope.png}
+\includegraphics[width=0.95\textwidth]{figures/fixed_clock_calibration_envelope.png}
 \caption{Fixed-clock calibration envelopes using linear interpolation. Each game contributes once at each fraction of regulation. Dark regions span the ten tie-preserving adaptive-bin gaps; light regions include the simultaneous season-stratified dyadic-bootstrap limits. Full time--probability surfaces and the LOCF sensitivity appear in the supplement.}
 \label{fig:fixed-clock-envelope}
 \end{figure}
@@ -611,12 +611,12 @@ The dot-dash line in each panel marks the 95th percentile of the centered dyadic
 \centering
 \begin{minipage}[t]{0.8\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{nfl_pit.png}
+  \includegraphics[width=\textwidth]{figures/nfl/pit.png}
   \smallskip\par\small (a) NFL
 \end{minipage}\\[0.5em]
 \begin{minipage}[t]{0.8\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{nba_pit.png}
+  \includegraphics[width=\textwidth]{figures/nba/pit.png}
   \smallskip\par\small (b) NBA
 \end{minipage}
 \caption{Centered PIT signatures $t-\hat F_U(t-)$ and the 95\% season-stratified dyadic-bootstrap critical value (dot-dash). The NFL application has no detected global departure; the NBA application exceeds its reference.}
@@ -715,7 +715,7 @@ Coarsening removes opportunities to observe a high losing-team peak and therefor
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.82\textwidth]{null_conservatism.png}
+\includegraphics[width=0.82\textwidth]{figures/simulation/null_conservatism.png}
 \caption{Centered PIT signatures after observing a common calibrated process at progressively coarser resolutions ($K_{\mathrm{base}}=\SimulationBaseGrid$). Coarsening makes the upper-tail benchmark conservative.}
 \label{fig:sim-null-gap}
 \end{figure}
@@ -1243,22 +1243,22 @@ Figure~\ref{fig:supp-fixed-clock} displays the full surfaces.
 \centering
 \begin{minipage}[t]{0.49\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{nfl_fixed_clock_surface_linear.png}
+  \includegraphics[width=\textwidth]{figures/nfl/fixed_clock_surface_linear.png}
   \\[-0.2em]{\small (a) NFL, linear interpolation}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.49\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{nba_fixed_clock_surface_linear.png}
+  \includegraphics[width=\textwidth]{figures/nba/fixed_clock_surface_linear.png}
   \\[-0.2em]{\small (b) NBA, linear interpolation}
 \end{minipage}\\[0.8em]
 \begin{minipage}[t]{0.49\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{nfl_fixed_clock_surface_locf.png}
+  \includegraphics[width=\textwidth]{figures/nfl/fixed_clock_surface_locf.png}
   \\[-0.2em]{\small (c) NFL, LOCF}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.49\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{nba_fixed_clock_surface_locf.png}
+  \includegraphics[width=\textwidth]{figures/nba/fixed_clock_surface_locf.png}
   \\[-0.2em]{\small (d) NBA, LOCF}
 \end{minipage}
 \caption{Fixed-clock calibration surfaces. Color is observed win rate minus mean published probability; outlined cells exclude zero under the simultaneous dyadic band. The bin locations adapt to the forecast distribution at each time.}

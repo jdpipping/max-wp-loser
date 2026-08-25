@@ -9,7 +9,8 @@ Benchmarks for calibrated win-probability paths, with regular-season NFL and NBA
 - **AOAS article:** `writing/aoas/article.pdf`
 - **AOAS supplement:** `writing/aoas/supplement.pdf`
 - **AOAS cover letter:** `writing/aoas/cover-letter.pdf`
-- **arXiv article with appendices:** `writing/arxiv-preview.pdf`
+- **arXiv article with appendices:** `writing/arxiv/main.pdf`
+- **arXiv upload ZIP:** `writing/arxiv/upload.zip`
 - **NESSIS 2025 slides:** `presentations/nessis2025/slides.pdf`
 - **WSABI research note:** `writing/research-note/research-note.pdf`
 - **Poster:** `presentations/poster/poster.pdf`
@@ -61,8 +62,8 @@ The frozen-data run requires the R packages listed in `results/tables/manuscript
 - **`results/figures/manuscript/`** stores the figures consumed by the working manuscript and future submission packages.
 - **`results/tables/manuscript/frozen-data-manifest.csv`** records SHA-256 hashes for every canonical game and path input.
 - **`results/tables/manuscript/session-info.txt`** records the R runtime and package versions used by the canonical run.
-- **`writing/aoas/`** and **`writing/arxiv/`** are regenerated from the working manuscript by `build-submission-packages.R`. The arXiv directory is a flat, upload-ready source package containing only `main.tex`, `references.bib`, and the required figures.
-- Upload every file in **`writing/arxiv/`** and select `main.tex` as the top-level TeX file. The locally compiled preview is kept separately at **`writing/arxiv-preview.pdf`** so it cannot be uploaded accidentally.
+- **`writing/aoas/`** and **`writing/arxiv/`** are regenerated from the working manuscript by `build-submission-packages.R`. The arXiv source keeps its figures organized in subdirectories for local use.
+- Upload **`writing/arxiv/upload.zip`** directly and select `main.tex` as the top-level TeX file. The ZIP contains a flat twelve-file copy of the TeX source, bibliography, and required figures; `main.pdf` and local build files are excluded.
 - Deliverable-specific local figures still live under their writing or presentation folders when they are not yet shared across outputs.
 
 ## Extreme-Value Correction In Enriched Paths

@@ -12,6 +12,7 @@ repo_root <- normalizePath(file.path(dirname(script_path), "..", ".."))
 manuscript_dir <- file.path(repo_root, "writing", "manuscript")
 aoas_dir <- file.path(repo_root, "writing", "aoas")
 arxiv_dir <- file.path(repo_root, "writing", "arxiv")
+arxiv_zip <- file.path(arxiv_dir, "upload.zip")
 template_dir <- file.path(repo_root, "vendor", "ims-aoas")
 figure_root <- file.path(repo_root, "results", "figures", "manuscript")
 macro_path <- file.path(repo_root, "results", "tables", "manuscript", "inference-results.tex")
@@ -219,12 +220,10 @@ write_tex(aoas_supplement, file.path(aoas_dir, "supplement.tex"))
 
 dir.create(arxiv_dir, recursive = TRUE, showWarnings = FALSE)
 unlink(list.files(arxiv_dir, full.names = TRUE, all.files = TRUE, no.. = TRUE), recursive = TRUE)
+unlink(file.path(repo_root, "writing", c("arxiv-upload.zip", "arxiv-preview.pdf")))
 copy_file(file.path(manuscript_dir, "references.bib"), file.path(arxiv_dir, "references.bib"))
 for (path in figure_paths) {
-  copy_file(
-    file.path(figure_root, path),
-    file.path(arxiv_dir, unname(arxiv_figure_names[[path]]))
-  )
+  copy_file(file.path(figure_root, path), file.path(arxiv_dir, path))
 }
 
 arxiv_body <- article_body
@@ -265,12 +264,6 @@ arxiv_appendix <- replace_fixed(
 )
 arxiv_appendix <- replace_fixed(arxiv_appendix, "Section~S8", "Appendix~\\ref{sec:supp-validation}")
 arxiv_appendix <- replace_fixed(arxiv_appendix, "Section~S7", "Appendix~\\ref{sec:supp-results}")
-
-for (path in figure_paths) {
-  flat_name <- unname(arxiv_figure_names[[path]])
-  arxiv_body <- replace_fixed(arxiv_body, path, flat_name)
-  arxiv_appendix <- replace_fixed(arxiv_appendix, path, flat_name)
-}
 
 arxiv_main <- c(
   "\\documentclass[12pt,letterpaper]{article}",
@@ -327,31 +320,80 @@ arxiv_main <- c(
 )
 write_tex(arxiv_main, file.path(arxiv_dir, "main.tex"))
 
-expected_arxiv_files <- sort(c(
+expected_arxiv_source_files <- sort(c(
   "main.tex",
   "references.bib",
-  unname(arxiv_figure_names)
+  figure_paths
 ))
-actual_arxiv_files <- sort(list.files(
+actual_arxiv_source_files <- sort(list.files(
   arxiv_dir,
   recursive = TRUE,
   all.files = TRUE,
   no.. = TRUE,
   include.dirs = FALSE
 ))
-if (!identical(actual_arxiv_files, expected_arxiv_files)) {
+if (!identical(actual_arxiv_source_files, expected_arxiv_source_files)) {
   stop(
-    "Unexpected arXiv package contents. Expected: ",
-    paste(expected_arxiv_files, collapse = ", "),
+    "Unexpected structured arXiv package contents. Expected: ",
+    paste(expected_arxiv_source_files, collapse = ", "),
     "; found: ",
-    paste(actual_arxiv_files, collapse = ", "),
+    paste(actual_arxiv_source_files, collapse = ", "),
     "."
   )
 }
-if (any(vapply(figure_paths, function(path) {
+if (!all(vapply(figure_paths, function(path) {
   any(grepl(path, arxiv_main, fixed = TRUE))
 }, logical(1)))) {
-  stop("Nested figure paths remain in the flattened arXiv source.")
+  stop("A structured figure path is missing from the arXiv source.")
+}
+
+flat_arxiv_main <- arxiv_main
+for (path in figure_paths) {
+  flat_arxiv_main <- replace_fixed(
+    flat_arxiv_main,
+    path,
+    unname(arxiv_figure_names[[path]])
+  )
+}
+
+expected_arxiv_zip_files <- sort(c(
+  "main.tex",
+  "references.bib",
+  unname(arxiv_figure_names)
+))
+
+build_arxiv_zip <- function(zip_path) {
+  stage_dir <- tempfile("arxiv-upload-")
+  dir.create(stage_dir, recursive = TRUE)
+  on.exit(unlink(stage_dir, recursive = TRUE), add = TRUE)
+
+  write_tex(flat_arxiv_main, file.path(stage_dir, "main.tex"))
+  copy_file(file.path(manuscript_dir, "references.bib"), file.path(stage_dir, "references.bib"))
+  for (path in figure_paths) {
+    copy_file(
+      file.path(figure_root, path),
+      file.path(stage_dir, unname(arxiv_figure_names[[path]]))
+    )
+  }
+
+  old_wd <- getwd()
+  on.exit(setwd(old_wd), add = TRUE)
+  setwd(stage_dir)
+  unlink(zip_path)
+  status <- utils::zip(
+    zipfile = zip_path,
+    files = expected_arxiv_zip_files,
+    flags = "-q -X"
+  )
+  if (!identical(as.integer(status), 0L)) {
+    stop("Could not create the arXiv upload ZIP.")
+  }
+}
+
+build_arxiv_zip(arxiv_zip)
+zip_entries <- sort(utils::unzip(arxiv_zip, list = TRUE)$Name)
+if (!identical(zip_entries, expected_arxiv_zip_files)) {
+  stop("The arXiv upload ZIP does not contain the expected flat file set.")
 }
 
 writeLines(c(
@@ -363,4 +405,12 @@ writeLines(c(
   "The bibliographic title uses a colon; the working manuscript may retain its two-line title treatment."
 ), file.path(aoas_dir, "README.md"), useBytes = TRUE)
 
-message("Built self-contained AOAS and flat arXiv submission packages.")
+writeLines(c(
+  "# arXiv Source Package",
+  "",
+  "`main.tex` is the only top-level document. Sections S1--S8 are appended to the article so all appendix references are internal hyperlinks.",
+  "The source tree keeps figures organized under `figures/` and compiles with `latexmk -pdf main.tex`.",
+  "For submission, upload `upload.zip`; it contains the same TeX, bibliography, and figures in a flat twelve-file archive."
+), file.path(arxiv_dir, "README.md"), useBytes = TRUE)
+
+message("Built self-contained AOAS and arXiv packages, including arxiv/upload.zip.")
