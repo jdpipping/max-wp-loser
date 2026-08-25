@@ -305,11 +305,12 @@ Live win probabilities have given sports collapses a common numerical language: 
 \end{abstract}
 
 \begin{keyword}
-\kwd{Calibration}
-\kwd{Martingales}
-\kwd{Pigeonhole bootstrap}
-\kwd{Sequential forecasting}
-\kwd{Win probability}
+\raggedright
+\kwd{\mbox{Forecast calibration}}
+\kwd{martingales}
+\kwd[,\newline]{\mbox{pigeonhole bootstrap}}
+\kwd{\mbox{sports analytics}}
+\kwd{\mbox{win probability}}
 \end{keyword}
 \end{frontmatter}
 
@@ -474,7 +475,7 @@ When $p_0\ne 1/2$, the intermediate region $[1-p_0,p_0)$ produces a kink (Figure
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.8\textwidth]{figures/distributions/sports_cdf.png}
+\includegraphics[width=0.9\textwidth]{figures/distributions/sports_cdf.png}
 \caption{Benchmark CDF $F_{M_\lambda}(x)$ for different pre-game favorite probabilities $p_0$.}
 \label{fig:sports-cdf}
 \end{figure}
@@ -487,7 +488,7 @@ For the Chicago game, $p_0=\ChicagoStartingWP$, the observed published-path maxi
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.88\textwidth]{figures/case_studies/nba_extreme_case_study.png}
+\includegraphics[width=0.92\textwidth]{figures/case_studies/nba_extreme_case_study.png}
 \caption{Chicago's published win probability paths. The eventual loser's observed peak is \ChicagoMaxWP{} with \ChicagoMinutesRemaining{} minutes remaining; the game-specific benchmark maps that peak and $p_0=\ChicagoStartingWP$ to $U=\ChicagoPIT$.}
 \label{fig:nba-extreme-case}
 \end{figure}
@@ -654,7 +655,6 @@ NBA & \NBAGames & \NBAGlobalD & \NBAGlobalDyadicP & \NBATailNinetyFiveRate & \NB
 \end{tabular}
 \end{table}
 
-\FloatBarrier
 The two applications diverge.
 For the NFL, $D_n^{\mathrm{upper}}=\NFLGlobalD$ and the dyadic test gives $p=\NFLGlobalDyadicP$.
 This conservative test yields no detected departure, leaving exact calibration unresolved.
@@ -731,7 +731,7 @@ Coarsening removes opportunities to observe a high losing-team peak and therefor
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.82\textwidth]{figures/simulation/null_conservatism.png}
+\includegraphics[width=0.9\textwidth]{figures/simulation/null_conservatism.png}
 \caption{Centered PIT signatures after observing a common calibrated process at progressively coarser resolutions ($K_{\mathrm{base}}=\SimulationBaseGrid$). Coarsening makes the upper-tail benchmark conservative.}
 \label{fig:sim-null-gap}
 \end{figure}
