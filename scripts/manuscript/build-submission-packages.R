@@ -74,6 +74,26 @@ figure_paths <- c(
   "figures/nba/fixed_clock_surface_locf.png"
 )
 
+arxiv_figure_names <- setNames(
+  c(
+    "sports_cdf.png",
+    "nba_extreme_case_study.png",
+    "fixed_clock_calibration_envelope.png",
+    "nfl_pit.png",
+    "nba_pit.png",
+    "null_conservatism.png",
+    "nfl_fixed_clock_surface_linear.png",
+    "nba_fixed_clock_surface_linear.png",
+    "nfl_fixed_clock_surface_locf.png",
+    "nba_fixed_clock_surface_locf.png"
+  ),
+  figure_paths
+)
+
+if (anyDuplicated(unname(arxiv_figure_names))) {
+  stop("arXiv figure names must be unique after flattening.")
+}
+
 for (path in figure_paths) {
   source <- file.path(figure_root, path)
   if (!file.exists(source)) stop("Missing submission figure: ", source)
@@ -201,7 +221,10 @@ dir.create(arxiv_dir, recursive = TRUE, showWarnings = FALSE)
 unlink(list.files(arxiv_dir, full.names = TRUE, all.files = TRUE, no.. = TRUE), recursive = TRUE)
 copy_file(file.path(manuscript_dir, "references.bib"), file.path(arxiv_dir, "references.bib"))
 for (path in figure_paths) {
-  copy_file(file.path(figure_root, path), file.path(arxiv_dir, path))
+  copy_file(
+    file.path(figure_root, path),
+    file.path(arxiv_dir, unname(arxiv_figure_names[[path]]))
+  )
 }
 
 arxiv_body <- article_body
@@ -242,6 +265,12 @@ arxiv_appendix <- replace_fixed(
 )
 arxiv_appendix <- replace_fixed(arxiv_appendix, "Section~S8", "Appendix~\\ref{sec:supp-validation}")
 arxiv_appendix <- replace_fixed(arxiv_appendix, "Section~S7", "Appendix~\\ref{sec:supp-results}")
+
+for (path in figure_paths) {
+  flat_name <- unname(arxiv_figure_names[[path]])
+  arxiv_body <- replace_fixed(arxiv_body, path, flat_name)
+  arxiv_appendix <- replace_fixed(arxiv_appendix, path, flat_name)
+}
 
 arxiv_main <- c(
   "\\documentclass[12pt,letterpaper]{article}",
@@ -298,6 +327,33 @@ arxiv_main <- c(
 )
 write_tex(arxiv_main, file.path(arxiv_dir, "main.tex"))
 
+expected_arxiv_files <- sort(c(
+  "main.tex",
+  "references.bib",
+  unname(arxiv_figure_names)
+))
+actual_arxiv_files <- sort(list.files(
+  arxiv_dir,
+  recursive = TRUE,
+  all.files = TRUE,
+  no.. = TRUE,
+  include.dirs = FALSE
+))
+if (!identical(actual_arxiv_files, expected_arxiv_files)) {
+  stop(
+    "Unexpected arXiv package contents. Expected: ",
+    paste(expected_arxiv_files, collapse = ", "),
+    "; found: ",
+    paste(actual_arxiv_files, collapse = ", "),
+    "."
+  )
+}
+if (any(vapply(figure_paths, function(path) {
+  any(grepl(path, arxiv_main, fixed = TRUE))
+}, logical(1)))) {
+  stop("Nested figure paths remain in the flattened arXiv source.")
+}
+
 writeLines(c(
   "# AOAS Submission Package",
   "",
@@ -307,12 +363,4 @@ writeLines(c(
   "The bibliographic title uses a colon; the working manuscript may retain its two-line title treatment."
 ), file.path(aoas_dir, "README.md"), useBytes = TRUE)
 
-writeLines(c(
-  "# arXiv Source Package",
-  "",
-  "`main.tex` is the only top-level document. Sections S1--S8 are appended to the article so all appendix references are internal hyperlinks.",
-  "The package is self-contained: upload `main.tex`, `references.bib`, and `figures/`.",
-  "Compile from this directory with `latexmk -pdf main.tex`."
-), file.path(arxiv_dir, "README.md"), useBytes = TRUE)
-
-message("Built self-contained AOAS and arXiv submission packages.")
+message("Built self-contained AOAS and flat arXiv submission packages.")

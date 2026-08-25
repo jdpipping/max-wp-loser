@@ -46,6 +46,22 @@ run_command <- function(command, args = character(), wd = repo_root) {
   }
 }
 
+compile_arxiv_package <- function(source_dir, preview_path) {
+  build_dir <- tempfile("arxiv-build-")
+  dir.create(build_dir, recursive = TRUE)
+  on.exit(unlink(build_dir, recursive = TRUE), add = TRUE)
+
+  source_files <- list.files(source_dir, full.names = TRUE)
+  if (!all(file.copy(source_files, build_dir, overwrite = TRUE))) {
+    stop("Could not stage the arXiv package for isolated compilation.")
+  }
+
+  run_command("latexmk", c("-pdf", "main.tex"), wd = build_dir)
+  if (!file.copy(file.path(build_dir, "main.pdf"), preview_path, overwrite = TRUE)) {
+    stop("Could not write the compiled arXiv preview.")
+  }
+}
+
 workers <- max(1L, as.integer(parse_arg("workers", "12")))
 seasons <- parse_arg("seasons", "2018,2019,2020,2021,2022,2023,2024")
 overwrite <- parse_flag("overwrite", FALSE)
@@ -125,7 +141,10 @@ if (compile_pdf) {
   run_command("latexmk", c("-pdf", "cover-letter.tex"), wd = file.path(repo_root, "writing", "aoas"))
   run_command("latexmk", c("-pdf", "article.tex"), wd = file.path(repo_root, "writing", "aoas"))
   run_command("latexmk", c("-pdf", "supplement.tex"), wd = file.path(repo_root, "writing", "aoas"))
-  run_command("latexmk", c("-pdf", "main.tex"), wd = file.path(repo_root, "writing", "arxiv"))
+  compile_arxiv_package(
+    file.path(repo_root, "writing", "arxiv"),
+    file.path(repo_root, "writing", "arxiv-preview.pdf")
+  )
 }
 
 message("Full manuscript analysis pipeline complete.")
