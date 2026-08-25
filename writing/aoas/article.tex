@@ -3,16 +3,16 @@
 \RequirePackage{amsthm,amsmath,amsfonts,amssymb}
 \RequirePackage[authoryear]{natbib}
 \RequirePackage{graphicx}
-\RequirePackage{float}
 \RequirePackage{placeins}
 \RequirePackage[colorlinks,citecolor=blue,urlcolor=blue,linkcolor=blue]{hyperref}
 
 \startlocaldefs
-\theoremstyle{definition}
+\theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{remark}[theorem]{Remark}
 \newcommand{\E}{\mathbb{E}}
@@ -473,9 +473,9 @@ In this final region the tail no longer depends on the starting probability:
 In particular, when $p_0\le 0.9$, $\P(M_\lambda\ge 0.9)=1/9\approx 11\%$.
 When $p_0\ne 1/2$, the intermediate region $[1-p_0,p_0)$ produces a kink (Figure~\ref{fig:sports-cdf}).
 
-\begin{figure}[!htbp]
+\begin{figure}[!tbp]
 \centering
-\includegraphics[width=0.9\textwidth]{figures/distributions/sports_cdf.png}
+\includegraphics[width=0.9\linewidth]{figures/distributions/sports_cdf.png}
 \caption{Benchmark CDF $F_{M_\lambda}(x)$ for different pre-game favorite probabilities $p_0$.}
 \label{fig:sports-cdf}
 \end{figure}
@@ -486,9 +486,9 @@ The comeback may still be surprising when it occurs.
 What changes is the comparison set: the selected maximum must be judged against other game paths that also end in defeat, not against forecasts observed at a fixed $90\%$.
 For the Chicago game, $p_0=\ChicagoStartingWP$, the observed published-path maximum is $m=\ChicagoMaxWP$, and the benchmark score is $U=\ChicagoPIT$, with upper-tail probability \ChicagoTailProbability{} (Figure~\ref{fig:nba-extreme-case}).
 
-\begin{figure}[H]
+\begin{figure}[!tbp]
 \centering
-\includegraphics[width=0.92\textwidth]{figures/case_studies/nba_extreme_case_study.png}
+\includegraphics[width=0.92\linewidth]{figures/case_studies/nba_extreme_case_study.png}
 \caption{Chicago's published win probability paths. The eventual loser's observed peak is \ChicagoMaxWP{} with \ChicagoMinutesRemaining{} minutes remaining; the game-specific benchmark maps that peak and $p_0=\ChicagoStartingWP$ to $U=\ChicagoPIT$.}
 \label{fig:nba-extreme-case}
 \end{figure}
@@ -572,7 +572,7 @@ That filter removes \NBAExcludedExhibitionEvents{} All-Star or Rising Stars even
 From the 2018--2024 season inventories, we retain completed games, exclude NFL ties, and require a usable published probability path.
 Table~\ref{tab:data-coverage} shows the resulting coverage.
 
-\begin{table}[!htbp]
+\begin{table}[!tbp]
 \centering
 \small
 \caption{Regular-season feed construction. Eligible games are completed, non-tied games; analyzed games also have a usable public win probability path.}
@@ -611,9 +611,9 @@ At each time, the dark region spans the observed-minus-forecast gaps across bins
 In the full time--probability surfaces, the cells whose simultaneous intervals exclude zero are concentrated late in regulation and near published probabilities of zero or one in both applications (Supplementary Figure~S6.1).
 The two diagnostics answer different questions: fixed-clock calibration evaluates forecasts at prespecified times, whereas the losing-path diagnostic selects a maximum after the loser is known.
 
-\begin{figure}[!htbp]
+\begin{figure}[!tbp]
 \centering
-\includegraphics[width=0.95\textwidth]{figures/fixed_clock_calibration_envelope.png}
+\includegraphics[width=0.95\linewidth]{figures/fixed_clock_calibration_envelope.png}
 \caption{Fixed-clock calibration envelopes using linear interpolation. Each game contributes once at each fraction of regulation. Dark regions span the ten tie-preserving adaptive-bin gaps; light regions include the simultaneous season-stratified dyadic-bootstrap limits. Full time--probability surfaces and the LOCF sensitivity appear in the supplement.}
 \label{fig:fixed-clock-envelope}
 \end{figure}
@@ -624,23 +624,25 @@ For each game, the losing-path diagnostic maps the eventual loser's peak $m_i$ t
 Figure~\ref{fig:pit-combined} shows the resulting curves $t-\hat F_U(t-)$.
 The dot-dash line in each panel marks the 95th percentile of the centered dyadic-bootstrap statistic used for formal inference.
 
-\begin{figure}[!htbp]
+\begin{figure}[!tbp]
 \centering
-\begin{minipage}[t]{0.8\textwidth}
+\begin{minipage}[t]{0.8\linewidth}
   \centering
-  \includegraphics[width=\textwidth]{figures/nfl/pit.png}
+  \includegraphics[width=\linewidth]{figures/nfl/pit.png}
   \smallskip\par\small (a) NFL
 \end{minipage}\\[0.5em]
-\begin{minipage}[t]{0.8\textwidth}
+\begin{minipage}[t]{0.8\linewidth}
   \centering
-  \includegraphics[width=\textwidth]{figures/nba/pit.png}
+  \includegraphics[width=\linewidth]{figures/nba/pit.png}
   \smallskip\par\small (b) NBA
 \end{minipage}
 \caption{Centered PIT signatures $t-\hat F_U(t-)$ and the 95\% season-stratified dyadic-bootstrap critical value (dot-dash). The NFL application has no detected global departure; the NBA application exceeds its reference.}
 \label{fig:pit-combined}
 \end{figure}
 
-\begin{table}[!htbp]
+Table~\ref{tab:primary-inference} reports the global test and the $0.95$ tail magnitude for each application.
+
+\begin{table}[!tbp]
 \centering
 \small
 \caption{Primary inference for each application. The interval is a two-sided percentile interval from the same season-stratified dyadic draws used for the global test.}
@@ -729,9 +731,9 @@ Figure~\ref{fig:sim-null-gap} shows the consequence.
 As reports become less frequent, $t-\hat F_U(t-)$ moves downward.
 Coarsening removes opportunities to observe a high losing-team peak and therefore works against upper-tail rejection.
 
-\begin{figure}[!htbp]
+\begin{figure}[!tbp]
 \centering
-\includegraphics[width=0.9\textwidth]{figures/simulation/null_conservatism.png}
+\includegraphics[width=0.9\linewidth]{figures/simulation/null_conservatism.png}
 \caption{Centered PIT signatures after observing a common calibrated process at progressively coarser resolutions ($K_{\mathrm{base}}=\SimulationBaseGrid$). Coarsening makes the upper-tail benchmark conservative.}
 \label{fig:sim-null-gap}
 \end{figure}

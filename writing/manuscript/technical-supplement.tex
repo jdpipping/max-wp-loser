@@ -66,10 +66,11 @@ Fix $x\in[p_0,1)$. Decompose $\P(M_N\ge x)$ by $Y$:
 \P(M_N\ge x)=\P(M_N\ge x, Y=1)+\P(M_N\ge x, Y=0).
 \]
 On $\{Y=1\}$ we have $p_N=1\ge x$, hence $\{Y=1\}\subseteq\{M_N\ge x\}$ and
-\[
-\P(M_N\ge x)=\P(Y=1)+\P(Y=0)\P(M_N\ge x\mid Y=0)
-= p_0 + (1-p_0)\P(M_N\ge x\mid Y=0).
-\]
+\begin{align*}
+\P(M_N\ge x)
+&=\P(Y=1)+\P(Y=0)\P(M_N\ge x\mid Y=0) \\
+&=p_0+(1-p_0)\P(M_N\ge x\mid Y=0).
+\end{align*}
 By Theorem~\ref{thm:supp-discrete-unconditional}, $\P(M_N\ge x)\le p_0/x$, so
 \[
 \frac{p_0}{x}\;\ge\; p_0 + (1-p_0)\P(M_N\ge x\mid Y=0),
@@ -83,12 +84,13 @@ Taking complements gives the stated strict-threshold bound; the ordinary CDF bou
 
 \begin{proposition}[Discrete-time correction identity]
 For $x\in(p_0,1)$,
-\[
+\begin{align*}
 \P(M_N\ge x\mid Y=0)
-=\frac{p_0}{1-p_0}\cdot\frac{1-x}{x}
--\frac{1}{x(1-p_0)}\,\E\!\big[(p_{\tau_x}-x)\mathbf 1\{\tau_x<N\}\big]
--\frac{1-x}{x(1-p_0)}\,\P(\tau_x=N).
-\]
+={}&\frac{p_0}{1-p_0}\cdot\frac{1-x}{x} \\
+&-\frac{1}{x(1-p_0)}
+  \E\!\big[(p_{\tau_x}-x)\mathbf 1\{\tau_x<N\}\big] \\
+&-\frac{1-x}{x(1-p_0)}\,\P(\tau_x=N).
+\end{align*}
 \end{proposition}
 
 \begin{proof}

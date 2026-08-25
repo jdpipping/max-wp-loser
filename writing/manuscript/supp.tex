@@ -12,7 +12,6 @@
 \usepackage{setspace}
 \usepackage{xcolor}
 \usepackage{parskip}
-\usepackage{float}
 \usepackage{placeins}
 \usepackage{enumitem}
 \usepackage{hyperref}
@@ -36,7 +35,7 @@
 \newcommand{\E}{\mathbb{E}}
 \input{../../results/tables/manuscript/inference-results.tex}
 
-\theoremstyle{definition}
+\theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
@@ -61,7 +60,7 @@
 
 \section{Numerical Benchmarks} \label{sec:supp-benchmarks}
 
-The piecewise CDF in Supplementary Section~S3 gives the selected values in Table~\ref{tab:supp-numerical-benchmarks}.
+The piecewise CDF in Supplementary Section~\ref{app:two-player-derivation} gives the selected values in Table~\ref{tab:supp-numerical-benchmarks}.
 When the peak threshold satisfies $x\ge p_0$, the tail is universal:
 \[
 \P(M_\lambda\ge x)=\frac{1}{x}-1.
@@ -70,7 +69,7 @@ In the intermediate region, $1-p_0\le x<p_0$, the corresponding probability is $
 The first three rows follow a game with $p_0=2/3$ across the boundary between these regions; the remaining rows give the practically important upper-tail thresholds.
 For discretely reported paths, these continuous-path probabilities are conservative upper bounds.
 
-\begin{table}[!htbp]
+\begin{table}[!tbp]
 \centering
 \small
 \caption{Selected benchmark probabilities for the eventual loser's peak.}
@@ -91,7 +90,7 @@ Universal tail & $p_0\le 0.99$ & $0.99$ & $1/99\;(0.0101)$ \\
 
 \section{Dependence Validity and Bootstrap} \label{sec:supp-inference}
 
-Intervals and $p$-values in Sections~S5--S7 use $B=\DyadicBootstrapReplicates$ season-stratified dyadic draws with seed \DyadicBootstrapSeed.
+Intervals and $p$-values in Sections~\ref{sec:supp-inference}--\ref{sec:supp-results} use $B=\DyadicBootstrapReplicates$ season-stratified dyadic draws with seed \DyadicBootstrapSeed.
 
 \subsection{Exchangeable-array specialization}
 
@@ -218,7 +217,7 @@ The result follows by taking suprema and applying Corollary~\ref{cor:dyadic-cdf}
 Corollaries~\ref{cor:dyadic-cdf}--\ref{cor:conservative-test} use a dense-array asymptotic and a nondegenerate first-order dyadic projection.
 A vanishing projection can produce a second-order limit and conservative pigeonhole resampling; more generally, \citet{Menzel2021} rules out uniform bootstrap consistency across all multiway-dependence regimes.
 Professional schedules have fixed conference and division structures, and franchises persist across seasons.
-Section~S8 evaluates finite-sample size on the observed schedules, and the franchise-linked specification in Table~\ref{tab:supp-specification} carries team effects across seasons.
+Section~\ref{sec:supp-validation} evaluates finite-sample size on the observed schedules, and the franchise-linked specification in Table~\ref{tab:supp-specification} carries team effects across seasons.
 
 \subsection{Season-stratified dyadic pigeonhole bootstrap}
 
@@ -253,7 +252,7 @@ Because ESPN's NBA season-type field also includes All-Star exhibitions, both pa
 Table~\ref{tab:supp-coverage} gives the complete acquisition ledger.
 ``Eligible'' means completed and non-tied, while ``analyzed'' additionally requires a usable public probability path.
 
-\begin{table}[!htbp]
+\begin{table}[!tbp]
 \centering
 \small
 \caption{Regular-season schedule and public-feed coverage by season.}
@@ -300,26 +299,26 @@ Thus the fixed-clock analysis finds sparse late-game boundary discrepancies, whi
 The descriptive root-mean-square cell gaps are \NFLFixedClockLinearRMS{} (linear) and \NFLFixedClockLOCFRMS{} (LOCF) in the NFL, and \NBAFixedClockLinearRMS{} and \NBAFixedClockLOCFRMS{} in the NBA.
 Figure~\ref{fig:supp-fixed-clock} displays the full surfaces.
 
-\begin{figure}[H]
+\begin{figure}[!tbp]
 \centering
-\begin{minipage}[t]{0.49\textwidth}
+\begin{minipage}[t]{0.49\linewidth}
   \centering
-  \includegraphics[width=\textwidth]{figures/nfl/fixed_clock_surface_linear.png}
+  \includegraphics[width=\linewidth]{figures/nfl/fixed_clock_surface_linear.png}
   \\[-0.2em]{\small (a) NFL, linear interpolation}
 \end{minipage}\hfill
-\begin{minipage}[t]{0.49\textwidth}
+\begin{minipage}[t]{0.49\linewidth}
   \centering
-  \includegraphics[width=\textwidth]{figures/nba/fixed_clock_surface_linear.png}
+  \includegraphics[width=\linewidth]{figures/nba/fixed_clock_surface_linear.png}
   \\[-0.2em]{\small (b) NBA, linear interpolation}
 \end{minipage}\\[0.8em]
-\begin{minipage}[t]{0.49\textwidth}
+\begin{minipage}[t]{0.49\linewidth}
   \centering
-  \includegraphics[width=\textwidth]{figures/nfl/fixed_clock_surface_locf.png}
+  \includegraphics[width=\linewidth]{figures/nfl/fixed_clock_surface_locf.png}
   \\[-0.2em]{\small (c) NFL, LOCF}
 \end{minipage}\hfill
-\begin{minipage}[t]{0.49\textwidth}
+\begin{minipage}[t]{0.49\linewidth}
   \centering
-  \includegraphics[width=\textwidth]{figures/nba/fixed_clock_surface_locf.png}
+  \includegraphics[width=\linewidth]{figures/nba/fixed_clock_surface_locf.png}
   \\[-0.2em]{\small (d) NBA, LOCF}
 \end{minipage}
 \caption{Fixed-clock calibration surfaces. Color is observed win rate minus mean published probability; outlined cells exclude zero under the simultaneous dyadic band. The bin locations adapt to the forecast distribution at each time.}
@@ -335,7 +334,7 @@ The fixed-clock surfaces evaluate reliability at prespecified times; the collaps
 Table~\ref{tab:supp-tail} reports upper-tail rates at $0.90$, $0.95$, and $0.99$.
 The NBA excess is positive at $0.90$ and $0.95$; its $0.99$ interval includes zero.
 
-\begin{table}[!htbp]
+\begin{table}[!tbp]
 \centering
 \small
 \caption{Upper-tail rates and excess over the continuous benchmark. Intervals are two-sided percentile dyadic-bootstrap intervals for the excess.}
@@ -365,7 +364,7 @@ Table~\ref{tab:supp-crossing} reports $\overline{1-Y}$, $\overline{1-p_{\tau_q}}
 The estimand is an average over crossing episodes; when two episodes come from the same game, they receive the same dyadic game weight.
 The crossing estimand uses a published probability $p\ge q$; the tail estimand in Table~\ref{tab:supp-tail} uses the game-level benchmark score $U\ge q$.
 
-\begin{table}[!htbp]
+\begin{table}[!tbp]
 \centering
 \small
 \setlength{\tabcolsep}{4pt}
@@ -393,7 +392,7 @@ For reported probabilities rounded to three decimals, lower and upper PIT vector
 The dyad-plus-calendar row multiplies the team multiplicity by a circular two-week block multiplicity within each season, retaining team dependence while allowing common model-period shocks.
 The franchise-linked row maps relocations to a common franchise and applies one team multiplicity across all seasons, allowing persistent team effects.
 
-\begin{table}[!htbp]
+\begin{table}[!tbp]
 \centering
 \small
 \setlength{\tabcolsep}{4pt}
@@ -431,12 +430,12 @@ NFL coverage is complete; minimum NBA season coverage is \NBAMinimumFeedCoverage
 Table~\ref{tab:supp-loso} gives descriptive stability summaries after omitting one season at a time.
 Across omissions, the NBA global statistic ranges from \NBALOSODMin{} to \NBALOSODMax{}, while the NFL statistic ranges from \NFLLOSODMin{} to \NFLLOSODMax{}.
 
-\begin{table}[!htbp]
+\begin{table}[!tbp]
 \centering
 \small
 \caption{Leave-one-season-out global statistic and $0.95$ tail excess.}
 \label{tab:supp-loso}
-\begin{minipage}[t]{0.47\textwidth}
+\begin{minipage}[t]{0.47\linewidth}
 \centering
 \textbf{NFL}\\[0.3em]
 \begin{tabular}{lrrr}
@@ -447,7 +446,7 @@ Omitted & Games & $D$ & Excess \\
 \hline
 \end{tabular}
 \end{minipage}\hfill
-\begin{minipage}[t]{0.47\textwidth}
+\begin{minipage}[t]{0.47\linewidth}
 \centering
 \textbf{NBA}\\[0.3em]
 \begin{tabular}{lrrr}
@@ -482,8 +481,9 @@ Games sharing a team are correlated through the team effect, with $\rho$ control
 For each $\rho\in\{0,0.25,0.5\}$, the global test is applied to \ValidationOuterSamples{} Monte Carlo samples using \ValidationInnerReplicates{} inner pigeonhole draws.
 The proportion rejected estimates finite-schedule Type I error at nominal level 5\%.
 When $\rho=0$, the pigeonhole procedure is expected to be conservative because the dyadic projection is degenerate; this is the regime in which multiway bootstrap behavior requires particular care \citep{Menzel2021}.
+Table~\ref{tab:supp-validation} reports the resulting rejection rates.
 
-\begin{table}[H]
+\begin{table}[!tbp]
 \centering
 \caption{Empirical 5\% rejection rates in the finite-schedule null simulation (\ValidationOuterSamples{} Monte Carlo samples; \ValidationInnerReplicates{} inner draws).}
 \label{tab:supp-validation}
@@ -502,7 +502,7 @@ NBA & 0.5 & \ValidationNBARhoFiftyDyadic \\
 \end{table}
 The test is conservative under these schedule-specific nulls.
 Rejection rates rise with the shared-team component, from \ValidationNFLRhoZeroDyadic{} to \ValidationNFLRhoFiftyDyadic{} on the NFL schedule and from \ValidationNBARhoZeroDyadic{} to \ValidationNBARhoFiftyDyadic{} on the NBA schedule, remaining at or below the nominal 5\% level.
-The simulation targets finite-schedule size under shared-team dependence; calendar and cross-season dependence are examined through the sensitivities in Section~S7.
+The simulation targets finite-schedule size under shared-team dependence; calendar and cross-season dependence are examined through the sensitivities in Section~\ref{sec:supp-results}.
 
 \bibliographystyle{apalike}
 \bibliography{references}
